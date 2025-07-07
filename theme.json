@@ -51,6 +51,11 @@
       },
       "elements": {
         "button": {
+          "fontFamily": "var(--wp--preset--font-family--manrope)",
+          "fontWeight": "var(--wp--preset--font-weight--bold)",
+          "fontSize": "var(--wp--preset--font-size--medium)",
+        
+        
           "color": {
             "background": "var(--wp--preset--color--accent-dark)",
             "text": "var(--wp--preset--color--base)"
@@ -61,11 +66,15 @@
           ":hover": {
             "color": {
               "background": "var(--wp--preset--color--accent)",
-              "text": "var(--wp--preset--color--accent-dark)"
+              "text": "var(--wp--preset--color--base)"
             }
           }
         },
         "buttonCta": {
+          "fontFamily": "var(--wp--preset--font-family--manrope)",
+          "fontWeight": "var(--wp--preset--font-weight--bold)",
+          "fontSize": "var(--wp--preset--font-size--medium)",
+
           "color": {
                 "background": "var(--wp--preset--color--accent)",
             "text": "var(--wp--preset--color--accent-dark)"
@@ -75,7 +84,7 @@
           }
         },
         "link": {
-          "color": "var(--wp--preset--color--accent)",
+          "color": "var(--wp--preset--color--base)",
           ":hover": {
             "color": "var(--wp--preset--color--accent-dark)"
           }
