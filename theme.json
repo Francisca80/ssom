@@ -1,0 +1,86 @@
+{
+    "version": 2,
+    "templateParts": [
+      {
+        "name": "header",
+        "title": "Ssom-Header",
+        "area": "header"
+      }
+    ],
+    "settings": {
+      "layout": {
+        "contentSize": "1200px",
+        "wideSize": "100%"
+      },
+      "color": {
+        "palette": [
+          { "slug": "base", "color": "#ffffff", "name": "Base" },
+          { "slug": "text", "color": "#111111", "name": "Text" },
+          { "slug": "accent", "color": "#b8ea3f", "name": "Accent" },
+          { "slug": "accent-dark", "color": "#000000", "name": "Accent Dark" }
+        ]
+      },
+      "typography": {
+        "fontFamilies": [
+          {
+            "slug": "manrope",
+            "name": "Manrope",
+            "fontFamily": "'Manrope', sans-serif"
+          }
+        ],
+        "fontSizes": [
+          { "slug": "xxs", "size": "12px", "name": "Extra Extra Small" },
+          { "slug": "small", "size": "14px", "name": "Small" },
+          { "slug": "medium", "size": "18px", "name": "Medium" },
+          { "slug": "large", "size": "32px", "name": "Large" },
+          { "slug": "xl", "size": "48px", "name": "Extra Large" },
+          { "slug": "xxl", "size": "64px", "name": "Extra Extra Large" }
+        ],
+        "fontWeights": [
+          { "slug": "regular", "name": "Regular", "value": "400" },
+          { "slug": "medium", "name": "Medium", "value": "500" },
+          { "slug": "bold", "name": "Bold", "value": "700" },
+          { "slug": "black", "name": "Black", "value": "900" }
+        ]
+      }
+    },
+    "styles": {
+      "typography": {
+        "fontFamily": "var(--wp--preset--font-family--manrope)",
+        "fontSize": "var(--wp--preset--font-size--medium)"
+      },
+      "elements": {
+        "button": {
+          "color": {
+            "background": "var(--wp--preset--color--accent-dark)",
+            "text": "var(--wp--preset--color--base)"
+          },
+          "border": {
+            "radius": "8px"
+          },
+          ":hover": {
+            "color": {
+              "background": "var(--wp--preset--color--accent)",
+              "text": "var(--wp--preset--color--accent-dark)"
+            }
+          }
+        },
+        "buttonCta": {
+          "color": {
+                "background": "var(--wp--preset--color--accent)",
+            "text": "var(--wp--preset--color--accent-dark)"
+          },
+          "border": {
+            "radius": "8px"
+          }
+        },
+        "link": {
+          "color": "var(--wp--preset--color--accent)",
+          ":hover": {
+            "color": "var(--wp--preset--color--accent-dark)"
+          }
+        }
+      }
+    }
+  }
+  

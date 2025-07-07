@@ -1,0 +1,27 @@
+/*
+Theme Name: Studio Sound of Music Custom 
+Theme URI: https://www.studiosoundofmusic.nl
+Author: Francisca
+Author URI: https://margin-top.com
+Description: A bold, clean child theme for Studio Sound of Music
+Template: twentytwentyfive
+Version: 1.0
+Tags: block-patterns, fse, bold, clean
+*/
+
+/* Hide Contact Us button on mobile */
+@media (max-width: 768px) {
+  .wp-block-buttons.is-style-hidden-mobile,
+  .is-style-hidden-mobile {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+/* Navigation link hover states */
+.wp-block-navigation a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--wp--preset--color--accent);
+  text-underline-offset: 6px;
+}
+
