@@ -1,0 +1,51 @@
+<?php
+/**
+ * Title: About Studio (Modern Card)
+ * Slug: ssom/about
+ * Categories: about, featured, text
+ * Keywords: studio, intro, about, card, modern
+ */
+?>
+
+<!-- wp:group {"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<div class="wp-block-group">
+  <!-- wp:columns {"verticalAlignment":"center"} -->
+  <div class="wp-block-columns are-vertically-aligned-center">
+    <!-- wp:column {"width":"55%"} -->
+    <div class="wp-block-column" style="flex-basis:55%">
+      <!-- wp:paragraph {"className":"has-text-color","style":{"typography":{"textTransform":"uppercase","fontWeight":"bold","letterSpacing":"0.05em"}}} -->
+      <p class="has-text-color" style="text-transform:uppercase;font-weight:bold;letter-spacing:0.05em;">Welkom bij Studio Sound of Music</p>
+      <!-- /wp:paragraph -->
+      <!-- wp:heading {"level":2,"style":{"typography":{"fontWeight":"900","fontSize":"2.5rem"}}} -->
+      <h2 style="font-weight:900;font-size:2.5rem;">De gitaarschool voor een muzikale reis</h2>
+      <!-- /wp:heading -->
+      <!-- wp:paragraph -->
+      <p>Studio Sound of Music is dé plek om gitaar te leren spelen met plezier. In onze lessen draait het om persoonlijke begeleiding, muzikaliteit en een fijne sfeer. We geven les in Nieuwegein, dichtbij Vianen, IJsselstein, Houten en Utrecht.</p>
+      <!-- /wp:paragraph -->
+      <!-- wp:buttons -->
+      <div class="wp-block-buttons">
+        <!-- wp:button {"className":"is-style-ctabutton"} -->
+        <div class="wp-block-button is-style-ctabutton">
+          <a class="wp-block-button__link wp-element-button">Over Ons</a>
+        </div>
+        <!-- /wp:button -->
+      </div>
+      <!-- /wp:buttons -->
+    </div>
+    <!-- /wp:column -->
+
+    <!-- wp:column {"width":"45%"} -->
+    <div class="wp-block-column" style="flex-basis:45%">
+      <!-- wp:embed {"url":"https://youtu.be/mD-phpwNSdI","type":"video","providerNameSlug":"youtube","responsive":true} -->
+      <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube">
+        <div class="wp-block-embed__wrapper">
+          https://youtu.be/mD-phpwNSdI
+        </div>
+      </figure>
+      <!-- /wp:embed -->
+    </div>
+    <!-- /wp:column -->
+  </div>
+  <!-- /wp:columns -->
+</div>
+<!-- /wp:group -->

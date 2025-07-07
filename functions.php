@@ -15,4 +15,10 @@ add_action( 'init', function () {
 	register_block_pattern_category( 'hero', [
 		'label' => __( 'Hero Sections', 'ssom' ),
 	] );
+	register_block_pattern_category( 'about', [
+		'label' => __( 'About Sections', 'ssom' ),
+	] );
+	register_block_pattern_category( 'cta', [
+		'label' => __( 'CTA Sections', 'ssom' ),
+	] );
 } );

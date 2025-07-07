@@ -25,3 +25,13 @@ Tags: block-patterns, fse, bold, clean
   text-underline-offset: 6px;
 }
 
+/* Responsive fix for About pattern card overlap */
+@media (max-width: 782px) {
+  .wp-block-group[style*="margin-left:-4rem"],
+  .wp-block-group[style*="margin-left: -4rem"] {
+    margin-left: 0 !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
