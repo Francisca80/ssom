@@ -1,6 +1,11 @@
 // GSAP Animations for SSOM Theme
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Register ScrollTrigger plugin
+    if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
+        gsap.registerPlugin(ScrollTrigger);
+    }
+    
     // Hero Section Animations
     const heroTitle = document.querySelector('.hero-title');
     const heroParagraph = document.querySelector('.hero-paragraph');

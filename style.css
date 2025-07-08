@@ -35,3 +35,35 @@ Tags: block-patterns, fse, bold, clean
   }
 }
 
+/* Individual post cards */
+.wp-block-post {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* Better image styling */
+.blog-column img {
+  border-radius: 8px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Default link hover effects */
+.blog-column a:hover {
+  color: var(--wp--preset--color--accent) !important;
+}
+
+/* Responsive blog layout */
+@media (max-width: 768px) {
+  .wp-block-query,
+  .blog-columns-equal-height {
+    flex-direction: column;
+  }
+  
+  .blog-column img {
+    height: 180px;
+  }
+}
+

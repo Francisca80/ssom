@@ -7,6 +7,12 @@
         "area": "header"
       }
     ],
+    "patterns": [
+      "ssom/hero",
+      "ssom/about", 
+      "ssom/cta",
+      "ssom/blog"
+    ],
     "settings": {
       "layout": {
         "contentSize": "1200px",

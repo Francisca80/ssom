@@ -7,8 +7,8 @@
  */
 ?>
 
-<!-- wp:group {"align":"full","className":"cta-join","style":{"color":{"background":"#f5f5f5"},"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull cta-join has-background" style="background-color:#f5f5f5;margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)">
+<!-- wp:group {"align":"full","className":"cta-join","style":{"color":{"background":"#f5f5f5"},"spacing":{"margin":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull cta-join has-background" style="background-color:#f5f5f5;margin-top:var(--wp--preset--spacing--50);margin-bottom:var(--wp--preset--spacing--50)">
   <!-- wp:group {"layout":{"type":"constrained","contentSize":"1200px"},"className":"cta-gallery-join-section"} -->
   <div class="wp-block-group cta-gallery-join-section">
     <!-- wp:columns {"verticalAlignment":"top","className":"cta-gallery-columns","style":{"spacing":{"blockGap":"1rem"}}} -->
