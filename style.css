@@ -35,6 +35,7 @@ Tags: block-patterns, fse, bold, clean
   }
 }
 
+/* Blog Pattern Styles */
 /* Individual post cards */
 .wp-block-post {
   border: 1px solid #e0e0e0;
@@ -64,6 +65,118 @@ Tags: block-patterns, fse, bold, clean
   
   .blog-column img {
     height: 180px;
+  }
+}
+
+/* Marquee Component Styles */
+.marquee-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.marquee-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: inline;
+  white-space: nowrap;
+  font-size: 2.5rem !important;
+  font-family: var(--wp--preset--font-family--manrope) !important;
+  font-weight: 900 !important;
+  color: #000000 !important;
+  line-height: 1 !important;
+  margin: 0;
+  padding: 0;
+}
+
+.marquee-content .star {
+  color: var(--wp--preset--color--accent) !important;
+  margin: 0 0.5rem;
+}
+
+/* Ensure no wrapping */
+.marquee-track,
+.marquee-content,
+.marquee-content * {
+  white-space: nowrap !important;
+  word-wrap: normal !important;
+  word-break: keep-all !important;
+}
+
+/* Animation for the marquee */
+.marquee-track {
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-track-2 {
+  animation: marquee-reverse 30s linear infinite;
+}
+.masonry-grid {
+  column-count: 2;
+  column-gap: 24px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Pause animation on hover */
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Responsive marquee adjustments */
+@media (max-width: 768px) {
+  .marquee-content {
+    font-size: 1.8rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-content {
+    font-size: 1.5rem !important;
   }
 }
 

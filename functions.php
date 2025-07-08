@@ -27,4 +27,10 @@ add_action( 'init', function () {
 	register_block_pattern_category( 'blog', [
 		'label' => __( 'Blog Sections', 'ssom' ),
 	] );
+	register_block_pattern_category( 'lessen', [
+		'label' => __( 'Lessen Sections', 'ssom' ),
+	] );
+	register_block_pattern_category( 'reviews', [
+		'label' => __( 'Reviews Sections', 'ssom' ),
+	] );
 } );

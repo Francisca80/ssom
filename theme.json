@@ -5,13 +5,20 @@
         "name": "header",
         "title": "Ssom-Header",
         "area": "header"
+      },
+      {
+        "name": "footer",
+        "title": "Ssom-Footer",
+        "area": "footer"
       }
     ],
     "patterns": [
       "ssom/hero",
       "ssom/about", 
       "ssom/cta",
-      "ssom/blog"
+      "ssom/blog",
+      "ssom/lessen",
+      "ssom/reviews"
     ],
     "settings": {
       "layout": {
