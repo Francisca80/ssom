@@ -68,4 +68,51 @@ document.addEventListener('DOMContentLoaded', function () {
             );
         }
     });
+
+    // Testimonial Carousel
+    const testimonialCarousels = document.querySelectorAll('.testimonial-carousel');
+    
+    testimonialCarousels.forEach(carousel => {
+        const testimonials = carousel.querySelectorAll('.testimonial');
+        const prevBtn = carousel.parentElement.querySelector('.testimonial-nav.prev');
+        const nextBtn = carousel.parentElement.querySelector('.testimonial-nav.next');
+        
+        if (!testimonials.length || !prevBtn || !nextBtn) return;
+        
+        let currentIndex = 0;
+        
+        function showTestimonial(index) {
+            // Hide all testimonials
+            testimonials.forEach(testimonial => {
+                testimonial.classList.remove('active');
+            });
+            
+            // Show current testimonial
+            testimonials[index].classList.add('active');
+            
+            // Update button states
+            prevBtn.style.opacity = index === 0 ? '0.5' : '1';
+            nextBtn.style.opacity = index === testimonials.length - 1 ? '0.5' : '1';
+        }
+        
+        function nextTestimonial() {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            showTestimonial(currentIndex);
+        }
+        
+        function prevTestimonial() {
+            currentIndex = currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1;
+            showTestimonial(currentIndex);
+        }
+        
+        // Event listeners
+        nextBtn.addEventListener('click', nextTestimonial);
+        prevBtn.addEventListener('click', prevTestimonial);
+        
+        // Initialize
+        showTestimonial(currentIndex);
+        
+        // Auto-advance every 5 seconds
+        setInterval(nextTestimonial, 5000);
+    });
 });

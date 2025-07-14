@@ -23,7 +23,27 @@
     "settings": {
       "layout": {
         "contentSize": "1200px",
-        "wideSize": "100%"
+        "wideSize": "100%",
+        "contentSizes": [
+          { "slug": "small", "size": "800px", "name": "Small" },
+          { "slug": "medium", "size": "1000px", "name": "Medium" },
+          { "slug": "large", "size": "1200px", "name": "Large" },
+          { "slug": "xl", "size": "1400px", "name": "Extra Large" },
+          { "slug": "full", "size": "100%", "name": "Full Width" }
+        ]
+      },
+      "spacing": {
+        "units": ["px", "em", "rem", "%", "vw", "vh"],
+        "spacingSizes": [
+          { "slug": "10", "size": "10px", "name": "10" },
+          { "slug": "20", "size": "20px", "name": "20" },
+          { "slug": "30", "size": "30px", "name": "30" },
+          { "slug": "40", "size": "40px", "name": "40" },
+          { "slug": "50", "size": "50px", "name": "50" },
+          { "slug": "60", "size": "60px", "name": "60" },
+          { "slug": "80", "size": "80px", "name": "80" },
+          { "slug": "100", "size": "100px", "name": "100" }
+        ]
       },
       "color": {
         "palette": [
