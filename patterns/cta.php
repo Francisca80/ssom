@@ -1,57 +1,58 @@
 <?php
 /**
- * Title: CTA
+ * Title: Call to Action (Join / Proefles)
  * Slug: ssom/cta
  * Categories: cta, featured
- * Keywords: join, cta, proefles, studio, sound of music
+ * Keywords: join, cta, proefles, studio sound of music
  */
 ?>
 
-<!-- wp:group {"align":"full","className":"cta-join","style":{"color":{"background":"#f5f5f5"},"spacing":{"margin":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull cta-join has-background" style="background-color:#f5f5f5;margin-top:var(--wp--preset--spacing--50);margin-bottom:var(--wp--preset--spacing--50)">
+<!-- wp:group {"align":"full","className":"cta-join","style":{"color":{"background":"#f5f5f5"},"spacing":{"margin":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"},"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull cta-join has-background" style="background-color:#f5f5f5;margin-top:var(--wp--preset--spacing--60);margin-bottom:var(--wp--preset--spacing--60);padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);">
+
   <!-- wp:group {"layout":{"type":"constrained","contentSize":"1200px"},"className":"cta-gallery-join-section"} -->
   <div class="wp-block-group cta-gallery-join-section">
-    <!-- wp:columns {"verticalAlignment":"top","className":"cta-gallery-columns","style":{"spacing":{"blockGap":"1rem"}}} -->
-    <div class="wp-block-columns are-vertically-aligned-top cta-gallery-columns" style="gap:1rem;">
-      <!-- wp:column {"width":"33.33%"} -->
-      <div class="wp-block-column" style="flex-basis:33.33%">
-        <!-- wp:image {"url":"http://studio-sound-of-music.local/wp-content/uploads/2025/05/fischer_portrait-marlowe_webres-6-683x1024.jpg","sizeSlug":"large","linkDestination":"none","className":"cta-gallery-image-large"} /-->
+
+    <!-- wp:columns {"className":"cta-gallery-columns"} -->
+    <div class="wp-block-columns cta-gallery-columns">
+      <!-- wp:column -->
+      <div class="wp-block-column">
+        <!-- wp:image {"url":"/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-6-200x300.jpg","alt":"Studio Sound of Music gitaarles","sizeSlug":"large","linkDestination":"none","className":"cta-gallery-image-large","style":{"border":{"radius":"12px"}}} -->
+        <figure class="wp-block-image size-large cta-gallery-image-large"><img src="/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-6-200x300.jpg" alt="Studio Sound of Music gitaarles"/></figure>
+        <!-- /wp:image -->
       </div>
       <!-- /wp:column -->
+      <!-- wp:column {"backgroundColor":"dark-accent"} -->
+      <div class="wp-block-column has-dark-accent-background-color has-background" style="border-radius:12px;overflow:hidden;padding:2.5rem;">
+        <!-- wp:heading {"level":3,"textColor":"base","style":{"typography":{"fontWeight":"900","fontSize":"1.75rem"},"spacing":{"margin":{"bottom":"1.5rem"}}}} -->
+        <h3 class="has-base-color has-text-color" style="font-weight:900;font-size:1.75rem;margin-bottom:1.5rem;">Maak kennis met Studio Sound of Music</h3>
+        <!-- /wp:heading -->
 
-      <!-- wp:column {"width":"33.33%","backgroundColor":"dark-accent"} -->
-      <div class="wp-block-column has-dark-accent-background-color has-background" style="flex-basis:33.33%">
-        <!-- wp:group {"className":"cta-text-block has-text-secondary-color has-text-color has-link-color"} -->
-        <div class="wp-block-group cta-text-block has-text-secondary-color has-text-color has-link-color">
-          <!-- wp:heading {"level":3,"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
-          <h3 class="wp-block-heading" style="padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">Maak kennis met Studio Sound of Music</h3>
-          <!-- /wp:heading -->
-
-          <!-- wp:separator {"backgroundColor":"secondary","className":"is-style-wide"} /-->
-
-          <!-- wp:paragraph {"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}}} -->
-          <p style="padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
-            We geven geen standaardlessen uit een boekje, maar stemmen alles af op jouw niveau, doelen en muzieksmaak. Misschien wil je lekkere rockriffs leren spelen, of juist fingerpicking onder de knie krijgen. Wat jouw droom ook is, wij helpen je die waar te maken — met slimme oefeningen, duidelijke uitleg en een flinke dosis motivatie.
-          </p>
-          <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:group -->
+        <!-- wp:paragraph {"textColor":"white","style":{"typography":{"fontSize":"1.125rem","lineHeight":"1.6"}}} -->
+        <p class="has-white-color has-text-color" style="font-size:1.125rem;line-height:1.6;">
+          We geven geen standaardlessen uit een boekje, maar stemmen alles af op jouw niveau, doelen en muzieksmaak.
+          Of je nu wil leren soleren, fingerpicken of je favoriete nummers spelen — we helpen je groeien met slimme oefeningen, persoonlijke aandacht en veel plezier.
+        </p>
+        <!-- /wp:paragraph -->
       </div>
       <!-- /wp:column -->
+      <!-- wp:column -->
+      <div class="wp-block-column">
+        <!-- wp:image {"url":"/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-8-1536x1024.jpg","alt":"Gitaardocent Marlowe aan het spelen","sizeSlug":"large","linkDestination":"none","className":"cta-gallery-image-small-1","style":{"border":{"radius":"12px"},"spacing":{"margin":{"bottom":"1rem"}}}} -->
+        <figure class="wp-block-image size-large cta-gallery-image-small-1"><img src="/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-8-1536x1024.jpg" alt="Gitaardocent Marlowe aan het spelen"/></figure>
+        <!-- /wp:image -->
 
-      <!-- wp:column {"width":"33.33%"} -->
-      <div class="wp-block-column" style="flex-basis:33.33%">
-        <!-- wp:image {"url":"http://studio-sound-of-music.local/wp-content/uploads/2025/05/fischer_portrait-marlowe_webres-8-1024x683.jpg","sizeSlug":"large","linkDestination":"none","className":"cta-gallery-image-small-1"} /-->
-        <!-- wp:image {"url":"http://studio-sound-of-music.local/wp-content/uploads/2025/05/fischer_portrait-marlowe_webres-9googleresize-Copy.jpg","sizeSlug":"full","linkDestination":"none","className":"cta-gallery-image-small-2"} /-->
-        <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-        <div class="wp-block-buttons">
-          <!-- wp:button {"width":100,"className":"cta-join-now-button has-primary-color has-secondary-background-color"} -->
-          <div class="wp-block-button has-custom-width wp-block-button__width-100 cta-join-now-button has-primary-color has-secondary-background-color has-text-color has-background">
-            <a class="wp-block-button__link wp-element-button"><strong>Plan een gratis proefles</strong></a>
-          </div>
-          <!-- /wp:button -->
+        <!-- wp:image {"url":"/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-10.jpg","alt":"Gitaarles in de studio","sizeSlug":"large","linkDestination":"none","className":"cta-gallery-image-small-2","style":{"border":{"radius":"12px"},"spacing":{"margin":{"bottom":"1.5rem"}}}} -->
+        <figure class="wp-block-image size-large cta-gallery-image-small-2"><img src="/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-10.jpg" alt="Gitaarles in de studio"/></figure>
+        <!-- /wp:image -->
+
+        <!-- wp:button {"backgroundColor":"accent","textColor":"dark","className":"cta-join-now-button"} -->
+        <div class="wp-block-button cta-join-now-button">
+          <a class="wp-block-button__link has-dark-color has-accent-background-color has-text-color has-background wp-element-button" href="#proefles">
+            Plan een gratis proefles
+          </a>
         </div>
-        <!-- /wp:buttons -->
+        <!-- /wp:button -->
       </div>
       <!-- /wp:column -->
     </div>

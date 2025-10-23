@@ -1,5 +1,34 @@
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('DOM loaded, checking GSAP...');
+    
+    // Global audio context initialization
+    let globalAudioContext = null;
+    let audioInitialized = false;
+    
+    // Initialize audio on first user interaction
+    function initGlobalAudio() {
+        if (!audioInitialized) {
+            try {
+                globalAudioContext = new (window.AudioContext || window.webkitAudioContext)();
+                if (globalAudioContext.state === 'suspended') {
+                    globalAudioContext.resume().then(() => {
+                        audioInitialized = true;
+                    }).catch((error) => {
+                        console.log('Audio resume failed:', error);
+                    });
+                } else {
+                    audioInitialized = true;
+                }
+            } catch (error) {
+                console.log('Audio not supported:', error);
+            }
+        }
+    }
+    
+    // Initialize audio on any user interaction
+    document.addEventListener('click', initGlobalAudio, { once: true });
+    document.addEventListener('touchstart', initGlobalAudio, { once: true });
+    document.addEventListener('keydown', initGlobalAudio, { once: true });
+    document.addEventListener('mousedown', initGlobalAudio, { once: true });
     
             // Check if GSAP is loaded
             if (typeof gsap === 'undefined') {
@@ -7,44 +36,32 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
             
-            console.log('GSAP loaded successfully');
-            console.log('GSAP version:', gsap.version);
-            console.log('Available GSAP plugins:', Object.keys(gsap));
     
-            // Register ScrollTrigger plugin
-            if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
-                gsap.registerPlugin(ScrollTrigger);
-                console.log('ScrollTrigger registered');
-            }
-            
+    // Register ScrollTrigger plugin
+    if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
+        gsap.registerPlugin(ScrollTrigger);
+    }
+
             // Check if TextPlugin is available
             if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
                 try {
                     gsap.registerPlugin(TextPlugin);
-                    console.log('TextPlugin registered successfully');
                 } catch (e) {
                     console.error('TextPlugin registration failed:', e);
                 }
             }
 
            // Hero "Sound Lines" Musical Staff Animation
-           const heroTitle = document.querySelector('.hero-title');
+    const heroTitle = document.querySelector('.hero-title');
            const heroLines = document.querySelectorAll('.hero-line');
-           const heroParagraph = document.querySelector('.hero-paragraph');
-           const heroButtons = document.querySelector('.hero-buttons');
+    const heroParagraph = document.querySelector('.hero-paragraph');
+    const heroButtons = document.querySelector('.hero-buttons');
 
-           console.log('Hero elements found:', {
-               heroTitle: !!heroTitle,
-               heroLines: heroLines.length,
-               heroParagraph: !!heroParagraph,
-               heroButtons: !!heroButtons
-           });
 
            if (heroTitle && heroLines.length > 0) {
-               console.log('Starting Sound Lines musical staff animation...');
                
                // Create the main timeline
-               const heroTl = gsap.timeline();
+        const heroTl = gsap.timeline();
 
                // Set initial states for all lines
                gsap.set(heroLines, {
@@ -78,15 +95,14 @@ document.addEventListener('DOMContentLoaded', function () {
                }, 0.5);
                
            } else {
-               console.log('Hero lines not found, using fallback animation...');
                
                // Fallback: Simple hero animation
                if (heroTitle) {
                    gsap.from(heroTitle, {
-                       x: -200,
-                       opacity: 0,
-                       duration: 1.2,
-                       ease: "power2.out"
+            x: -200,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power2.out"
                    });
                }
            }
@@ -94,9 +110,9 @@ document.addEventListener('DOMContentLoaded', function () {
            // Animate paragraph and buttons after hero lines
            if (heroParagraph) {
                gsap.from(heroParagraph, {
-                   y: 30,
-                   opacity: 0,
-                   duration: 0.8,
+            y: 30,
+            opacity: 0,
+            duration: 0.8,
                    ease: "power2.out",
                    delay: 1.8 // Start after hero lines animation
                });
@@ -104,9 +120,9 @@ document.addEventListener('DOMContentLoaded', function () {
            
            if (heroButtons) {
                gsap.from(heroButtons, {
-                   y: 50,
-                   opacity: 0,
-                   duration: 0.8,
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
                    ease: "power2.out",
                    delay: 2.0 // Start after paragraph
                });
@@ -114,14 +130,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
            // Elastic Line Effect for Guitar Strings
            function createElasticLine(element, position = 'bottom') {
-               console.log('Creating elastic line for:', element, 'position:', position);
-               
                // Get element dimensions
                const rect = element.getBoundingClientRect();
                const elementWidth = rect.width;
                const elementHeight = rect.height;
-               
-               console.log('Element dimensions:', { width: elementWidth, height: elementHeight });
                
                // Center point relative to element
                const centerX = elementWidth / 2;
@@ -138,6 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
                svg.setAttribute('width', '100%');
                svg.setAttribute('height', '100%');
+               svg.setAttribute('class', 'elastic-line');
                svg.style.position = 'absolute';
                svg.style.top = '0';
                svg.style.left = '0';
@@ -153,8 +166,6 @@ document.addEventListener('DOMContentLoaded', function () {
                
                svg.appendChild(pathElement);
                element.appendChild(svg);
-               
-               console.log('SVG created and added to element');
                
                function updateLine(mouseX, mouseY) {
                    // Convert mouse coordinates to element-relative coordinates
@@ -206,7 +217,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
            // Create 6 guitar strings equally spaced around the hero title
            function createGuitarString(container, stringIndex) {
-               console.log(`Creating guitar string ${stringIndex + 1}`);
                
                // Get fresh container dimensions
                const getContainerRect = () => container.getBoundingClientRect();
@@ -215,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
                const containerHeight = rect.height;
                
                // Calculate 6 positions centered around the text
-               const positions = [0.15, 0.30, 0.45, 0.60, 0.75, 0.90]; // Better centered around text
+               const positions = [0.20, 0.35, 0.50, 0.65, 0.80, 0.95]; // More centered with text
                const lineY = containerHeight * positions[stringIndex];
                
                const centerX = containerWidth / 2;
@@ -238,19 +248,33 @@ document.addEventListener('DOMContentLoaded', function () {
                // Initialize audio context
                function initAudio() {
                    if (!audioContext) {
-                       audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                       // Use global audio context if available and initialized
+                       if (globalAudioContext && audioInitialized) {
+                           audioContext = globalAudioContext;
+                       } else {
+                           // Don't create new audio context, wait for user interaction
+                           return false;
+                       }
                    }
                    
                    // Resume audio context if suspended (browser autoplay policy)
                    if (audioContext.state === 'suspended') {
-                       audioContext.resume();
+                       audioContext.resume().then(() => {
+                       }).catch((error) => {
+                           console.log('Audio context resume failed:', error);
+                           return false;
+                       });
                    }
+                   
+                   return true;
                }
                
                // Play string sound
                function playStringSound() {
                    try {
-                       initAudio();
+                       if (!initAudio()) {
+                           return; // Audio not available
+                       }
                        
                        // Create oscillator for the string frequency
                        oscillator = audioContext.createOscillator();
@@ -272,10 +296,8 @@ document.addEventListener('DOMContentLoaded', function () {
                        // Start and stop the sound
                        oscillator.start(audioContext.currentTime);
                        oscillator.stop(audioContext.currentTime + 0.5);
-                       
-                       console.log(`String ${stringIndex + 1} played note: ${currentFrequency.toFixed(2)}Hz`);
                    } catch (error) {
-                       console.log('Audio not available:', error);
+                       console.log('Audio playback failed:', error);
                    }
                }
                
@@ -283,6 +305,7 @@ document.addEventListener('DOMContentLoaded', function () {
                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
                svg.setAttribute('width', '100%');
                svg.setAttribute('height', '100%');
+               svg.setAttribute('class', 'elastic-line');
                svg.style.position = 'absolute';
                svg.style.top = '0';
                svg.style.left = '0';
@@ -312,7 +335,6 @@ document.addEventListener('DOMContentLoaded', function () {
                        if (isGrabbed) {
                            isGrabbed = false;
                            container.style.cursor = 'default';
-                           console.log(`String ${stringIndex + 1} released (out of bounds)!`);
                        }
                        return;
                    }
@@ -325,21 +347,16 @@ document.addEventListener('DOMContentLoaded', function () {
                    // More lenient X threshold, stricter Y threshold
                    const isNearString = yDistance < 40 && xDistance < 200;
                    
-                   // Debug: Log distance for all strings
-                   console.log(`String ${stringIndex + 1}: Y=${yDistance.toFixed(1)}, X=${xDistance.toFixed(1)}, Near=${isNearString}`);
-                   
                    // Only this string responds to mouse proximity
                    if (isNearString && !isGrabbed) {
                        isGrabbed = true;
                        container.style.cursor = 'grab';
-                       console.log(`String ${stringIndex + 1} grabbed! Y: ${yDistance.toFixed(1)}`);
                        
                        // Play sound when string is grabbed
                        playStringSound();
                    } else if (!isNearString && isGrabbed) {
                        isGrabbed = false;
                        container.style.cursor = 'default';
-                       console.log(`String ${stringIndex + 1} released! Y: ${yDistance.toFixed(1)}`);
                    }
                    
                    // Only update THIS string's position
@@ -408,7 +425,6 @@ document.addEventListener('DOMContentLoaded', function () {
            }
 
            setTimeout(() => {
-               console.log('Creating 6 independent guitar strings...');
                
                const heroTitle = document.querySelector('.hero-title');
                if (heroTitle) {
@@ -427,30 +443,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
            // Fallback: Add simple static lines if elastic lines don't work
            setTimeout(() => {
-               console.log('Adding fallback static lines...');
-               heroLines.forEach((line, index) => {
-                   if (!line.querySelector('svg')) {
-                       console.log(`Adding fallback line for ${index + 1}`);
+               // Only create fallback if no elastic lines were created
+               const heroTitle = document.querySelector('.hero-title');
+               if (heroTitle && !heroTitle.querySelector('.elastic-line')) {
+                   // Create exactly 6 lines for the fallback
+                   for (let i = 0; i < 6; i++) {
                        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
                        svg.setAttribute('width', '100%');
                        svg.setAttribute('height', '100%');
+                       svg.setAttribute('viewBox', '0 0 100 100');
+                       svg.setAttribute('preserveAspectRatio', 'none');
+                       svg.setAttribute('class', 'fallback-line');
                        svg.style.position = 'absolute';
                        svg.style.top = '0';
                        svg.style.left = '0';
                        svg.style.pointerEvents = 'none';
                        svg.style.zIndex = '1';
                        
+                       // Position each line at different heights (6 strings) - centered with text
+                       const lineY = 30 + (i * 10); // Space lines evenly, more centered
+                       
                        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
                        path.setAttribute('stroke', '#ddd');
                        path.setAttribute('stroke-width', '2');
                        path.setAttribute('fill', 'none');
                        path.setAttribute('stroke-linecap', 'round');
-                       path.setAttribute('d', 'M 0 50% Q 50% 50% 100% 50%');
+                       path.setAttribute('d', `M 0 ${lineY} Q 50 ${lineY} 100 ${lineY}`);
                        
                        svg.appendChild(path);
-                       line.appendChild(svg);
+                       heroTitle.appendChild(svg);
                    }
-               });
+               }
            }, 3000);
 
     // Marquee animation
@@ -537,3 +560,51 @@ document.addEventListener('DOMContentLoaded', function () {
         setInterval(nextTestimonial, 5000);
     });
 });
+
+// Lessen Section - Scroll-triggered fade-in animation
+document.addEventListener("scroll", () => {
+    document.querySelectorAll(".lessen-block, .wp-block-column img").forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            el.classList.add("is-visible");
+        }
+    });
+});
+
+// Reviews Section - Testimonial Carousel
+document.addEventListener("DOMContentLoaded", () => {
+    const testimonials = document.querySelectorAll(".testimonial");
+    const nextBtn = document.querySelector(".testimonial-nav.next a");
+    const prevBtn = document.querySelector(".testimonial-nav.prev a");
+    let current = 0;
+
+    if (testimonials.length === 0 || !nextBtn || !prevBtn) return;
+
+    function showTestimonial(index) {
+        testimonials.forEach(t => t.classList.remove("active"));
+        testimonials[index].classList.add("active");
+    }
+
+    nextBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        current = (current + 1) % testimonials.length;
+        showTestimonial(current);
+    });
+
+    prevBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        current = (current - 1 + testimonials.length) % testimonials.length;
+        showTestimonial(current);
+    });
+
+// Initialize first testimonial
+showTestimonial(0);
+});
+
+// Contact Form 7 - Success message
+document.addEventListener('wpcf7mailsent', function () {
+  const msg = document.querySelector('.form-thank-you');
+  if (msg) {
+    msg.style.display = 'block';
+  }
+}, false);

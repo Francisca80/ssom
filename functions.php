@@ -52,6 +52,54 @@ add_action( 'init', function() {
         if (function_exists('wp_cache_flush_group')) {
             wp_cache_flush_group('block_patterns');
         }
+        
+        // Clear FSE pattern cache
+        if (function_exists('wp_cache_flush_group')) {
+            wp_cache_flush_group('patterns');
+        }
+        
+        // Clear theme cache
+        if (function_exists('wp_cache_flush_group')) {
+            wp_cache_flush_group('theme');
+        }
+    }
+});
+
+// Force pattern cache refresh on theme activation
+add_action( 'after_switch_theme', function() {
+    wp_cache_flush();
+    if (function_exists('wp_cache_flush_group')) {
+        wp_cache_flush_group('block_patterns');
+        wp_cache_flush_group('patterns');
+        wp_cache_flush_group('theme');
+        wp_cache_flush_group('template-parts');
+    }
+});
+
+// Clear FSE cache on any file save
+add_action( 'save_post', function() {
+    wp_cache_flush();
+    if (function_exists('wp_cache_flush_group')) {
+        wp_cache_flush_group('block_patterns');
+        wp_cache_flush_group('patterns');
+        wp_cache_flush_group('theme');
+        wp_cache_flush_group('template-parts');
+    }
+});
+
+// Manual cache clear - add ?clear_cache=1 to any URL to clear FSE cache
+add_action( 'init', function() {
+    if (isset($_GET['clear_cache']) && $_GET['clear_cache'] === '1') {
+        wp_cache_flush();
+        if (function_exists('wp_cache_flush_group')) {
+            wp_cache_flush_group('block_patterns');
+            wp_cache_flush_group('patterns');
+            wp_cache_flush_group('theme');
+            wp_cache_flush_group('template-parts');
+        }
+        // Redirect to remove the parameter
+        wp_redirect(remove_query_arg('clear_cache'));
+        exit;
     }
 });
 

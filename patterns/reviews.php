@@ -20,7 +20,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|medium","lineHeight":"1.6"},"spacing":{"padding":{"top":"0px","right":"0px","bottom":"var:preset|spacing|50","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
-<p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:var(--wp--preset--spacing--50);padding-left:0px;font-size:var(--wp--preset--font-size--medium);line-height:1.6">Ontdek wat onze leerlingen over hun ervaringen zeggenbij Studio Sound of Music. Van beginners tot gevorderde muzikanten, onze leerlingen delen hun reis en succesverhalen.</p>
+<p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:var(--wp--preset--spacing--50);padding-left:0px;font-size:var(--wp--preset--font-size--medium);line-height:1.6">Ontdek wat onze leerlingen vertellen over hun ervaring bij Studio Sound of Music. Van beginners tot gevorderde muzikanten, onze leerlingen delen hun reis en succesverhalen.</p>
 <!-- /wp:paragraph -->
 
 
@@ -77,11 +77,11 @@ Door zijn op maat gemaakte opdrachten is gitaar spelen een heerlijke dagelijkse 
 
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"0px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:0px"><!-- wp:button {"className":"testimonial-nav prev","style":{"spacing":{"padding":{"right":"var:preset|spacing|20","left":"var:preset|spacing|20","top":"0px","bottom":"0px"}},"border":{"radius":"8px"},"color":{"background":"var:preset|color|accent","text":"var:preset|color|accent-dark"},"typography":{"fontSize":"var:preset|font-size|large","lineHeight":"1.1"}}} -->
-<div class="wp-block-button testimonial-nav prev has-custom-font-size" style="font-size:var(--wp--preset--font-size--large);line-height:1.1"><a class="wp-block-button__link has-text-color has-background wp-element-button" style="border-radius:8px;color:var(--wp--preset--color--accent-dark);background-color:var(--wp--preset--color--accent);padding-top:0px;padding-right:var(--wp--preset--spacing--20);padding-bottom:0px;padding-left:var(--wp--preset--spacing--20)">‹</a></div>
+<div class="wp-block-button testimonial-nav prev has-custom-font-size"><a class="wp-block-button__link has-text-color has-background wp-element-button">‹</a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"testimonial-nav next","style":{"spacing":{"padding":{"right":"var:preset|spacing|20","left":"var:preset|spacing|20","top":"0px","bottom":"0px"}},"border":{"radius":"8px"},"color":{"background":"var:preset|color|accent","text":"var:preset|color|accent-dark"},"typography":{"fontSize":"var:preset|font-size|large","lineHeight":"1.1"}}} -->
-<div class="wp-block-button testimonial-nav next has-custom-font-size" style="font-size:var(--wp--preset--font-size--large);line-height:1.1"><a class="wp-block-button__link has-text-color has-background wp-element-button" style="border-radius:8px;color:var(--wp--preset--color--accent-dark);background-color:var(--wp--preset--color--accent);padding-top:0px;padding-right:var(--wp--preset--spacing--20);padding-bottom:0px;padding-left:var(--wp--preset--spacing--20)">›</a></div>
+<div class="wp-block-button testimonial-nav next has-custom-font-size"><a class="wp-block-button__link has-text-color has-background wp-element-button">›</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

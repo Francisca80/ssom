@@ -9,6 +9,61 @@ Version: 1.0
 Tags: block-patterns, fse, bold, clean
 */
 
+/* ===========================
+   Header Styling
+   =========================== */
+
+.ssom-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.ssom-header.is-scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.header-brand .wp-block-site-title a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 900;
+}
+
+.primary-navigation a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.primary-navigation a:hover {
+  color: var(--wp--preset--color--accent);
+}
+
+.header-cta .wp-block-button__link {
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.header-cta .wp-block-button__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(72, 255, 0, 0.25);
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .ssom-header {
+    padding: 1rem;
+  }
+  .primary-navigation {
+    display: none;
+  }
+  .header-cta {
+    display: none;
+  }
+}
+
 /* Hide Contact Us button on mobile */
 @media (max-width: 768px) {
   .wp-block-buttons.is-style-hidden-mobile,
@@ -132,6 +187,12 @@ Tags: block-patterns, fse, bold, clean
 .marquee-track-2 {
   animation: marquee-reverse 30s linear infinite;
 }
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .masonry-grid {
   column-count: 2;
   column-gap: 24px;
@@ -237,8 +298,10 @@ Tags: block-patterns, fse, bold, clean
   padding-top: 0.5rem;
 }
 
-/* SVG container for elastic lines */
-.hero-line svg {
+/* SVG container for elastic lines - only in hero title */
+.hero .hero-title .hero-line svg,
+.hero .hero-title .elastic-line,
+.hero .hero-title .fallback-line {
   position: absolute;
   top: 0;
   left: 0;
@@ -246,10 +309,31 @@ Tags: block-patterns, fse, bold, clean
   height: 100%;
   pointer-events: none;
   z-index: 1;
+  overflow: visible;
+  transform: translateY(10%);
 }
 
-/* Elastic line path styling */
-.hero-line svg path {
+/* Hero title container - prevent overflow */
+.hero-title {
+  overflow: visible;
+  position: relative;
+}
+
+/* Hero section - allow overflow for guitar strings */
+.hero {
+  overflow: visible;
+}
+
+/* Hero paragraph container - allow overflow */
+.hero-paragraph {
+  overflow: visible;
+}
+
+
+/* Elastic line path styling - only in hero title */
+.hero .hero-title .hero-line svg path,
+.hero .hero-title .elastic-line path,
+.hero .hero-title .fallback-line path {
   stroke: #ddd;
   stroke-width: 2;
   fill: none;
@@ -257,8 +341,10 @@ Tags: block-patterns, fse, bold, clean
   transition: stroke 0.3s ease;
 }
 
-/* Hover effect for elastic lines */
-.hero-line:hover svg path {
+/* Hover effect for elastic lines - only in hero title */
+.hero .hero-title .hero-line:hover svg path,
+.hero .hero-title .elastic-line:hover path,
+.hero .hero-title .fallback-line:hover path {
   stroke: #bbb;
   stroke-width: 3;
 }
@@ -333,6 +419,646 @@ Tags: block-patterns, fse, bold, clean
   }
 }
 
+/* Lessen Section - Micro-Polish Improvements */
+
+/* 1. Responsive spacing fix for small screens */
+@media (max-width: 768px) {
+  .lessen-block {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .wp-block-column img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+}
+
+/* 2. Equal height alignment trick */
+.text-block-equal-height {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 3. Subtle fade-in on scroll */
+.lessen-block,
+.wp-block-column img {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.lessen-block.is-visible,
+.wp-block-column img.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================
+   Studio Sound of Music – Reviews Section
+   ============================ */
+
+.reviews-section {
+  background-color: #fff;
+  color: #0a0a0a;
+  position: relative;
+}
+
+.testimonial-carousel {
+  position: relative;
+  overflow: hidden;
+  min-height: 240px;
+  background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+}
+
+.testimonial {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.testimonial.active {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+}
+
+.testimonial-nav a {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.testimonial-nav a:hover {
+  background-color: var(--wp--preset--color--accent-dark);
+  color: #fff !important;
+}
+
+/* ============================
+   Studio Sound of Music – CTA Section
+   ============================ */
+
+.cta-join {
+  background-color: #f5f5f5;
+}
+
+.cta-gallery-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cta-gallery-columns .wp-block-column {
+  flex: 1;
+  min-width: 0;
+}
+
+.cta-text-block h3 {
+  line-height: 1.2;
+}
+
+.cta-text-block p {
+  margin-bottom: 0;
+}
+
+/* CTA Gallery Images */
+.cta-gallery-image-large,
+.cta-gallery-image-small-1,
+.cta-gallery-image-small-2 {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cta-gallery-image-small-1 {
+  margin-bottom: 1rem;
+}
+
+.cta-gallery-image-small-2 {
+  margin-bottom: 1.5rem;
+}
+
+.cta-join-now-button a {
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 1rem 1.5rem;
+}
+
+/* Hero button styling */
+.hero-buttons .wp-block-button:last-child .wp-block-button__link {
+  border: 2px solid var(--wp--preset--color--accent);
+  border-radius: 8px;
+  font-weight: 600;
+  background: transparent;
+}
+
+.cta-join-now-button a:hover {
+  background-color: color-mix(in srgb, var(--wp--preset--color--accent) 80%, #fff);
+  transform: translateY(-2px);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .cta-gallery-columns {
+    flex-direction: column;
+  }
+}
+
+/* ============================
+   Studio Sound of Music – Blog (Journal Layout)
+   ============================ */
+
+.blog-journal-section {
+  background: #fff;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.journal-item {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 5rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.journal-item:nth-child(1) { animation-delay: 0.1s; }
+.journal-item:nth-child(2) { animation-delay: 0.2s; }
+.journal-item:nth-child(3) { animation-delay: 0.3s; }
+.journal-item:nth-child(4) { animation-delay: 0.4s; }
+.journal-item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.journal-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.journal-item:hover img {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+.journal-item img {
+  transition: transform 0.4s ease, filter 0.4s ease;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  position: relative;
+}
+
+.journal-item:hover img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--wp--preset--color--accent);
+  mix-blend-mode: overlay;
+  border-radius: 12px;
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+}
+
+.journal-item .wp-block-post-title a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.journal-item .wp-block-post-title a:hover {
+  color: var(--wp--preset--color--accent);
+}
+
+.journal-item .wp-block-post-excerpt p {
+  margin-top: 0.5rem;
+  color: #222;
+}
+
+/* Blog fallback image */
+.blog-journal-section .fallback-image {
+  width: 50%;
+  aspect-ratio: 3/2;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+  background: linear-gradient(135deg, var(--wp--preset--color--accent) 0%, #f0f0f0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* Blog buttons */
+.blog-journal-section .wp-block-buttons {
+  margin-top: 3rem;
+}
+
+/* Hide fallback image when featured image is present */
+.journal-item:has(.wp-block-post-featured-image img) .fallback-image {
+  display: none !important;
+}
+
+/* Show fallback image when no featured image */
+.journal-item:not(:has(.wp-block-post-featured-image img)) .fallback-image {
+  display: flex !important;
+}
+
+@media (max-width: 768px) {
+  .journal-item {
+    flex-direction: column !important;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .journal-item img {
+    width: 100%;
+  }
+  
+  .fallback-image {
+    width: 100% !important;
+  }
+}
+
+/* ===========================
+   Lessen Section Styling
+   =========================== */
+
+.lessen-section {
+  padding-top: var(--wp--preset--spacing--60);
+  padding-bottom: var(--wp--preset--spacing--60);
+  min-height: 100vh;
+}
+
+.lessen-block {
+  padding-top: var(--wp--preset--spacing--40);
+  padding-right: var(--wp--preset--spacing--40);
+  padding-bottom: var(--wp--preset--spacing--40);
+  padding-left: var(--wp--preset--spacing--40);
+  border-radius: 8px;
+}
+
+/* ===========================
+   Contact Section Styling
+   =========================== */
+
+.contact-section {
+  position: relative;
+}
+
+.contact-left h2 {
+  font-family: var(--wp--preset--font-family--manrope);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #000 !important;
+}
+
+.contact-left p {
+  color: #000 !important;
+}
+
+.contact-form-wrapper {
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-form-wrapper:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form-wrapper h3 {
+  color: #000 !important;
+  text-align: center;
+  width: 100%;
+}
+
+/* Contact Form 7 field styling */
+.wpcf7 form {
+  width: 100%;
+  max-width: 500px;
+}
+
+.wpcf7 form p {
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 input[type="tel"],
+.wpcf7 textarea,
+.wpcf7 select {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: var(--wp--preset--font-family--manrope);
+  transition: all 0.2s ease;
+  background: #fff;
+  color: #000 !important;
+}
+
+.wpcf7 input:focus,
+.wpcf7 textarea:focus,
+.wpcf7 select:focus {
+  border-color: var(--wp--preset--color--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(72, 255, 0, 0.2);
+}
+
+/* Submit button */
+.wpcf7 input[type="submit"] {
+  background: var(--wp--preset--color--accent);
+  color: #000 !important;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  padding: 0.875rem 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.wpcf7 input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(72, 255, 0, 0.3);
+}
+
+/* Success message fade-in */
+.wpcf7 form.sent .form-thank-you {
+  display: block;
+}
+
+.form-thank-you {
+  color: var(--wp--preset--color--accent) !important;
+  text-align: center;
+}
+
+/* Nuclear option - Force all contact section text to be black */
+.contact-section *,
+.contact-section h1,
+.contact-section h2,
+.contact-section h3,
+.contact-section h4,
+.contact-section h5,
+.contact-section h6,
+.contact-section p,
+.contact-section a,
+.contact-section div,
+.contact-section span,
+.contact-section .wp-block-heading,
+.contact-section .wp-block-paragraph,
+.contact-section .wp-block-column,
+.contact-section .wp-block-group {
+  color: #000000 !important;
+}
+
+/* Force form elements to be black */
+.contact-section .wpcf7 *,
+.contact-section .wpcf7 input,
+.contact-section .wpcf7 textarea,
+.contact-section .wpcf7 select,
+.contact-section .wpcf7 label,
+.contact-section .wpcf7 p {
+  color: #000000 !important;
+}
+
+/* Force submit button styling */
+.contact-section .wpcf7 input[type="submit"] {
+  background: var(--wp--preset--color--accent) !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+/* Override any WordPress block styling */
+body .contact-section .wp-block-group.contact-form-wrapper *,
+body .contact-section .wp-block-group.contact-form-wrapper h3,
+body .contact-section .wp-block-group.contact-form-wrapper p,
+body .contact-section .wp-block-group.contact-form-wrapper input,
+body .contact-section .wp-block-group.contact-form-wrapper textarea,
+body .contact-section .wp-block-group.contact-form-wrapper select {
+  color: #000000 !important;
+}
+
+/* Maximum specificity override - Nuclear option */
+html body .wp-block-group.contact-section *,
+html body .wp-block-group.contact-section h1,
+html body .wp-block-group.contact-section h2,
+html body .wp-block-group.contact-section h3,
+html body .wp-block-group.contact-section h4,
+html body .wp-block-group.contact-section h5,
+html body .wp-block-group.contact-section h6,
+html body .wp-block-group.contact-section p,
+html body .wp-block-group.contact-section a,
+html body .wp-block-group.contact-section div,
+html body .wp-block-group.contact-section span,
+html body .wp-block-group.contact-section input,
+html body .wp-block-group.contact-section textarea,
+html body .wp-block-group.contact-section select,
+html body .wp-block-group.contact-section label {
+  color: #000000 !important;
+}
+
+/* Override Contact Form 7 with maximum specificity */
+html body .wp-block-group.contact-section .wpcf7 *,
+html body .wp-block-group.contact-section .wpcf7 input,
+html body .wp-block-group.contact-section .wpcf7 textarea,
+html body .wp-block-group.contact-section .wpcf7 select,
+html body .wp-block-group.contact-section .wpcf7 label,
+html body .wp-block-group.contact-section .wpcf7 p,
+html body .wp-block-group.contact-section .wpcf7 span {
+  color: #000000 !important;
+}
+
+/* Force form wrapper content */
+html body .wp-block-group.contact-section .wp-block-group.contact-form-wrapper *,
+html body .wp-block-group.contact-section .wp-block-group.contact-form-wrapper h3,
+html body .wp-block-group.contact-section .wp-block-group.contact-form-wrapper p,
+html body .wp-block-group.contact-section .wp-block-group.contact-form-wrapper input,
+html body .wp-block-group.contact-section .wp-block-group.contact-form-wrapper textarea,
+html body .wp-block-group.contact-section .wp-block-group.contact-form-wrapper select {
+  color: #000000 !important;
+}
+
+/* Override the white text rule specifically for contact section */
+.wp-block-group.alignfull.has-background.has-text-color.contact-section,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section *,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section h1,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section h2,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section h3,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section h4,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section h5,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section h6,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section p,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section a,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section div,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section span,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section .wp-block-heading,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section .wp-block-paragraph,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section .wp-block-column,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section .wp-block-social-links,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section .wp-block-buttons,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section .wp-block-button,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section .wp-block-button__link,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section .hero-line {
+  color: #000000 !important;
+}
+
+/* ============================
+   Studio Sound of Music – Footer Section
+   ============================ */
+
+.footer-section {
+  background: var(--wp--preset--color--accent-dark);
+  color: var(--wp--preset--color--base) !important;
+}
+
+.footer-section *,
+.footer-section h1,
+.footer-section h2,
+.footer-section h3,
+.footer-section h4,
+.footer-section h5,
+.footer-section h6,
+.footer-section p,
+.footer-section div,
+.footer-section span,
+.footer-section a,
+.footer-section li,
+.footer-section ul,
+.footer-section .wp-block-column,
+.footer-section .wp-block-group,
+.footer-section .wp-block-heading,
+.footer-section .wp-block-paragraph {
+  color: var(--wp--preset--color--base) !important;
+}
+
+.footer-section h3 {
+  font-family: var(--wp--preset--font-family--manrope);
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+  font-family: var(--wp--preset--font-family--manrope);
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section p {
+  font-family: var(--wp--preset--font-family--manrope);
+  line-height: 1.6;
+}
+
+.footer-nav a {
+  color: var(--wp--preset--color--base) !important;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer-nav a:hover {
+  opacity: 0.7;
+}
+
+.wp-block-social-links a:hover {
+  transform: scale(1.15);
+  transition: transform 0.3s ease;
+}
+
+footer p a,
+.footer-section p a {
+  color: var(--wp--preset--color--base) !important;
+  border-bottom: 1px solid currentColor;
+  transition: opacity 0.3s ease;
+}
+
+footer p a:hover {
+  opacity: 0.6;
+}
+
+/* Force all footer text to be white/light - Maximum specificity */
+.wp-block-group.alignfull.has-background.has-text-color,
+.wp-block-group.alignfull.has-background.has-text-color *,
+.wp-block-group.alignfull.has-background.has-text-color h1,
+.wp-block-group.alignfull.has-background.has-text-color h2,
+.wp-block-group.alignfull.has-background.has-text-color h3,
+.wp-block-group.alignfull.has-background.has-text-color h4,
+.wp-block-group.alignfull.has-background.has-text-color h5,
+.wp-block-group.alignfull.has-background.has-text-color h6,
+.wp-block-group.alignfull.has-background.has-text-color p,
+.wp-block-group.alignfull.has-background.has-text-color a,
+.wp-block-group.alignfull.has-background.has-text-color div,
+.wp-block-group.alignfull.has-background.has-text-color span,
+.wp-block-group.alignfull.has-background.has-text-color .wp-block-heading,
+.wp-block-group.alignfull.has-background.has-text-color .wp-block-paragraph,
+.wp-block-group.alignfull.has-background.has-text-color .wp-block-column,
+.wp-block-group.alignfull.has-background.has-text-color .wp-block-social-links,
+.wp-block-group.alignfull.has-background.has-text-color .wp-block-buttons,
+.wp-block-group.alignfull.has-background.has-text-color .wp-block-button,
+.wp-block-group.alignfull.has-background.has-text-color .wp-block-button__link,
+.wp-block-group.alignfull.has-background.has-text-color .hero-line {
+  color: #ffffff !important;
+}
+
+/* Additional overrides for specific elements */
+body .wp-block-group.alignfull.has-background.has-text-color h3,
+body .wp-block-group.alignfull.has-background.has-text-color h4,
+body .wp-block-group.alignfull.has-background.has-text-color p,
+body .wp-block-group.alignfull.has-background.has-text-color a,
+body .wp-block-group.alignfull.has-background.has-text-color .hero-line {
+  color: #ffffff !important;
+}
+
+/* Force white text on all footer elements */
+html body .wp-block-group.alignfull.has-background.has-text-color * {
+  color: #ffffff !important;
+}
+
+/* Nuclear option - force white on everything in footer */
+[style*="background-color:var(--wp--preset--color--accent-dark)"] *,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] h1,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] h2,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] h3,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] h4,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] h5,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] h6,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] p,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] a,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] div,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] span {
+  color: #ffffff !important;
+}
+
 /* Remove conflicting margin rules */
 
 /* Hero Buttons */
@@ -381,150 +1107,6 @@ Tags: block-patterns, fse, bold, clean
 .hero-char:nth-child(18) { --char-index: 17; }
 .hero-char:nth-child(19) { --char-index: 18; }
 
-/* Contact Section Enhancements */
-.contact-form-container {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: #ffffff !important;
-  border: 2px solid #000000 !important;
-  border-radius: 12px !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* Contact Form 7 Styling */
-.wpcf7-form {
-  font-family: var(--wp--preset--font-family--manrope);
-}
-
-.wpcf7-form label {
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-.wpcf7-form input[type="text"],
-.wpcf7-form input[type="email"],
-.wpcf7-form input[type="tel"],
-.wpcf7-form textarea {
-  width: 100%;
-  padding: 1rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-family: var(--wp--preset--font-family--manrope);
-  font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: #ffffff;
-  margin-bottom: 1.5rem;
-}
-
-.wpcf7-form input[type="text"]:focus,
-.wpcf7-form input[type="email"]:focus,
-.wpcf7-form input[type="tel"]:focus,
-.wpcf7-form textarea:focus {
-  outline: none;
-  border-color: var(--wp--preset--color--accent);
-  box-shadow: 0 0 0 3px rgba(184, 234, 63, 0.1);
-}
-
-.wpcf7-form textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.wpcf7-form input[type="submit"] {
-  background-color: var(--wp--preset--color--accent) !important;
-  color: var(--wp--preset--color--accent-dark) !important;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-family: var(--wp--preset--font-family--manrope);
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-.wpcf7-form input[type="submit"]:hover {
-  background-color: var(--wp--preset--color--accent-dark) !important;
-  color: var(--wp--preset--color--base) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.wpcf7-form input[type="submit"]:active {
-  transform: translateY(0);
-}
-
-/* Form validation styling */
-.wpcf7-not-valid-tip {
-  color: #dc3545;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-  font-family: var(--wp--preset--font-family--manrope);
-}
-
-.wpcf7-form .wpcf7-not-valid {
-  border-color: #dc3545 !important;
-}
-
-.wpcf7-response-output {
-  font-family: var(--wp--preset--font-family--manrope);
-  border-radius: 8px;
-  padding: 1rem;
-  margin-top: 1rem;
-}
-
-.wpcf7-mail-sent-ok {
-  background-color: #d4edda;
-  border: 1px solid #c3e6cb;
-  color: #155724;
-}
-
-.wpcf7-validation-errors {
-  background-color: #f8d7da;
-  border: 1px solid #f5c6cb;
-  color: #721c24;
-}
-
-/* Social links enhancement */
-.wp-block-social-links .wp-social-link {
-  transition: transform 0.3s ease;
-}
-
-.wp-block-social-links .wp-social-link:hover {
-  transform: scale(1.1);
-}
-
-/* Contact section background */
-.wp-block-group.alignfull:has(.contact-form-container) {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-}
-
-/* Responsive contact form adjustments */
-@media (max-width: 768px) {
-  .contact-form-container {
-    margin-top: 2rem;
-  }
-  
-  .wpcf7-form input[type="text"],
-  .wpcf7-form input[type="email"],
-  .wpcf7-form input[type="tel"],
-  .wpcf7-form textarea {
-    padding: 0.875rem;
-  }
-  
-  .wpcf7-form input[type="submit"] {
-    padding: 0.875rem 1.5rem;
-  }
-}
 
 /* Responsive hero staff lines */
 @media (max-width: 768px) {
