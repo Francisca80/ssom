@@ -18,7 +18,8 @@
       "ssom/cta",
       "ssom/blog",
       "ssom/lessen",
-      "ssom/reviews"
+      "ssom/reviews",
+      "ssom/contact"
     ],
     "settings": {
       "layout": {

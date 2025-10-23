@@ -180,3 +180,252 @@ Tags: block-patterns, fse, bold, clean
   }
 }
 
+/* Hero Section - Full Viewport Height */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--wp--preset--color--base, #ffffff);
+  padding: 2rem;
+}
+
+.hero-section .wp-block-group {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Title */
+.hero-title {
+  margin-bottom: 3rem !important;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* Character Animation Setup */
+.hero-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: typewriterFallback 0.1s ease-in-out forwards;
+  animation-delay: calc(var(--char-index, 0) * 0.05s);
+  color: var(--wp--preset--color--contrast, #000000) !important;
+  font-weight: 900 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: var(--wp--preset--font-family--manrope) !important;
+}
+
+.hero-line {
+  display: inline-block;
+}
+
+/* Hero Paragraph */
+.hero-paragraph {
+  margin-bottom: 3rem !important;
+  max-width: 600px;
+  text-align: left !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Override any inline styles on hero paragraph */
+.hero-paragraph[style*="text-align"] {
+  text-align: left !important;
+}
+
+.hero-paragraph[style*="margin"] {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Hero Buttons */
+.hero-buttons .wp-block-button:first-child a {
+  background: var(--wp--preset--color--accent);
+  color: #000;
+  font-weight: 600;
+}
+
+.hero-buttons .wp-block-button:last-child a {
+  background: transparent;
+  color: #000;
+  border: 2px solid var(--wp--preset--color--accent);
+}
+.hero-buttons .wp-block-button:last-child a:hover {
+  background: var(--wp--preset--color--accent);
+  color: #000;
+}
+
+/* Fallback CSS animation for typewriter effect */
+@keyframes typewriterFallback {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure characters are visible if JS fails */
+.hero-char:nth-child(1) { --char-index: 0; }
+.hero-char:nth-child(2) { --char-index: 1; }
+.hero-char:nth-child(3) { --char-index: 2; }
+.hero-char:nth-child(4) { --char-index: 3; }
+.hero-char:nth-child(5) { --char-index: 4; }
+.hero-char:nth-child(6) { --char-index: 5; }
+.hero-char:nth-child(7) { --char-index: 6; }
+.hero-char:nth-child(8) { --char-index: 7; }
+.hero-char:nth-child(9) { --char-index: 8; }
+.hero-char:nth-child(10) { --char-index: 9; }
+.hero-char:nth-child(11) { --char-index: 10; }
+.hero-char:nth-child(12) { --char-index: 11; }
+.hero-char:nth-child(13) { --char-index: 12; }
+.hero-char:nth-child(14) { --char-index: 13; }
+.hero-char:nth-child(15) { --char-index: 14; }
+.hero-char:nth-child(16) { --char-index: 15; }
+.hero-char:nth-child(17) { --char-index: 16; }
+.hero-char:nth-child(18) { --char-index: 17; }
+.hero-char:nth-child(19) { --char-index: 18; }
+
+/* Contact Section Enhancements */
+.contact-form-container {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact Form 7 Styling */
+.wpcf7-form {
+  font-family: var(--wp--preset--font-family--manrope);
+}
+
+.wpcf7-form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: var(--wp--preset--font-family--manrope);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.wpcf7-form input[type="text"]:focus,
+.wpcf7-form input[type="email"]:focus,
+.wpcf7-form input[type="tel"]:focus,
+.wpcf7-form textarea:focus {
+  outline: none;
+  border-color: var(--wp--preset--color--accent);
+  box-shadow: 0 0 0 3px rgba(184, 234, 63, 0.1);
+}
+
+.wpcf7-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.wpcf7-form input[type="submit"] {
+  background-color: var(--wp--preset--color--accent) !important;
+  color: var(--wp--preset--color--accent-dark) !important;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-family: var(--wp--preset--font-family--manrope);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.wpcf7-form input[type="submit"]:hover {
+  background-color: var(--wp--preset--color--accent-dark) !important;
+  color: var(--wp--preset--color--base) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.wpcf7-form input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Form validation styling */
+.wpcf7-not-valid-tip {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  font-family: var(--wp--preset--font-family--manrope);
+}
+
+.wpcf7-form .wpcf7-not-valid {
+  border-color: #dc3545 !important;
+}
+
+.wpcf7-response-output {
+  font-family: var(--wp--preset--font-family--manrope);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.wpcf7-mail-sent-ok {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.wpcf7-validation-errors {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+/* Social links enhancement */
+.wp-block-social-links .wp-social-link {
+  transition: transform 0.3s ease;
+}
+
+.wp-block-social-links .wp-social-link:hover {
+  transform: scale(1.1);
+}
+
+/* Contact section background */
+.wp-block-group.alignfull:has(.contact-form-container) {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Responsive contact form adjustments */
+@media (max-width: 768px) {
+  .contact-form-container {
+    margin-top: 2rem;
+  }
+  
+  .wpcf7-form input[type="text"],
+  .wpcf7-form input[type="email"],
+  .wpcf7-form input[type="tel"],
+  .wpcf7-form textarea {
+    padding: 0.875rem;
+  }
+  
+  .wpcf7-form input[type="submit"] {
+    padding: 0.875rem 1.5rem;
+  }
+}
+

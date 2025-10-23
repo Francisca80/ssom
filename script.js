@@ -1,35 +1,101 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Register ScrollTrigger plugin
-    if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
-        gsap.registerPlugin(ScrollTrigger);
-    }
+    console.log('DOM loaded, checking GSAP...');
+    
+            // Check if GSAP is loaded
+            if (typeof gsap === 'undefined') {
+                console.error('GSAP is not loaded!');
+                return;
+            }
+            
+            console.log('GSAP loaded successfully');
+            console.log('GSAP version:', gsap.version);
+            console.log('Available GSAP plugins:', Object.keys(gsap));
+    
+            // Register ScrollTrigger plugin
+            if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
+                gsap.registerPlugin(ScrollTrigger);
+                console.log('ScrollTrigger registered');
+            }
+            
+            // Check if TextPlugin is available
+            if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
+                try {
+                    gsap.registerPlugin(TextPlugin);
+                    console.log('TextPlugin registered successfully');
+                } catch (e) {
+                    console.error('TextPlugin registration failed:', e);
+                }
+            }
 
-    // Hero animation
+    // Hero Typewriter Animation (GSAP "Animate Anything" style)
     const heroTitle = document.querySelector('.hero-title');
     const heroParagraph = document.querySelector('.hero-paragraph');
     const heroButtons = document.querySelector('.hero-buttons');
+    const heroChars = document.querySelectorAll('.hero-char');
 
-    if (heroTitle) {
+            console.log('Hero elements found:', {
+                heroTitle: !!heroTitle,
+                heroParagraph: !!heroParagraph,
+                heroButtons: !!heroButtons,
+                heroChars: heroChars.length
+            });
+
+    if (heroTitle && heroChars.length > 0) {
+        console.log('Starting simple GSAP animation...');
+        
+        // Create the main timeline
         const heroTl = gsap.timeline();
 
-        heroTl.from(heroTitle, {
-            x: -200,
+        // Set initial states for all characters
+        gsap.set(heroChars, {
             opacity: 0,
-            duration: 1.2,
-            ease: "power2.out"
-        })
-        .from(heroParagraph, {
-            y: 30,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power2.out"
-        }, "-=0.3")
-        .from(heroButtons, {
             y: 50,
-            opacity: 0,
+            scale: 0.8,
+            transformOrigin: "center center"
+        });
+
+        // Simple entrance animation
+        heroTl.to(heroChars, {
             duration: 0.8,
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            stagger: 0.1,
             ease: "power2.out"
-        }, "-=0.2");
+        });
+        
+    } else {
+        console.log('Hero characters not found, using fallback animation...');
+        
+        // Fallback: Simple hero animation
+        if (heroTitle) {
+            gsap.from(heroTitle, {
+                x: -200,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power2.out"
+            });
+        }
+        
+        if (heroParagraph) {
+            gsap.from(heroParagraph, {
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                delay: 0.3
+            });
+        }
+        
+        if (heroButtons) {
+            gsap.from(heroButtons, {
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                delay: 0.5
+            });
+        }
     }
 
     // Marquee animation

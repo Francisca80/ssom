@@ -47,7 +47,7 @@
         <div class="wp-block-buttons">
           <!-- wp:button {"width":100,"className":"cta-join-now-button has-primary-color has-secondary-background-color"} -->
           <div class="wp-block-button has-custom-width wp-block-button__width-100 cta-join-now-button has-primary-color has-secondary-background-color has-text-color has-background">
-            <a class="wp-block-button__link wp-element-button"><strong>PLAN EEN GRATIS PROEFLES</strong></a>
+            <a class="wp-block-button__link wp-element-button"><strong>Plan een gratis proefles</strong></a>
           </div>
           <!-- /wp:button -->
         </div>

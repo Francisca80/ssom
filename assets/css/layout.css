@@ -1,0 +1,214 @@
+/**
+ * Layout and responsive styles
+ * Organized by breakpoints and layout components
+ */
+
+/* ========================================
+   HERO SECTION LAYOUT
+   ======================================== */
+
+/* Hero section styling for better flow */
+.hero-section,
+.wp-block-group:has(.hero-title) {
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure smooth transition to next section */
+.hero-section + .wp-block-group,
+.wp-block-group:has(.hero-title) + .wp-block-group {
+  margin-top: 0;
+  padding-top: 2rem;
+}
+
+/* ========================================
+   HEADER LAYOUT
+   ======================================== */
+.wp-block-group.alignfull:has(.wp-block-site-logo) .wp-block-group,
+.wp-block-group.alignfull:has(.wp-block-site-title) .wp-block-group {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Ensure logo and title stay left-aligned - Header specific */
+.wp-block-group.alignfull:has(.wp-block-site-logo) .wp-block-group .wp-block-group,
+.wp-block-group.alignfull:has(.wp-block-site-title) .wp-block-group .wp-block-group {
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.wp-block-group.alignfull:has(.wp-block-site-logo) .wp-block-group .wp-block-group .wp-block-group:first-child,
+.wp-block-group.alignfull:has(.wp-block-site-title) .wp-block-group .wp-block-group .wp-block-group:first-child {
+  justify-content: flex-start;
+  text-align: left;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* ========================================
+   BLOG LAYOUT
+   ======================================== */
+/* Individual post cards */
+.wp-block-post {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* Better image styling */
+.blog-column img {
+  border-radius: 8px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Default link hover effects */
+.blog-column a:hover {
+  color: var(--wp--preset--color--accent) !important;
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Mobile First - Base styles (up to 768px) */
+@media (max-width: 768px) {
+  /* Hide Contact Us button on mobile */
+  .wp-block-buttons.is-style-hidden-mobile,
+  .is-style-hidden-mobile {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
+  /* Header responsive padding */
+  .wp-block-group.alignfull:has(.wp-block-site-logo),
+  .wp-block-group.alignfull:has(.wp-block-site-title) {
+    padding-left: var(--wp--preset--spacing--20) !important;
+    padding-right: var(--wp--preset--spacing--20) !important;
+  }
+  
+  /* Reset any unwanted padding on mobile - Header specific */
+  .wp-block-group.alignfull:has(.wp-block-site-logo) .wp-block-group,
+  .wp-block-group.alignfull:has(.wp-block-site-title) .wp-block-group {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  /* Keep logo and title left-aligned on mobile - Header specific */
+  .wp-block-group.alignfull:has(.wp-block-site-logo) .wp-block-group .wp-block-group .wp-block-group:first-child,
+  .wp-block-group.alignfull:has(.wp-block-site-title) .wp-block-group .wp-block-group .wp-block-group:first-child {
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+  
+  /* Center footer content on mobile */
+  .wp-block-group.alignfull .wp-block-group {
+    text-align: center;
+  }
+  
+  /* Center footer columns */
+  .wp-block-group.alignfull .wp-block-columns {
+    text-align: center;
+  }
+  
+  /* Center individual footer columns */
+  .wp-block-group.alignfull .wp-block-column {
+    text-align: center;
+  }
+  
+  /* Center navigation menu items */
+  .wp-block-group.alignfull .wp-block-navigation {
+    justify-content: center !important;
+    text-align: center;
+  }
+  
+  /* Center social links */
+  .wp-block-group.alignfull .wp-block-social-links {
+    justify-content: center !important;
+  }
+  
+  /* Center buttons */
+  .wp-block-group.alignfull .wp-block-buttons {
+    justify-content: center !important;
+  }
+  
+  /* Center headings */
+  .wp-block-group.alignfull .wp-block-heading {
+    text-align: center !important;
+  }
+  
+  /* Center paragraphs */
+  .wp-block-group.alignfull p {
+    text-align: center !important;
+  }
+  
+  /* Responsive blog layout */
+  .wp-block-query,
+  .blog-columns-equal-height {
+    flex-direction: column;
+  }
+  
+  .blog-column img {
+    height: 180px;
+  }
+  
+  /* Responsive testimonial adjustments */
+  .testimonial-carousel {
+    padding: var(--wp--preset--spacing--30) !important;
+  }
+  
+  /* Responsive marquee adjustments */
+  .marquee-content {
+    font-size: var(--wp--preset--font-size--xl) !important;
+  }
+  
+  /* Contact form responsive adjustments */
+  .contact-form-container {
+    margin-top: 2rem;
+  }
+  
+  .wpcf7-form input[type="text"],
+  .wpcf7-form input[type="email"],
+  .wpcf7-form input[type="tel"],
+  .wpcf7-form textarea {
+    padding: 0.875rem;
+  }
+  
+  .wpcf7-form input[type="submit"] {
+    padding: 0.875rem 1.5rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  /* Header responsive padding for mobile */
+  .wp-block-group.alignfull {
+    padding-left: var(--wp--preset--spacing--15) !important;
+    padding-right: var(--wp--preset--spacing--15) !important;
+  }
+  
+  /* Responsive marquee adjustments */
+  .marquee-content {
+    font-size: var(--wp--preset--font-size--large) !important;
+  }
+}
+
+/* Tablet and small desktop */
+@media (max-width: 782px) {
+  /* Responsive fix for About pattern card overlap */
+  .wp-block-group[style*="margin-left:-4rem"],
+  .wp-block-group[style*="margin-left: -4rem"] {
+    margin-left: 0 !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
