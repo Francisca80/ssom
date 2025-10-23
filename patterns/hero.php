@@ -11,12 +11,20 @@
 <section class="wp-block-group hero" style="background-color:#ffffff;color:#0a0a0a;padding-top:6rem;padding-bottom:8rem;padding-left:2rem;padding-right:2rem;">
   
   <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(3rem, 8vw, 8rem)","fontFamily":"var(--wp--preset--font-family--manrope)","fontWeight":"900","lineHeight":"1","letterSpacing":"-0.02em"},"spacing":{"margin":{"bottom":"3rem"}}}} -->
-  <h1 class="wp-block-heading hero-title" style="font-size:clamp(3rem, 8vw, 8rem);font-family:var(--wp--preset--font-family--manrope);font-weight:900;line-height:1;letter-spacing:-0.02em;margin-bottom:3rem;">STUDIO<br>SOUND OF<br>MUSIC</h1>
+  <h1 class="wp-block-heading hero-title" style="font-size:clamp(3rem, 8vw, 8rem);font-family:var(--wp--preset--font-family--manrope);font-weight:900;line-height:1;letter-spacing:-0.02em;margin-bottom:3rem;">
+    <span class="hero-line">STUDIO</span>
+    <span class="hero-line">SOUND OF</span>
+    <span class="hero-line">MUSIC</span>
+  </h1>
   <!-- /wp:heading -->
 
-  <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.25rem","lineHeight":"1.5"},"spacing":{"margin":{"bottom":"3rem"}}}} -->
-  <p class="hero-paragraph" style="font-size:1.25rem;line-height:1.5;margin-bottom:3rem;">Leer gitaar spelen — op jouw tempo.<br>Persoonlijke lessen in Nieuwegein en omgeving.</p>
-  <!-- /wp:paragraph -->
+  <!-- wp:group {"layout":{"type":"constrained","contentSize":"1200px"},"style":{"spacing":{"margin":{"bottom":"3rem"}}}} -->
+  <div class="wp-block-group hero-paragraph" style="margin-bottom:3rem;">
+    <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.25rem","lineHeight":"1.5","textAlign":"left"}}} -->
+    <p style="font-size:1.25rem;line-height:1.5;text-align:left;">Leer gitaar spelen — op jouw tempo.<br>Persoonlijke lessen in Nieuwegein en omgeving.</p>
+    <!-- /wp:paragraph -->
+  </div>
+  <!-- /wp:group -->
 
   <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left","flexWrap":"wrap"}} -->
   <div class="wp-block-buttons hero-buttons">

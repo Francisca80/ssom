@@ -182,7 +182,7 @@ Tags: block-patterns, fse, bold, clean
 
 /* Hero Section - Full Viewport Height */
 .hero-section {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   background: var(--wp--preset--color--base, #ffffff);
@@ -195,11 +195,80 @@ Tags: block-patterns, fse, bold, clean
   margin: 0 auto;
 }
 
-/* Hero Title */
+/* Hero Title - Musical Staff Lines */
 .hero-title {
   margin-bottom: 3rem !important;
   line-height: 1;
   letter-spacing: -0.02em;
+  position: relative;
+  padding: 1rem 0;
+}
+
+/* Guitar String Lines - Interactive */
+.hero-line {
+  position: relative;
+  z-index: 2;
+  display: block;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  text-align: left;
+  width: 100%;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Elastic Guitar Strings - SVG based */
+.hero-line {
+  position: relative;
+  z-index: 2;
+  display: block;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  text-align: left;
+  width: 100%;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.hero-line:nth-child(1) {
+  padding-top: 0.5rem;
+}
+
+/* SVG container for elastic lines */
+.hero-line svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Elastic line path styling */
+.hero-line svg path {
+  stroke: #ddd;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke 0.3s ease;
+}
+
+/* Hover effect for elastic lines */
+.hero-line:hover svg path {
+  stroke: #bbb;
+  stroke-width: 3;
+}
+
+/* Remove old positioning rules */
+
+/* Animated state */
+.hero-line.animate-in {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Character Animation Setup */
@@ -219,24 +288,52 @@ Tags: block-patterns, fse, bold, clean
   display: inline-block;
 }
 
-/* Hero Paragraph */
-.hero-paragraph {
-  margin-bottom: 3rem !important;
+/* Hero Paragraph - Uses constrained layout like other blocks */
+
+/* About Section - Full Viewport Height */
+.about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* About Section Video - Larger Size */
+.about .wp-block-video {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.about .wp-block-video video {
+  width: 100%;
   max-width: 600px;
-  text-align: left !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  height: auto;
+  max-height: 900px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
-/* Override any inline styles on hero paragraph */
-.hero-paragraph[style*="text-align"] {
-  text-align: left !important;
+/* Make video column taller for vertical videos */
+.about .wp-block-column:last-child {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
 }
 
-.hero-paragraph[style*="margin"] {
-  margin-left: auto !important;
-  margin-right: auto !important;
+/* Responsive video for mobile */
+@media (max-width: 768px) {
+  .about .wp-block-video video {
+    max-width: 400px;
+    max-height: 700px;
+  }
+  
+  .about .wp-block-column:last-child {
+    min-height: 60vh;
+  }
 }
+
+/* Remove conflicting margin rules */
 
 /* Hero Buttons */
 .hero-buttons .wp-block-button:first-child a {
@@ -426,6 +523,22 @@ Tags: block-patterns, fse, bold, clean
   
   .wpcf7-form input[type="submit"] {
     padding: 0.875rem 1.5rem;
+  }
+}
+
+/* Responsive hero staff lines */
+@media (max-width: 768px) {
+  .hero-title::after {
+    left: -1.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .hero-title {
+    padding: 1.5rem 0;
+  }
+  
+  .hero-line {
+    transform: translateX(-80px);
   }
 }
 

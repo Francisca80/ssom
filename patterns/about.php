@@ -11,8 +11,8 @@
 <div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--50);margin-bottom:var(--wp--preset--spacing--50)">
   <!-- wp:columns {"verticalAlignment":"center"} -->
   <div class="wp-block-columns are-vertically-aligned-center">
-    <!-- wp:column {"width":"55%"} -->
-    <div class="wp-block-column" style="flex-basis:55%">
+    <!-- wp:column {"width":"50%"} -->
+    <div class="wp-block-column" style="flex-basis:50%">
       <!-- wp:paragraph {"className":"has-text-color","style":{"typography":{"textTransform":"uppercase","fontWeight":"bold","letterSpacing":"0.05em"}}} -->
       <p class="has-text-color" style="text-transform:uppercase;font-weight:bold;letter-spacing:0.05em;">Welkom bij Studio Sound of Music</p>
       <!-- /wp:paragraph -->
@@ -34,15 +34,13 @@
     </div>
     <!-- /wp:column -->
 
-    <!-- wp:column {"width":"45%"} -->
-    <div class="wp-block-column" style="flex-basis:45%">
-      <!-- wp:embed {"url":"https://youtu.be/mD-phpwNSdI","type":"video","providerNameSlug":"youtube","responsive":true} -->
-      <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube">
-        <div class="wp-block-embed__wrapper">
-          https://youtu.be/mD-phpwNSdI
-        </div>
+    <!-- wp:column {"width":"50%"} -->
+    <div class="wp-block-column" style="flex-basis:50%">
+      <!-- wp:video {"align":"center","style":{"border":{"radius":"12px"}}} -->
+      <figure class="wp-block-video aligncenter" style="border-radius:12px">
+        <video controls src=""></video>
       </figure>
-      <!-- /wp:embed -->
+      <!-- /wp:video -->
     </div>
     <!-- /wp:column -->
   </div>
