@@ -19,7 +19,10 @@
       "ssom/blog",
       "ssom/lessen",
       "ssom/reviews",
-      "ssom/contact"
+      "ssom/contact",
+      "ssom-over-ons-page",
+      "ssom-gitaarles-page"
+
     ],
     "settings": {
       "layout": {

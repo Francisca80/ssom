@@ -141,7 +141,9 @@ add_action( 'init', function () {
     register_block_pattern_category( 'ssom-over-ons-page', [
 		'label' => __( 'Ssom Over Ons Page Sections', 'ssom' ),
 	] );
-        
+    register_block_pattern_category( 'ssom-gitaarles-page', [   
+        'label' => __( 'SSOM Gitaarles Page Sections', 'ssom' ),
+    ] );
 } );
 
 
