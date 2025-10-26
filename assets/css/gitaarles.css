@@ -1,0 +1,223 @@
+/* Gitaarles Page Styles */
+
+/* Main Container - Only affect content inside gitaarles-page, not footer */
+.gitaarles-page {
+    background-color: var(--wp--preset--color--base);
+    color: var(--wp--preset--color--text);
+}
+
+
+/* Page Header Section */
+.gitaarles-page-header {
+    padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--50);
+    text-align: left;
+    background-color: var(--wp--preset--color--base);
+}
+
+.gitaarles-page-header h1 {
+    color: var(--wp--preset--color--accent-dark);
+    font-size: var(--wp--preset--font-size--xl);
+    font-weight: var(--wp--preset--font-weight--bold);
+    margin-bottom: var(--wp--preset--spacing--20);
+}
+
+.gitaarles-page-header h4 {
+    color: var(--wp--preset--color--text);
+    font-size: var(--wp--preset--font-size--medium);
+    font-weight: var(--wp--preset--font-weight--regular);
+    margin-bottom: var(--wp--preset--spacing--30);
+}
+
+.gitaarles-page-header p {
+    color: var(--wp--preset--color--text);
+    font-size: var(--wp--preset--font-size--medium);
+    line-height: 1.6;
+    margin-bottom: var(--wp--preset--spacing--30);
+}
+
+/* Pricing Section */
+.gitaarles-pricing {
+    padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--50);
+    background-color: var(--wp--preset--color--base);
+}
+
+/* Pricing Cards */
+.gitaarles-page .wp-block-columns {
+    gap: var(--wp--preset--spacing--40);
+    padding: var(--wp--preset--spacing--30);
+}
+
+/* Only apply borders to pricing section columns, not extras */
+.gitaarles-pricing .wp-block-column {
+    border: 4px solid var(--wp--preset--color--text);
+    border-radius: 8px;
+    padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--20);
+    background: var(--wp--preset--color--base);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gitaarles-pricing .wp-block-column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Extras section columns - no borders */
+.gitaarles-extras .wp-block-column {
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+
+/* Ensure pricing columns have proper styling */
+.gitaarles-page .wp-block-column.has-border-color {
+    border: 4px solid var(--wp--preset--color--text) !important;
+    border-radius: 8px !important;
+    padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--20) !important;
+}
+
+.gitaarles-pricing .wp-block-column h2 {
+    color: var(--wp--preset--color--accent-dark);
+    font-size: var(--wp--preset--font-size--large);
+    font-weight: var(--wp--preset--font-weight--bold);
+    margin-bottom: var(--wp--preset--spacing--20);
+}
+
+.gitaarles-pricing .wp-block-column p {
+    color: var(--wp--preset--color--text);
+    margin-bottom: var(--wp--preset--spacing--15);
+}
+
+.gitaarles-pricing .wp-block-column .has-small-font-size {
+    font-size: var(--wp--preset--font-size--small);
+    color: var(--wp--preset--color--text);
+    opacity: 0.8;
+}
+
+/* Buttons */
+.gitaarles-page .wp-block-button {
+    margin-top: var(--wp--preset--spacing--20);
+}
+
+.gitaarles-page .wp-block-button__link {
+    background-color: var(--wp--preset--color--accent);
+    color: var(--wp--preset--color--accent-dark);
+    border-radius: 8px;
+    padding: var(--wp--preset--spacing--15) var(--wp--preset--spacing--30);
+    font-weight: var(--wp--preset--font-weight--bold);
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.gitaarles-page .wp-block-button__link:hover {
+    background-color: var(--wp--preset--color--accent-dark);
+    color: var(--wp--preset--color--base);
+    transform: translateY(-2px);
+}
+
+/* Separator */
+.gitaarles-page .wp-block-separator {
+    margin: var(--wp--preset--spacing--20) 0;
+    border-color: var(--wp--preset--color--text);
+    opacity: 0.3;
+}
+
+/* Lists */
+.gitaarles-page .wp-block-list {
+    margin: var(--wp--preset--spacing--20) 0;
+}
+
+.gitaarles-page .wp-block-list li {
+    color: var(--wp--preset--color--text);
+    margin-bottom: var(--wp--preset--spacing--10);
+    padding-left: var(--wp--preset--spacing--20);
+    position: relative;
+}
+
+.gitaarles-page .wp-block-list li::before {
+    content: "✓";
+    color: var(--wp--preset--color--accent);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Extras Section */
+.gitaarles-extras {
+    padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--50);
+    background-color: var(--wp--preset--color--base);
+}
+
+.gitaarles-extras h2 {
+    color: var(--wp--preset--color--accent-dark);
+    font-size: var(--wp--preset--font-size--xl);
+    font-weight: var(--wp--preset--font-weight--bold);
+    margin-bottom: var(--wp--preset--spacing--30);
+    text-align: center;
+}
+
+.gitaarles-extras p {
+    color: var(--wp--preset--color--text);
+    text-align: center;
+    margin-bottom: var(--wp--preset--spacing--30);
+}
+
+/* Extras Columns */
+.gitaarles-extras .wp-block-columns {
+    gap: var(--wp--preset--spacing--40);
+    padding: var(--wp--preset--spacing--30);
+}
+
+
+.gitaarles-extras .wp-block-column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Extras List */
+.gitaarles-extras .wp-block-list {
+    margin: var(--wp--preset--spacing--20) 0;
+}
+
+.gitaarles-extras .wp-block-list li {
+    color: var(--wp--preset--color--text);
+    margin-bottom: var(--wp--preset--spacing--15);
+    text-align: left;
+    padding-left: var(--wp--preset--spacing--20);
+    position: relative;
+    list-style: none;
+}
+
+.gitaarles-extras .wp-block-list li::before {
+    content: "✓";
+    color: var(--wp--preset--color--accent);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Image */
+.gitaarles-page .wp-block-image img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gitaarles-page .wp-block-columns {
+        flex-direction: column;
+    }
+    
+    .gitaarles-page-header,
+    .gitaarles-pricing,
+    .gitaarles-extras {
+        padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--30);
+    }
+}

@@ -20,8 +20,9 @@ add_action( 'wp_enqueue_scripts', function() {
     
     // Enqueue page-specific CSS
     wp_enqueue_style( 'about-css', get_stylesheet_directory_uri() . '/assets/css/about.css', array('child-style'), time() );
+    wp_enqueue_style( 'gitaarles-page-css', get_stylesheet_directory_uri() . '/assets/css/gitaarles.css', array('child-style'), time() );
     wp_enqueue_style( 'over-page-css', get_stylesheet_directory_uri() . '/assets/css/over.css', array('child-style'), time() );
-    wp_enqueue_style( 'footer-css', get_stylesheet_directory_uri() . '/assets/css/footer.css', array('child-style'), time() );
+    wp_enqueue_style( 'footer-css', get_stylesheet_directory_uri() . '/assets/css/footer.css', array('child-style'), time() . '.1' );
     wp_enqueue_style( 'header-css', get_stylesheet_directory_uri() . '/assets/css/header.css', array('child-style'), time() );
     
     // Clear caches to ensure patterns load properly
