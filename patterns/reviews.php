@@ -15,8 +15,8 @@
 <p class="has-text-color has-medium-font-size" style="color:var(--wp--preset--color--accent);margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:var(--wp--preset--spacing--20);padding-left:0px;text-transform:uppercase;font-weight:bold;letter-spacing:0.05em">Reviews</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":2,"style":{"typography":{"textTransform":"capitalize","fontStyle":"normal","fontWeight":"var:preset|font-weight|bold","lineHeight":"1.3"},"color":{"text":"var:preset|color|text"},"spacing":{"padding":{"top":"0px","right":"0px","bottom":"var:preset|spacing|30","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
-<h2 class="has-text-color" style="color:var(--wp--preset--color--text);margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:var(--wp--preset--spacing--30);padding-left:0px;font-style:normal;font-weight:var(--wp--preset--font-weight--bold);line-height:1.3;text-transform:capitalize">Wat onze leerlingen over Studio Sound of Music zeggen!</h2>
+<!-- wp:heading {"level":2} -->
+<h2>Wat onze leerlingen over Studio Sound of Music zeggen!</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|medium","lineHeight":"1.6"},"spacing":{"padding":{"top":"0px","right":"0px","bottom":"var:preset|spacing|50","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
@@ -37,8 +37,8 @@ Ik wilde graag met meer gevoel gitaar kunnen spelen.
 Door zijn op maat gemaakte opdrachten is gitaar spelen een heerlijke dagelijkse hobby geworden en heb ik heel veel zin om in de toekomst mijn musicaliteit verder te ontdekken."</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":3,"style":{"typography":{"textTransform":"capitalize","fontStyle":"normal","fontWeight":"var:preset|font-weight|bold","fontSize":"var:preset|font-size|large"},"color":{"text":"var:preset|color|text"},"spacing":{"padding":{"top":"0px","right":"0px","bottom":"var:preset|spacing|10","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
-<h3 class="has-text-color" style="color:var(--wp--preset--color--text);margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:var(--wp--preset--spacing--10);padding-left:0px;font-size:var(--wp--preset--font-size--large);font-style:normal;font-weight:var(--wp--preset--font-weight--bold);text-transform:capitalize">Kelvin</h3>
+<!-- wp:heading {"level":3} -->
+<h3>Kelvin</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"typography":{"textTransform":"capitalize","fontStyle":"normal","fontWeight":"var:preset|font-weight|medium"},"color":{"text":"var:preset|color|accent"}},"fontSize":"medium"} -->
@@ -51,8 +51,8 @@ Door zijn op maat gemaakte opdrachten is gitaar spelen een heerlijke dagelijkse 
 <p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:var(--wp--preset--spacing--30);padding-left:0px;font-size:var(--wp--preset--font-size--medium);line-height:1.6;font-style:italic">"Super leuke gitaarlessen! Zit er nu al meerdere jaren op en ga er elke week met plezier heen. Ik heb in de paar jaren dat ik nu gitaarles volg veel geleerd en kan dan nu ook echt een beetje spelen, met dank aan de gitaarlessen! "</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":3,"style":{"typography":{"textTransform":"capitalize","fontStyle":"normal","fontWeight":"var:preset|font-weight|bold","fontSize":"var:preset|font-size|large"},"color":{"text":"var:preset|color|text"},"spacing":{"padding":{"top":"0px","right":"0px","bottom":"var:preset|spacing|10","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
-<h3 class="has-text-color" style="color:var(--wp--preset--color--text);margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:var(--wp--preset--spacing--10);padding-left:0px;font-size:var(--wp--preset--font-size--large);font-style:normal;font-weight:var(--wp--preset--font-weight--bold);text-transform:capitalize">Sander</h3>
+<!-- wp:heading {"level":3} -->
+<h3>Sander</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"typography":{"textTransform":"capitalize","fontStyle":"normal","fontWeight":"var:preset|font-weight|medium"},"color":{"text":"var:preset|color|accent"}},"fontSize":"medium"} -->
@@ -65,8 +65,8 @@ Door zijn op maat gemaakte opdrachten is gitaar spelen een heerlijke dagelijkse 
 <p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:var(--wp--preset--spacing--30);padding-left:0px;font-size:var(--wp--preset--font-size--medium);line-height:1.6;font-style:italic">"Marlowe is een rustige leraar die mij als beginnend gitarist goed op weg heeft geholpen. Veel aandacht voor techniek en hoe je dit moet toepassen binnen je eigen mogelijkheden. Ook als gevorderd gitarist kun je nog veel leren van hem."</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":3,"style":{"typography":{"textTransform":"capitalize","fontStyle":"normal","fontWeight":"var:preset|font-weight|bold","fontSize":"var:preset|font-size|large"},"color":{"text":"var:preset|color|text"},"spacing":{"padding":{"top":"0px","right":"0px","bottom":"var:preset|spacing|10","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
-<h3 class="has-text-color" style="color:var(--wp--preset--color--text);margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:var(--wp--preset--spacing--10);padding-left:0px;font-size:var(--wp--preset--font-size--large);font-style:normal;font-weight:var(--wp--preset--font-weight--bold);text-transform:capitalize">Ronald</h3>
+<!-- wp:heading {"level":3} -->
+<h3>Ronald</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"typography":{"textTransform":"capitalize","fontStyle":"normal","fontWeight":"var:preset|font-weight|medium"},"color":{"text":"var:preset|color|accent"}},"fontSize":"medium"} -->

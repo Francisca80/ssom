@@ -15,25 +15,7 @@
     text-align: left;
 }
 
-/* Typography */
-.wp-block-group.over-ons-page-header h1,
-.over-ons-page-header h1,
-.wp-block-heading.has-text-align-left,
-.wp-block-group.over-ons-page-header .wp-block-heading,
-.over-ons-page-header .wp-block-heading {
-    font-size: var(--wp--preset--font-size--xl) !important; /* 48px from theme.json */
-    font-weight: var(--wp--preset--font-weight--bold) !important; /* 700 from theme.json */
-    margin: 0 !important;
-    color: var(--wp--preset--color--accent-dark) !important;
-    line-height: 1.1 !important;
-}
-
-/* Even more specific targeting for WordPress blocks */
-.wp-block-group.alignfull.over-ons-page-header h1,
-.wp-block-group.alignfull.over-ons-page-header .wp-block-heading {
-    font-size: var(--wp--preset--font-size--xl) !important;
-    font-weight: var(--wp--preset--font-weight--bold) !important;
-}
+/* H1 and H2 styling now handled by global styles in style.css */
 
 /* H2 Styles - Let theme.json handle the styling, just add margin */
 .over-ons-profile h2 {

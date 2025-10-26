@@ -16,7 +16,7 @@
     <p class="has-accent-color has-text-color">Studio Journal</p>
     <!-- /wp:paragraph -->
 
-    <!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"2.75rem","fontWeight":"900","lineHeight":"1.1"},"spacing":{"margin":{"bottom":"1rem"}}}} -->
+    <!-- wp:heading {"level":2} -->
     <h2>Laatste Artikelen</h2>
     <!-- /wp:heading -->
   </div>
@@ -41,7 +41,7 @@
       <div class="wp-block-group">
         <!-- wp:post-date {"format":"j F Y","textColor":"accent","style":{"typography":{"fontSize":"0.875rem","fontWeight":"700","letterSpacing":"0.05em","textTransform":"uppercase"}}} /-->
 
-        <!-- wp:post-title {"isLink":true,"style":{"typography":{"fontSize":"2rem","fontWeight":"800","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"0.5rem"}}}} /-->
+        <!-- wp:post-title {"isLink":true} /-->
 
         <!-- wp:post-excerpt {"moreText":"Lees verder →","style":{"typography":{"fontSize":"1.125rem","lineHeight":"1.6"}}} /-->
       </div>

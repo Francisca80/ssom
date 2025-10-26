@@ -33,12 +33,12 @@ Tags: block-patterns, fse, bold, clean
 */
 
 .hero h1 {
-  font-size: clamp(3rem, 8vw, 8rem);
+  font-size: clamp(3rem, 8vw, 8rem) !important;
   font-family: var(--wp--preset--font-family--manrope);
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  margin-bottom: 3rem;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 3rem !important;
 }
 
 .hero p {
@@ -53,38 +53,42 @@ Tags: block-patterns, fse, bold, clean
   margin-bottom: var(--wp--preset--spacing--50);
 }
 
-/* Override theme.json h1 styling for hero section only */
-.hero h1 {
-  font-size: clamp(3rem, 8vw, 8rem) !important;
-  font-weight: 900 !important;
-  line-height: 1 !important;
-  letter-spacing: -0.02em !important;
-  margin-bottom: 3rem !important;
+/* Global h1 and h2 styling - respect theme.json settings */
+h1:not(.hero h1),
+h2:not(.hero h2),
+.wp-block-heading:not(.hero .wp-block-heading),
+h1.wp-block-heading:not(.hero h1),
+h2.wp-block-heading:not(.hero h2) {
+  font-family: var(--wp--preset--font-family--manrope) !important;
+  font-weight: var(--wp--preset--font-weight--bold) !important;
+  color: var(--wp--preset--color--accent-dark) !important;
+  line-height: 1.2 !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
-/* Fix h1 alignment on larger screens */
-@media (min-width: 768px) {
-  h1:not(.hero h1),
-  .wp-block-heading:not(.hero .wp-block-heading),
-  h1.wp-block-heading:not(.hero h1) {
-    text-align: left !important;
-    margin-left: 0 !important;
-    max-width: none !important;
-    width: 100% !important;
-  }
+/* H1 specific sizing from theme.json */
+h1:not(.hero h1),
+h1.wp-block-heading:not(.hero h1) {
+  font-size: var(--wp--preset--font-size--xl) !important; /* 48px */
 }
 
-@media (min-width: 1024px) {
-  h1:not(.hero h1),
-  .wp-block-heading:not(.hero .wp-block-heading),
-  h1.wp-block-heading:not(.hero h1) {
-    text-align: left !important;
-    margin-left: 0 !important;
-    max-width: none !important;
-    width: 100% !important;
-    justify-self: start !important;
-    align-self: flex-start !important;
-  }
+/* H2 specific sizing from theme.json */
+h2:not(.hero h2),
+h2.wp-block-heading:not(.hero h2) {
+  font-size: var(--wp--preset--font-size--xl) !important; /* 48px */
+}
+
+/* H3 styling for consistency */
+h3,
+h3.wp-block-heading {
+  font-family: var(--wp--preset--font-family--manrope) !important;
+  font-weight: var(--wp--preset--font-weight--bold) !important;
+  color: var(--wp--preset--color--accent-dark) !important;
+  line-height: 1.2 !important;
+  text-align: left !important;
+  font-size: var(--wp--preset--font-size--large) !important; /* 32px */
 }
 
 
@@ -142,14 +146,6 @@ Tags: block-patterns, fse, bold, clean
   position: relative;
 }
 
-/* Hero section - allow overflow for guitar strings */
-.hero {
-  overflow: visible;
-}
-
-.hero-paragraph {
-  overflow: visible;
-}
 
 /* Elastic line path styling - only in hero title */
 .hero .wp-block-heading .hero-line svg path,
@@ -209,8 +205,6 @@ Tags: block-patterns, fse, bold, clean
   }
 }
 
-/* Hero buttons now use theme.json styles */
-
 /* Button styling to prevent validation errors */
 .wp-block-button__link {
     border-radius: 8px !important;
@@ -257,7 +251,6 @@ Tags: block-patterns, fse, bold, clean
     transform: translateY(-2px) !important;
 }
 
-/* Hero buttons now use global button styles */
 
 /* Hide Contact Us button on mobile */
 @media (max-width: 768px) {
@@ -274,8 +267,6 @@ Tags: block-patterns, fse, bold, clean
   text-decoration-color: var(--wp--preset--color--accent);
   text-underline-offset: 6px;
 }
-
-/* About section styles moved to assets/css/about.css */
 
 /* Blog Pattern Styles */
 /* Individual post cards */
@@ -428,9 +419,6 @@ Tags: block-patterns, fse, bold, clean
   }
 }
 
-/* Hero animation styles moved to assets/css/hero.css */
-
-/* About section styles moved to assets/css/about.css */
 
 /* Lessen Section - Micro-Polish Improvements */
 
@@ -613,9 +601,6 @@ Tags: block-patterns, fse, bold, clean
     margin-bottom: 1.5rem;
 }
 
-.cta-join {
-  background-color: #f5f5f5;
-}
 
 .cta-gallery-columns {
   display: flex;
@@ -660,7 +645,6 @@ Tags: block-patterns, fse, bold, clean
   padding: 1rem 1.5rem;
 }
 
-/* Hero button styling removed - using global styles */
 
 .cta-join-now-button a:hover {
   background-color: color-mix(in srgb, var(--wp--preset--color--accent) 80%, #fff);
@@ -1072,7 +1056,6 @@ footer h3 .hero-line,
   color: white !important;
 }
 
-/* Hero Buttons - removed, using global styles */
 
 /* Fallback CSS animation for typewriter effect */
 @keyframes typewriterFallback {
@@ -1082,7 +1065,6 @@ footer h3 .hero-line,
   }
 }
 
-/* Hero character animation and responsive styles moved to assets/css/hero.css */
 
 /* ============================
    Studio Sound of Music – About Section
@@ -1138,68 +1120,4 @@ footer h3 .hero-line,
     object-fit: cover;
 }
 
-/* Contact Form 7 ComboboxControl styling - now handled by JavaScript fix */
-
-/* ============================
-   Studio Sound of Music – Contact Section
-   ============================ */
-
-/* Contact Section Styling */
-.contact-section {
-    background-color: #ffffff;
-    color: #000000;
-    padding: 6rem 2rem;
-}
-
-.contact-section .wp-block-columns {
-    gap: 4rem;
-}
-
-.contact-section .wp-block-column {
-    flex-basis: 50%;
-}
-
-/* Contact Left Column */
-.contact-label {
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    margin-bottom: 1rem;
-}
-
-.contact-title {
-    font-weight: 900;
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 2rem;
-}
-
-.contact-description {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    margin-bottom: 3rem;
-}
-
-/* Contact Form Wrapper */
-.contact-form-wrapper {
-    background-color: #f9f9f9;
-    color: #000000;
-    border-radius: 12px;
-    padding: 3rem;
-}
-
-.contact-form-wrapper h3 {
-    font-weight: 700;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.form-thank-you {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--wp--preset--color--accent);
-    margin-top: 1rem;
-    display: none;
-}
 

@@ -20,7 +20,6 @@ add_action( 'wp_enqueue_scripts', function() {
     
     // Enqueue page-specific CSS
     wp_enqueue_style( 'about-css', get_stylesheet_directory_uri() . '/assets/css/about.css', array('child-style'), time() );
-    wp_enqueue_style( 'lessen-page-css', get_stylesheet_directory_uri() . '/assets/css/lessen.css', array('child-style'), time() );
     wp_enqueue_style( 'over-page-css', get_stylesheet_directory_uri() . '/assets/css/over.css', array('child-style'), time() );
     wp_enqueue_style( 'footer-css', get_stylesheet_directory_uri() . '/assets/css/footer.css', array('child-style'), time() );
     wp_enqueue_style( 'header-css', get_stylesheet_directory_uri() . '/assets/css/header.css', array('child-style'), time() );
@@ -38,32 +37,6 @@ add_action( 'wp_enqueue_scripts', function() {
 
 } );        
 
-// ACF field files are managed through WordPress admin
-// No need to load external field files
-
-// ACF function declarations for linter
-if (!function_exists('acf_add_options_page')) {
-    /**
-     * Add ACF options page
-     * @param array $page
-     * @return void
-     */
-    function acf_add_options_page($page) {
-        return;
-    }
-}
-
-// ACF Options Page
-add_action('acf/init', function() {
-	if (function_exists('acf_add_options_page')) {
-		acf_add_options_page([
-		  'page_title' => 'Studio Settings',
-		  'menu_title' => 'Studio Settings',
-		  'menu_slug' => 'studio-settings',
-		  'capability' => 'edit_posts',
-		]);
-	}
-});
 
    
 
@@ -165,41 +138,11 @@ add_action( 'init', function () {
     register_block_pattern_category( 'ssom', [
 		'label' => __( 'Ssom Sections', 'ssom' ),
 	] );
-    register_block_pattern_category( 'ssom-lessen-page', [
-		'label' => __( 'Ssom Lessen Page Sections', 'ssom' ),
-	] );
     register_block_pattern_category( 'ssom-over-ons-page', [
 		'label' => __( 'Ssom Over Ons Page Sections', 'ssom' ),
 	] );
         
 } );
 
-function ssom_register_lessen_cpt() {
-    $labels = array(
-        'name' => 'Lessen',
-        'singular_name' => 'Les',
-        'add_new' => 'Nieuwe les toevoegen',
-        'add_new_item' => 'Nieuwe les toevoegen',
-        'edit_item' => 'Les bewerken',
-        'new_item' => 'Nieuwe les',
-        'view_item' => 'Bekijk les',
-        'search_items' => 'Zoek lessen',
-        'not_found' => 'Geen lessen gevonden',
-    );
-
-    $args = array(
-        'label' => 'Lessen',
-        'labels' => $labels,
-        'public' => true,
-        'menu_icon' => 'dashicons-album',
-        'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
-        'has_archive' => false,
-        'show_in_rest' => true,
-        'rewrite' => array('slug' => 'lessen'),
-    );
-
-    register_post_type('lessen', $args);
-}
-add_action('init', 'ssom_register_lessen_cpt');
 
 

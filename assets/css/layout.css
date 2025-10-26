@@ -30,7 +30,6 @@
    ======================================== */
 .wp-block-group.alignfull:has(.wp-block-site-logo) .wp-block-group,
 .wp-block-group.alignfull:has(.wp-block-site-title) .wp-block-group {
-  max-width: 1400px;
   margin: 0 auto;
   padding-left: 0;
   padding-right: 0;
@@ -141,8 +140,8 @@
     justify-content: center !important;
   }
   
-  /* Center headings */
-  .wp-block-group.alignfull .wp-block-heading {
+  /* Center headings - but respect theme.json alignment for h1/h2 */
+  .wp-block-group.alignfull .wp-block-heading:not(h1):not(h2) {
     text-align: center !important;
   }
   
