@@ -1,0 +1,53 @@
+/* ============================
+   Studio Sound of Music – Header Section
+   ============================ */
+
+.ssom-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  transition: all 0.3s ease;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.ssom-header.is-scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.header-brand .wp-block-site-title a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 900;
+}
+
+.primary-navigation a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.primary-navigation a:hover {
+  color: var(--wp--preset--color--accent);
+}
+
+/* Header button uses theme.json styles - only add header-specific overrides */
+.header-cta .wp-block-button__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .ssom-header {
+    padding: 1rem;
+  }
+  .primary-navigation {
+    display: none;
+  }
+  .header-cta {
+    display: none;
+  }
+}

@@ -1,5 +1,53 @@
 document.addEventListener('DOMContentLoaded', function () {
     
+    // Fix Contact Form 7 deprecation warnings
+    // This adds the __nextHasNoMarginBottom prop to fix various component warnings
+    if (window.wp && window.wp.components) {
+        // Fix ComboboxControl
+        const originalComboboxControl = window.wp.components.ComboboxControl;
+        if (originalComboboxControl) {
+            window.wp.components.ComboboxControl = function(props) {
+                return originalComboboxControl({
+                    ...props,
+                    __nextHasNoMarginBottom: true
+                });
+            };
+        }
+        
+        // Fix SelectControl
+        const originalSelectControl = window.wp.components.SelectControl;
+        if (originalSelectControl) {
+            window.wp.components.SelectControl = function(props) {
+                return originalSelectControl({
+                    ...props,
+                    __nextHasNoMarginBottom: true
+                });
+            };
+        }
+        
+        // Fix TextControl
+        const originalTextControl = window.wp.components.TextControl;
+        if (originalTextControl) {
+            window.wp.components.TextControl = function(props) {
+                return originalTextControl({
+                    ...props,
+                    __nextHasNoMarginBottom: true
+                });
+            };
+        }
+        
+        // Fix TextareaControl
+        const originalTextareaControl = window.wp.components.TextareaControl;
+        if (originalTextareaControl) {
+            window.wp.components.TextareaControl = function(props) {
+                return originalTextareaControl({
+                    ...props,
+                    __nextHasNoMarginBottom: true
+                });
+            };
+        }
+    }
+    
     // Global audio context initialization
     let globalAudioContext = null;
     let audioInitialized = false;
@@ -52,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
            // Hero "Sound Lines" Musical Staff Animation
-    const heroTitle = document.querySelector('.hero-title');
+    const heroTitle = document.querySelector('.hero .wp-block-heading');
            const heroLines = document.querySelectorAll('.hero-line');
     const heroParagraph = document.querySelector('.hero-paragraph');
     const heroButtons = document.querySelector('.hero-buttons');
@@ -426,7 +474,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
            setTimeout(() => {
                
-               const heroTitle = document.querySelector('.hero-title');
+               const heroTitle = document.querySelector('.hero .wp-block-heading');
                if (heroTitle) {
                    // Create 6 completely independent strings
                    const stringCleanupFunctions = [];
@@ -444,7 +492,7 @@ document.addEventListener('DOMContentLoaded', function () {
            // Fallback: Add simple static lines if elastic lines don't work
            setTimeout(() => {
                // Only create fallback if no elastic lines were created
-               const heroTitle = document.querySelector('.hero-title');
+               const heroTitle = document.querySelector('.hero .wp-block-heading');
                if (heroTitle && !heroTitle.querySelector('.elastic-line')) {
                    // Create exactly 6 lines for the fallback
                    for (let i = 0; i < 6; i++) {

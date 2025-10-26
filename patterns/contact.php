@@ -7,24 +7,24 @@
  */
 ?>
 
-<!-- wp:group {"align":"full","style":{"color":{"background":"#ffffff","text":"#000000"},"spacing":{"padding":{"top":"6rem","bottom":"6rem","left":"2rem","right":"2rem"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
-<div class="wp-block-group alignfull contact-section" style="background-color:#ffffff;color:#000000 !important;padding-top:6rem;padding-bottom:6rem;padding-left:2rem;padding-right:2rem;">
+<!-- wp:group {"align":"full","className":"contact-section","layout":{"type":"constrained","contentSize":"1200px"}} -->
+<div class="wp-block-group alignfull contact-section">
 
-  <!-- wp:columns {"verticalAlignment":"top","style":{"spacing":{"blockGap":"4rem"}}} -->
-  <div class="wp-block-columns are-vertically-aligned-top" style="gap:4rem;">
+  <!-- wp:columns {"verticalAlignment":"top"} -->
+  <div class="wp-block-columns are-vertically-aligned-top">
 
-    <!-- wp:column {"width":"50%"} -->
-    <div class="wp-block-column contact-left" style="flex-basis:50%;">
-      <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","fontWeight":"700","letterSpacing":"0.05em"},"spacing":{"margin":{"bottom":"1rem"}}}} -->
-      <p style="text-transform:uppercase;font-weight:700;letter-spacing:0.05em;margin-bottom:1rem;">Contact</p>
+    <!-- wp:column -->
+    <div class="wp-block-column contact-left">
+      <!-- wp:paragraph -->
+      <p class="contact-label">Contact</p>
       <!-- /wp:paragraph -->
 
-      <!-- wp:heading {"level":2,"style":{"typography":{"fontWeight":"900","fontSize":"clamp(2.5rem, 6vw, 4rem)","lineHeight":"1.1","letterSpacing":"-0.02em"},"spacing":{"margin":{"bottom":"2rem"}}}} -->
-      <h2 style="font-weight:900;font-size:clamp(2.5rem, 6vw, 4rem);line-height:1.1;letter-spacing:-0.02em;margin-bottom:2rem;">Neem contact<br>met ons op</h2>
+      <!-- wp:heading {"level":2} -->
+      <h2 class="contact-title">Neem contact<br>met ons op</h2>
       <!-- /wp:heading -->
 
-      <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.25rem","lineHeight":"1.6"},"spacing":{"margin":{"bottom":"3rem"}}}} -->
-      <p style="font-size:1.25rem;line-height:1.6;margin-bottom:3rem;">Heb je vragen over gitaarlessen, tarieven of een proefles? Stuur ons een bericht — we reageren meestal binnen één dag.</p>
+      <!-- wp:paragraph -->
+      <p class="contact-description">Heb je vragen over gitaarlessen, tarieven of een proefles? Stuur ons een bericht — we reageren meestal binnen één dag.</p>
       <!-- /wp:paragraph -->
 
       <!-- wp:image {"url":"http://studio-sound-of-music.local/wp-content/uploads/2025/05/fischer_portrait-marlowe_webres-9googleresize-Copy.jpg","sizeSlug":"large","style":{"border":{"radius":"12px"}}} /-->

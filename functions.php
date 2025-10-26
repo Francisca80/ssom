@@ -17,26 +17,54 @@ add_action( 'wp_enqueue_scripts', function() {
     
     // Enqueue custom animations with cache busting
     wp_enqueue_script( 'ssom-animations', get_stylesheet_directory_uri() . '/script.js', array('gsap', 'gsap-scrolltrigger', 'gsap-textplugin'), time(), true );
+    
+    // Enqueue page-specific CSS
+    wp_enqueue_style( 'about-css', get_stylesheet_directory_uri() . '/assets/css/about.css', array('child-style'), time() );
+    wp_enqueue_style( 'lessen-page-css', get_stylesheet_directory_uri() . '/assets/css/lessen.css', array('child-style'), time() );
+    wp_enqueue_style( 'over-page-css', get_stylesheet_directory_uri() . '/assets/css/over.css', array('child-style'), time() );
+    wp_enqueue_style( 'footer-css', get_stylesheet_directory_uri() . '/assets/css/footer.css', array('child-style'), time() );
+    wp_enqueue_style( 'header-css', get_stylesheet_directory_uri() . '/assets/css/header.css', array('child-style'), time() );
+    
+    // Clear caches to ensure patterns load properly
+    if (isset($_GET['clear_cache']) && current_user_can('manage_options')) {
+        wp_cache_flush();
+        if (function_exists('wp_cache_flush_group')) {
+            wp_cache_flush_group('block_patterns');
+            wp_cache_flush_group('patterns');
+            wp_cache_flush_group('theme');
+        }
+        echo '<div style="background: #4CAF50; color: white; padding: 10px; margin: 10px 0;">Cache cleared successfully!</div>';
+    }
 
 } );        
 
-add_action('after_setup_theme', function(){
-	$dir = get_stylesheet_directory() . '/acf/';
-	foreach (['fields-options.php','fields-home.php','fields-lessen.php','fields-about.php','fields-contact.php'] as $f) {
-	  $p = $dir . $f;
-	  if (file_exists($p)) require_once $p;
-	}
-  });
+// ACF field files are managed through WordPress admin
+// No need to load external field files
 
-  if( function_exists('acf_add_options_page') ){
-	acf_add_options_page([
-	  'page_title' => 'Studio Settings',
-	  'menu_title' => 'Studio Settings',
-	  'menu_slug'  => 'ssof-settings',
-	  'capability' => 'edit_posts',
-	  'redirect'   => false
-	]);
-  }
+// ACF function declarations for linter
+if (!function_exists('acf_add_options_page')) {
+    /**
+     * Add ACF options page
+     * @param array $page
+     * @return void
+     */
+    function acf_add_options_page($page) {
+        return;
+    }
+}
+
+// ACF Options Page
+add_action('acf/init', function() {
+	if (function_exists('acf_add_options_page')) {
+		acf_add_options_page([
+		  'page_title' => 'Studio Settings',
+		  'menu_title' => 'Studio Settings',
+		  'menu_slug' => 'studio-settings',
+		  'capability' => 'edit_posts',
+		]);
+	}
+});
+
    
 
 // Clear WordPress caches for development
@@ -134,5 +162,44 @@ add_action( 'init', function () {
 	register_block_pattern_category( 'contact', [
 		'label' => __( 'Contact Sections', 'ssom' ),
 	] );
-	
+    register_block_pattern_category( 'ssom', [
+		'label' => __( 'Ssom Sections', 'ssom' ),
+	] );
+    register_block_pattern_category( 'ssom-lessen-page', [
+		'label' => __( 'Ssom Lessen Page Sections', 'ssom' ),
+	] );
+    register_block_pattern_category( 'ssom-over-ons-page', [
+		'label' => __( 'Ssom Over Ons Page Sections', 'ssom' ),
+	] );
+        
 } );
+
+function ssom_register_lessen_cpt() {
+    $labels = array(
+        'name' => 'Lessen',
+        'singular_name' => 'Les',
+        'add_new' => 'Nieuwe les toevoegen',
+        'add_new_item' => 'Nieuwe les toevoegen',
+        'edit_item' => 'Les bewerken',
+        'new_item' => 'Nieuwe les',
+        'view_item' => 'Bekijk les',
+        'search_items' => 'Zoek lessen',
+        'not_found' => 'Geen lessen gevonden',
+    );
+
+    $args = array(
+        'label' => 'Lessen',
+        'labels' => $labels,
+        'public' => true,
+        'menu_icon' => 'dashicons-album',
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'has_archive' => false,
+        'show_in_rest' => true,
+        'rewrite' => array('slug' => 'lessen'),
+    );
+
+    register_post_type('lessen', $args);
+}
+add_action('init', 'ssom_register_lessen_cpt');
+
+

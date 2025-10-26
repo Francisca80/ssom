@@ -1,0 +1,213 @@
+/* ============================
+   Studio Sound of Music – Footer Section
+   ============================ */
+
+.footer-section {
+  background: var(--wp--preset--color--accent-dark);
+  color: var(--wp--preset--color--base) !important;
+  padding: 6rem 2rem;
+}
+
+/* Footer Layout */
+footer .wp-block-columns {
+  margin-bottom: 3rem;
+  gap: 3rem;
+}
+
+footer .wp-block-column:first-child {
+  flex-basis: 35%;
+}
+
+footer .wp-block-column:nth-child(2),
+footer .wp-block-column:nth-child(3) {
+  flex-basis: 20%;
+}
+
+footer .wp-block-column:last-child {
+  flex-basis: 25%;
+}
+
+/* Footer Typography */
+footer h3 {
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+footer h4 {
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+footer p a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer .has-text-align-center a {
+  color: var(--wp--preset--color--base);
+  text-decoration: none;
+  border-bottom: 1px solid var(--wp--preset--color--base);
+}
+
+.footer-section *,
+.footer-section h1,
+.footer-section h2,
+.footer-section h3,
+.footer-section h4,
+.footer-section h5,
+.footer-section h6,
+.footer-section p,
+.footer-section div,
+.footer-section span,
+.footer-section a,
+.footer-section li,
+.footer-section ul,
+.footer-section .wp-block-column,
+.footer-section .wp-block-group,
+.footer-section .wp-block-heading,
+.footer-section .wp-block-paragraph {
+  color: var(--wp--preset--color--base) !important;
+}
+
+.footer-section h3 {
+  font-family: var(--wp--preset--font-family--manrope);
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+  font-family: var(--wp--preset--font-family--manrope);
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section p {
+  font-family: var(--wp--preset--font-family--manrope);
+  line-height: 1.6;
+}
+
+.footer-nav a {
+  color: var(--wp--preset--color--base) !important;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer-nav a:hover {
+  opacity: 0.7;
+}
+
+.wp-block-social-links a:hover {
+  transform: scale(1.15);
+  transition: transform 0.3s ease;
+}
+
+footer p a,
+.footer-section p a {
+  color: var(--wp--preset--color--base) !important;
+  border-bottom: 1px solid currentColor;
+  transition: opacity 0.3s ease;
+}
+
+footer p a:hover {
+  opacity: 0.6;
+}
+
+/* Force all footer text to be white/light - Maximum specificity */
+.wp-block-group.alignfull.has-background.has-text-color,
+.wp-block-group.alignfull.has-background.has-text-color *,
+.wp-block-group.alignfull.has-background.has-text-color h1,
+.wp-block-group.alignfull.has-background.has-text-color h2,
+.wp-block-group.alignfull.has-background.has-text-color h3,
+.wp-block-group.alignfull.has-background.has-text-color h4,
+.wp-block-group.alignfull.has-background.has-text-color h5,
+.wp-block-group.alignfull.has-background.has-text-color h6,
+.wp-block-group.alignfull.has-background.has-text-color p,
+.wp-block-group.alignfull.has-background.has-text-color a,
+.wp-block-group.alignfull.has-background.has-text-color div,
+.wp-block-group.alignfull.has-background.has-text-color span,
+.wp-block-group.alignfull.has-background.has-text-color .wp-block-heading,
+.wp-block-group.alignfull.has-background.has-text-color .wp-block-paragraph,
+.wp-block-group.alignfull.has-background.has-text-color .wp-block-column,
+.wp-block-group.alignfull.has-background.has-text-color .wp-block-social-links,
+.wp-block-group.alignfull.has-background.has-text-color .wp-block-buttons,
+.wp-block-group.alignfull.has-background.has-text-color .wp-block-button,
+.wp-block-group.alignfull.has-background.has-text-color .wp-block-button__link,
+.wp-block-group.alignfull.has-background.has-text-color .hero-line {
+  color: #ffffff !important;
+}
+
+/* Additional overrides for specific elements */
+body .wp-block-group.alignfull.has-background.has-text-color h3,
+body .wp-block-group.alignfull.has-background.has-text-color h4,
+body .wp-block-group.alignfull.has-background.has-text-color p,
+body .wp-block-group.alignfull.has-background.has-text-color a,
+body .wp-block-group.alignfull.has-background.has-text-color .hero-line {
+  color: #ffffff !important;
+}
+
+/* Force white text on all footer elements */
+html body .wp-block-group.alignfull.has-background.has-text-color * {
+  color: #ffffff !important;
+}
+
+/* Ensure hero-line is white in footer - High specificity for all templates */
+.footer-section .hero-line,
+footer .hero-line,
+.wp-block-group.alignfull.has-background.has-text-color .hero-line,
+body .wp-block-group.alignfull.has-background.has-text-color .hero-line,
+html body .wp-block-group.alignfull.has-background.has-text-color .hero-line {
+  color: #ffffff !important;
+}
+
+/* Nuclear option - force white on everything in footer */
+[style*="background-color:var(--wp--preset--color--accent-dark)"] *,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] h1,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] h2,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] h3,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] h4,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] h5,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] h6,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] p,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] a,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] div,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] span,
+[style*="background-color:var(--wp--preset--color--accent-dark)"] .hero-line {
+  color: #ffffff !important;
+}
+
+/* Maximum specificity for hero-line in footer across all templates */
+html body .wp-block-group.alignfull.has-background.has-text-color .hero-line,
+html body footer .hero-line,
+html body .footer-section .hero-line {
+  color: #ffffff !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-section h3 {
+    font-size: 1.5rem;
+  }
+  
+  .footer-section h4 {
+    font-size: 1rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .footer-section {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .footer-section * {
+    color: black !important;
+  }
+}

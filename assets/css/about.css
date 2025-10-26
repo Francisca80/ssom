@@ -1,0 +1,54 @@
+/**
+ * About Section Styles
+ * Dedicated CSS file for about section styling
+ */
+
+/* Responsive fix for About pattern card overlap */
+@media (max-width: 782px) {
+  .wp-block-group[style*="margin-left:-4rem"],
+  .wp-block-group[style*="margin-left: -4rem"] {
+    margin-left: 0 !important;
+  }
+}
+
+/* About Section - Full Viewport Height */
+.about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* About Section Video - Larger Size */
+.about .wp-block-video {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.about .wp-block-video video {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Make video column taller for vertical videos */
+.about .wp-block-column:last-child {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .about .wp-block-video video {
+    max-width: 400px;
+    max-height: 700px;
+  }
+  
+  .about .wp-block-column:last-child {
+    min-height: 60vh;
+  }
+}

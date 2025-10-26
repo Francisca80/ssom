@@ -76,12 +76,12 @@ Door zijn op maat gemaakte opdrachten is gitaar spelen een heerlijke dagelijkse 
 <!-- /wp:group -->
 
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"0px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:0px"><!-- wp:button {"className":"testimonial-nav prev","style":{"spacing":{"padding":{"right":"var:preset|spacing|20","left":"var:preset|spacing|20","top":"0px","bottom":"0px"}},"border":{"radius":"8px"},"color":{"background":"var:preset|color|accent","text":"var:preset|color|accent-dark"},"typography":{"fontSize":"var:preset|font-size|large","lineHeight":"1.1"}}} -->
-<div class="wp-block-button testimonial-nav prev has-custom-font-size"><a class="wp-block-button__link has-text-color has-background wp-element-button">‹</a></div>
+<div class="wp-block-buttons"><!-- wp:button {"className":"testimonial-nav prev"} -->
+<div class="wp-block-button testimonial-nav prev has-custom-font-size"><a class="wp-block-button__link wp-element-button">‹</a></div>
 <!-- /wp:button -->
 
-<!-- wp:button {"className":"testimonial-nav next","style":{"spacing":{"padding":{"right":"var:preset|spacing|20","left":"var:preset|spacing|20","top":"0px","bottom":"0px"}},"border":{"radius":"8px"},"color":{"background":"var:preset|color|accent","text":"var:preset|color|accent-dark"},"typography":{"fontSize":"var:preset|font-size|large","lineHeight":"1.1"}}} -->
-<div class="wp-block-button testimonial-nav next has-custom-font-size"><a class="wp-block-button__link has-text-color has-background wp-element-button">›</a></div>
+<!-- wp:button {"className":"testimonial-nav next"} -->
+<div class="wp-block-button testimonial-nav next has-custom-font-size"><a class="wp-block-button__link wp-element-button">›</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

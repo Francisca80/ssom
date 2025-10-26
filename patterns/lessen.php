@@ -11,8 +11,8 @@
 <div class="wp-block-group alignfull lessen-section">
   <!-- wp:group {"layout":{"type":"constrained","contentSize":"1200px"}} -->
   <div class="wp-block-group">
-    <!-- wp:heading {"level":2,"textColor":"primary","style":{"typography":{"fontSize":"var:preset|font-size|xl","fontWeight":"var:preset|font-weight|bold"},"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}}} -->
-    <h2 class="wp-block-heading has-primary-color has-text-color" style="font-size:var(--wp--preset--font-size--xl);font-weight:var(--wp--preset--font-weight--bold);margin-bottom:var(--wp--preset--spacing--50)">Onze Gitaarlessen</h2>
+    <!-- wp:heading {"level":2,"textColor":"primary"} -->
+    <h2 class="wp-block-heading has-primary-color has-text-color">Onze Gitaarlessen</h2>
     <!-- /wp:heading -->
 
     <!-- wp:columns {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
@@ -78,9 +78,9 @@
           <p class="has-white-color has-text-color" style="font-size:var(--wp--preset--font-size--medium)">Nieuwsgierig? Boek een gratis proefles en ervaar zelf hoe leuk gitaarles kan zijn. Geen verplichtingen, gewoon kennismaken.</p>
           <!-- /wp:paragraph -->
           <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
-          <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--30)">
-            <!-- wp:button {"backgroundColor":"accent","textColor":"dark","style":{"border":{"radius":"8px"}}} -->
-            <div class="wp-block-button"><a class="wp-block-button__link has-dark-color has-accent-background-color has-text-color has-background wp-element-button" href="#proefles">Proefles Boeken</a></div>
+          <div class="wp-block-buttons">
+            <!-- wp:button -->
+            <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#proefles">Proefles Boeken</a></div>
             <!-- /wp:button -->
           </div>
           <!-- /wp:buttons -->

@@ -54,9 +54,9 @@
 
   <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"3rem"}}}} -->
   <div class="wp-block-buttons">
-    <!-- wp:button {"backgroundColor":"accent","textColor":"dark","style":{"border":{"radius":"8px"},"typography":{"fontWeight":"700"}}} -->
+    <!-- wp:button -->
     <div class="wp-block-button">
-      <a class="wp-block-button__link has-dark-color has-accent-background-color has-text-color has-background wp-element-button" href="/blog">Bekijk alle artikelen</a>
+      <a class="wp-block-button__link wp-element-button" href="/blog">Bekijk alle artikelen</a>
     </div>
     <!-- /wp:button -->
   </div>
