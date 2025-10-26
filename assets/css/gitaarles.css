@@ -61,11 +61,18 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Extras section columns - no borders */
+/* Extras section columns - no borders, no motion */
 .gitaarles-extras .wp-block-column {
     border: none;
     padding: 0;
     background: transparent;
+    transition: none;
+    transform: none;
+}
+
+.gitaarles-extras .wp-block-column:hover {
+    transform: none;
+    box-shadow: none;
 }
 
 /* Ensure pricing columns have proper styling */

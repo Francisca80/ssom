@@ -21,7 +21,9 @@
       "ssom/reviews",
       "ssom/contact",
       "ssom-over-ons-page",
-      "ssom-gitaarles-page"
+      "ssom-gitaarles-page",
+      "ssom-contact-page",
+      "ssom-blog-home"
 
     ],
     "settings": {

@@ -656,3 +656,68 @@ document.addEventListener('wpcf7mailsent', function () {
     msg.style.display = 'block';
   }
 }, false);
+
+// Swiper.js Carousel Initialization
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if Swiper is available
+  if (typeof Swiper === 'undefined') {
+    console.warn('Swiper.js is not loaded');
+    return;
+  }
+
+  // Initialize Swiper for over-ons carousel
+  const overOnsCarousel = document.querySelector('.over-ons-carousel .swiper');
+  if (overOnsCarousel) {
+    new Swiper(overOnsCarousel, {
+      // Basic settings
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      centeredSlides: true,
+      loop: true,
+      
+      // Navigation
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        hideOnClick: false,
+      },
+      
+      // Pagination - Disabled
+      pagination: {
+        enabled: false,
+      },
+      
+      // Responsive breakpoints
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 16,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 16,
+        },
+      },
+      
+      // Touch/swipe settings
+      touchRatio: 1,
+      touchAngle: 45,
+      grabCursor: true,
+      
+      // Animation settings
+      speed: 600,
+      effect: 'slide',
+      
+      // Accessibility
+      a11y: {
+        enabled: true,
+        prevSlideMessage: 'Previous slide',
+        nextSlideMessage: 'Next slide',
+      },
+    });
+  }
+});

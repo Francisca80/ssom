@@ -12,11 +12,15 @@ add_action( 'wp_enqueue_scripts', function() {
     // Enqueue GSAP ScrollTrigger plugin
     wp_enqueue_script( 'gsap-scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js', array('gsap'), time(), true );
     
-    // Enqueue GSAP TextPlugin for text animations
-    wp_enqueue_script( 'gsap-textplugin', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js', array('gsap'), time(), true );
-    
-    // Enqueue custom animations with cache busting
-    wp_enqueue_script( 'ssom-animations', get_stylesheet_directory_uri() . '/script.js', array('gsap', 'gsap-scrolltrigger', 'gsap-textplugin'), time(), true );
+                // Enqueue GSAP TextPlugin for text animations
+                wp_enqueue_script( 'gsap-textplugin', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js', array('gsap'), time(), true );
+                
+                // Enqueue Swiper.js for carousels
+                wp_enqueue_style( 'swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0' );
+                wp_enqueue_script( 'swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true );
+                
+                // Enqueue custom animations with cache busting
+                wp_enqueue_script( 'ssom-animations', get_stylesheet_directory_uri() . '/script.js', array('gsap', 'gsap-scrolltrigger', 'gsap-textplugin', 'swiper-js'), time(), true );
     
     // Enqueue page-specific CSS
     wp_enqueue_style( 'about-css', get_stylesheet_directory_uri() . '/assets/css/about.css', array('child-style'), time() );
@@ -24,17 +28,11 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style( 'over-page-css', get_stylesheet_directory_uri() . '/assets/css/over.css', array('child-style'), time() );
     wp_enqueue_style( 'footer-css', get_stylesheet_directory_uri() . '/assets/css/footer.css', array('child-style'), time() . '.1' );
     wp_enqueue_style( 'header-css', get_stylesheet_directory_uri() . '/assets/css/header.css', array('child-style'), time() );
-    
-    // Clear caches to ensure patterns load properly
-    if (isset($_GET['clear_cache']) && current_user_can('manage_options')) {
-        wp_cache_flush();
-        if (function_exists('wp_cache_flush_group')) {
-            wp_cache_flush_group('block_patterns');
-            wp_cache_flush_group('patterns');
-            wp_cache_flush_group('theme');
-        }
-        echo '<div style="background: #4CAF50; color: white; padding: 10px; margin: 10px 0;">Cache cleared successfully!</div>';
-    }
+    wp_enqueue_style( 'contact-page-css', get_stylesheet_directory_uri() . '/assets/css/contact.css', array('child-style'), time() );
+    wp_enqueue_style( 'blog-css', get_stylesheet_directory_uri() . '/assets/css/blog.css', array('child-style'), time() );
+
+    // Enqueue page-specific JS
+    wp_enqueue_script( 'contact-page-js', get_stylesheet_directory_uri() . '/assets/js/contact.js', array('child-style'), time(), true );
 
 } );        
 
@@ -145,7 +143,23 @@ add_action( 'init', function () {
     register_block_pattern_category( 'ssom-gitaarles-page', [   
         'label' => __( 'SSOM Gitaarles Page Sections', 'ssom' ),
     ] );
+    register_block_pattern_category( 'ssom-contact-page', [
+        'label' => __( 'SSOM Contact Page Sections', 'ssom' ),
+    ] );
+    register_block_pattern_category( 'ssom-blog-home', [
+        'label' => __( 'SSOM Blog Home Sections', 'ssom' ),
+    ] );
 } );
 
-
-
+// Explicitly register the blog home pattern
+add_action( 'init', function() {
+    register_block_pattern(
+        'ssom/ssom-blog-home',
+        array(
+            'title'       => 'SSOM Blog Home',
+            'description' => 'Blog home page with posts query and pagination',
+            'content'     => file_get_contents(get_stylesheet_directory() . '/patterns/ssom-blog-home.php'),
+            'categories'  => array( 'ssom-blog-home' ),
+        )
+    );
+} );

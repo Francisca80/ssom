@@ -13,11 +13,11 @@
   <!-- wp:group {"layout":{"type":"constrained"},"style":{"spacing":{"margin":{"bottom":"4rem"}}}} -->
   <div class="wp-block-group">
     <!-- wp:paragraph {"textColor":"accent","style":{"typography":{"textTransform":"uppercase","fontWeight":"700","letterSpacing":"0.05em","fontSize":"0.875rem"}}} -->
-    <p class="has-accent-color has-text-color">Studio Journal</p>
+    <p class="has-accent-color has-text-color">Journal</p>
     <!-- /wp:paragraph -->
 
     <!-- wp:heading {"level":2} -->
-    <h2>Laatste Artikelen</h2>
+    <h2>Notes from the Studio</h2>
     <!-- /wp:heading -->
   </div>
   <!-- /wp:group -->
