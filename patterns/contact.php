@@ -7,8 +7,8 @@
  */
 ?>
 
-<!-- wp:group {"align":"full","className":"contact-section","layout":{"type":"constrained","contentSize":"1200px"}} -->
-<div class="wp-block-group alignfull contact-section">
+<!-- wp:group {"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<div class="wp-block-group contact-section">
 
   <!-- wp:columns {"verticalAlignment":"top"} -->
   <div class="wp-block-columns are-vertically-aligned-top">

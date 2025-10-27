@@ -10,12 +10,12 @@
 
 <!-- wp:group {"align":"full","className":"blog-header","layout":{"type":"constrained","contentSize":"1200px"}} -->
 <div class="wp-block-group alignfull blog-header">
-	<!-- wp:heading {"level":1,"textAlign":"center","style":{"spacing":{"margin":{"bottom":"1rem"}}}} -->
-	<h1 class="has-text-align-center">Muziek Notes & Tips</h1>
+	<!-- wp:heading {"level":1,"textAlign":"left","style":{"spacing":{"margin":{"bottom":"1rem"}}}} -->
+	<h1 class="has-text-align-left">Muziek Notes & Tips</h1>
 	<!-- /wp:heading -->
 	
-	<!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"bottom":"3rem"}}}} -->
-	<p class="has-text-align-center">Ontdek handige tips, technieken en inzichten voor gitaarspelers van alle niveaus.</p>
+	<!-- wp:paragraph {"align":"left","style":{"spacing":{"margin":{"bottom":"3rem"}}}} -->
+	<p class="has-text-align-left">Ontdek handige tips, technieken en inzichten voor gitaarspelers van alle niveaus.</p>
 	<!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
@@ -32,7 +32,7 @@
 			<!-- wp:group {"className":"blog-card-content","style":{"spacing":{"padding":{"top":"1.5rem","right":"1.5rem","bottom":"1.5rem","left":"1.5rem"}}},"layout":{"type":"constrained"}} -->
 			<div class="wp-block-group blog-card-content">
 				<!-- wp:post-title {"level":3,"isLink":true,"style":{"typography":{"fontSize":"1.125rem","fontWeight":"700","lineHeight":"1.3"},"spacing":{"margin":{"bottom":"1rem"}},"color":{"text":"#111111"}}} /-->
-				<!-- wp:post-excerpt {"moreText":"","style":{"spacing":{"margin":{"bottom":"1rem"}},"color":{"text":"#666666"}},"excerptLength":25} /-->
+				<!-- wp:post-excerpt {"moreText":"","align":"left","style":{"spacing":{"margin":{"bottom":"1rem"}},"color":{"text":"#666666"}},"excerptLength":25} /-->
 				<!-- wp:post-date {"style":{"typography":{"fontSize":"0.875rem","fontWeight":"500","color":"#888888","spacing":{"margin":{"bottom":"1rem"}}}}} /-->
 				<!-- wp:button {"textColor":"accent-dark","backgroundColor":"accent","style":{"typography":{"fontSize":"var(--wp--preset--font-size--medium)","fontWeight":"var(--wp--preset--font-weight--bold)"}}} -->
 				<div class="wp-block-button"><a class="wp-block-button__link has-accent-background-color has-accent-dark-color wp-element-button">LEES MEER</a></div>

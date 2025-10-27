@@ -49,7 +49,6 @@ Tags: block-patterns, fse, bold, clean
   text-align: left !important;
 }
 
-/* Blog section uses natural WordPress alignment like other patterns */
 
 /* Lessen section - let headings use natural alignment */
 
@@ -241,14 +240,6 @@ h3.wp-block-heading {
     transform: translateY(-2px) !important;
 }
 
-/* Blog button hover styling */
-.blog-journal-section .wp-block-button__link:hover {
-    background-color: var(--wp--preset--color--accent-dark) !important;
-    color: var(--wp--preset--color--accent) !important;
-    transform: translateY(-2px) !important;
-}
-
-
 /* Hide Contact Us button on mobile */
 @media (max-width: 768px) {
   .wp-block-buttons.is-style-hidden-mobile,
@@ -263,39 +254,6 @@ h3.wp-block-heading {
   text-decoration: underline;
   text-decoration-color: var(--wp--preset--color--accent);
   text-underline-offset: 6px;
-}
-
-/* Blog Pattern Styles */
-/* Individual post cards */
-.wp-block-post {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 1rem;
-}
-
-/* Better image styling */
-.blog-column img {
-  border-radius: 8px;
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-/* Default link hover effects */
-.blog-column a:hover {
-  color: var(--wp--preset--color--accent) !important;
-}
-
-/* Responsive blog layout */
-@media (max-width: 768px) {
-  .wp-block-query,
-  .blog-columns-equal-height {
-    flex-direction: column;
-  }
-  
-  .blog-column img {
-    height: 180px;
-  }
 }
 
 /* Marquee Component Styles */
@@ -439,6 +397,12 @@ h3.wp-block-heading {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* Ensure text colors are properly applied in flex containers */
+.text-block-equal-height h3,
+.text-block-equal-height p {
+  color: inherit !important;
 }
 
 /* 3. Subtle fade-in on scroll */
@@ -735,134 +699,72 @@ h3.wp-block-heading {
   }
 }
 
-/* ============================
-   Studio Sound of Music – Blog (Journal Layout)
-   ============================ */
 
-.blog-journal-section {
-  background: #fff;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+
+
+
+/* ===========================
+   Section Intro and Heading Pattern
+   =========================== */
+
+.section-intro {
+    color: var(--wp--preset--color--accent-dark);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
 }
 
-.journal-item {
+.section-heading {
+    font-weight: 900;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+/* ===========================
+   Blog Section Styling
+   =========================== */
+
+.blog-journal-section .wp-block-query {
   display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 4rem;
-  margin-bottom: 5rem;
-  transition: all 0.3s ease;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.8s ease forwards;
+  gap: 2rem;
 }
 
-.journal-item:nth-child(1) { animation-delay: 0.1s; }
-.journal-item:nth-child(2) { animation-delay: 0.2s; }
-.journal-item:nth-child(3) { animation-delay: 0.3s; }
-.journal-item:nth-child(4) { animation-delay: 0.4s; }
-.journal-item:nth-child(5) { animation-delay: 0.5s; }
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.blog-post-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.journal-item:nth-child(even) {
-  flex-direction: row-reverse;
+.blog-post-card .wp-block-post-featured-image {
+  margin-bottom: 1rem;
 }
 
-.journal-item:hover img {
-  transform: scale(1.03);
-  filter: brightness(1.05);
-}
-
-.journal-item img {
-  transition: transform 0.4s ease, filter 0.4s ease;
+.blog-post-card .wp-block-post-featured-image img {
   width: 100%;
-  height: auto;
+  height: 200px;
   object-fit: cover;
-  border-radius: 12px;
-  position: relative;
+  border-radius: 8px;
 }
 
-.journal-item:hover img::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--wp--preset--color--accent);
-  mix-blend-mode: overlay;
-  border-radius: 12px;
-  opacity: 0.3;
-  transition: opacity 0.4s ease;
+.blog-post-card .wp-block-post-title {
+  margin-bottom: 1rem;
 }
 
-.journal-item .wp-block-post-title a {
-  color: #000;
+.blog-post-card .wp-block-post-title a {
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.journal-item .wp-block-post-title a:hover {
+.blog-post-card .wp-block-post-title a:hover {
   color: var(--wp--preset--color--accent);
 }
 
-.journal-item .wp-block-post-excerpt p {
-  margin-top: 0.5rem;
-  color: #222;
-}
-
-/* Blog fallback image */
-.blog-journal-section .fallback-image {
-  width: 50%;
-  aspect-ratio: 3/2;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-  background: linear-gradient(135deg, var(--wp--preset--color--accent) 0%, #f0f0f0 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #000;
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
-/* Blog buttons */
-.blog-journal-section .wp-block-buttons {
-  margin-top: 3rem;
-}
-
-/* Hide fallback image when featured image is present */
-.journal-item:has(.wp-block-post-featured-image img) .fallback-image {
-  display: none !important;
-}
-
-/* Show fallback image when no featured image */
-.journal-item:not(:has(.wp-block-post-featured-image img)) .fallback-image {
-  display: flex !important;
-}
-
-@media (max-width: 768px) {
-  .journal-item {
-    flex-direction: column !important;
-    gap: 2rem;
-    text-align: left;
-  }
-  
-  .journal-item img {
-    width: 100%;
-  }
-  
-  .fallback-image {
-    width: 100% !important;
-  }
+.blog-post-card .wp-block-post-excerpt {
+  flex: 1;
 }
 
 /* ===========================

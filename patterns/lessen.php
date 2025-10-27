@@ -17,15 +17,15 @@
 
     <!-- wp:columns {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
     <div class="wp-block-columns" style="gap:var(--wp--preset--spacing--30)">
-      <!-- wp:column {"width":"40%", "backgroundColor":"accent"} -->
-      <div class="wp-block-column has-accent-background-color has-background" style="flex-basis:40%">
-        <!-- wp:group {"className":"text-block-equal-height lessen-block","backgroundColor":"accent","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"border":{"radius":"8px"}}}} -->
-        <div class="wp-block-group text-block-equal-height lessen-block has-accent-background-color has-background">
-          <!-- wp:heading {"level":3,"textColor":"dark"} -->
-          <h3 class="wp-block-heading has-dark-color has-text-color">Persoonlijke Begeleiding</h3>
+      <!-- wp:column {"width":"40%", "backgroundColor":"accent-dark"} -->
+      <div class="wp-block-column has-accent-dark-background-color has-background" style="flex-basis:40%">
+        <!-- wp:group {"className":"text-block-equal-height lessen-block","backgroundColor":"accent-dark","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"border":{"radius":"8px"}}}} -->
+        <div class="wp-block-group text-block-equal-height lessen-block has-accent-dark-background-color has-background">
+          <!-- wp:heading {"level":3,"textColor":"base"} -->
+          <h3 class="wp-block-heading has-base-color has-text-color">Persoonlijke Begeleiding</h3>
           <!-- /wp:heading -->
-          <!-- wp:paragraph {"textColor":"dark","style":{"typography":{"fontSize":"var:preset|font-size|medium"}}} -->
-          <p class="has-dark-color has-text-color" style="font-size:var(--wp--preset--font-size--medium)">Elke leerling is uniek. Daarom stemmen we onze lessen af op jouw niveau, doelen en muzieksmaak. Van beginner tot gevorderde, we helpen je groeien.</p>
+          <!-- wp:paragraph {"textColor":"base","style":{"typography":{"fontSize":"var:preset|font-size|medium"}}} -->
+          <p class="has-base-color has-text-color" style="font-size:var(--wp--preset--font-size--medium)">Elke leerling is uniek. Daarom stemmen we onze lessen af op jouw niveau, doelen en muzieksmaak. Van beginner tot gevorderde, we helpen je groeien.</p>
           <!-- /wp:paragraph -->
         </div>
         <!-- /wp:group -->
@@ -52,11 +52,11 @@
       <div class="wp-block-column" style="flex-basis:40%">
         <!-- wp:group {"className":"text-block-equal-height lessen-block","backgroundColor":"accent-dark","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"border":{"radius":"8px"}}}} -->
         <div class="wp-block-group text-block-equal-height lessen-block has-accent-dark-background-color has-background">
-          <!-- wp:heading {"level":3} -->
-          <h3>Flexibele Lessen</h3>
+          <!-- wp:heading {"level":3,"textColor":"base"} -->
+          <h3 class="wp-block-heading has-base-color has-text-color">Flexibele Lessen</h3>
           <!-- /wp:heading -->
-        <!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|medium"}}} -->
-          <p style="font-size:var(--wp--preset--font-size--medium)">We bieden verschillende lesvormen aan: individuele lessen, duolessen en groepslessen. Kies wat het beste bij jou past en jouw agenda.</p>
+        <!-- wp:paragraph {"textColor":"base","style":{"typography":{"fontSize":"var:preset|font-size|medium"}}} -->
+          <p class="has-base-color has-text-color" style="font-size:var(--wp--preset--font-size--medium)">We bieden verschillende lesvormen aan: individuele lessen, duolessen en groepslessen. Kies wat het beste bij jou past en jouw agenda.</p>
         <!-- /wp:paragraph -->
         </div>
         <!-- /wp:group -->

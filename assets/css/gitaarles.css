@@ -162,12 +162,12 @@
     font-size: var(--wp--preset--font-size--xl);
     font-weight: var(--wp--preset--font-weight--bold);
     margin-bottom: var(--wp--preset--spacing--30);
-    text-align: center;
+    text-align: left;
 }
 
 .gitaarles-extras p {
     color: var(--wp--preset--color--text);
-    text-align: center;
+    text-align: left;
     margin-bottom: var(--wp--preset--spacing--30);
 }
 

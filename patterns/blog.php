@@ -1,70 +1,54 @@
 <?php
 /**
  * Title: Blog Section – Studio Journal Layout
- * Slug: ssom/blog-journal
+ * Slug: ssom/blog
  * Categories: blog, featured
  * Keywords: blog, nieuws, artikelen, gitaar, studio, journal
  */
 ?>
 
-<!-- wp:group {"align":"full","className":"blog-journal-section","style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"6rem","bottom":"6rem","left":"2rem","right":"2rem"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
-<div class="wp-block-group alignfull blog-journal-section">
+<!-- wp:group {"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<div class="wp-block-group blog-journal-section">
 
-  <!-- wp:group {"layout":{"type":"constrained","contentSize":"1200px"},"style":{"spacing":{"margin":{"bottom":"4rem"}}}} -->
-  <div class="wp-block-group">
-    <!-- wp:heading {"level":2} -->
-    <h2>Notes from the Studio</h2>
-    <!-- /wp:heading -->
-  </div>
-  <!-- /wp:group -->
+  <!-- wp:paragraph -->
+  <p class="section-intro">
+    Studio Journal
+  </p>
+  <!-- /wp:paragraph -->
+  
+  <!-- wp:heading {"level":2} -->
+  <h2 class="section-heading">Notes from the Studio</h2>
+  <!-- /wp:heading -->
 
-  <!-- wp:group {"layout":{"type":"constrained","contentSize":"1200px"}} -->
-  <div class="wp-block-group">
-    <!-- wp:query {"queryId":1,"query":{"perPage":2,"postType":"post","order":"desc","orderBy":"date"},"displayLayout":{"type":"list"}} -->
-    <div class="wp-block-query">
-
-      <!-- wp:post-template -->
-      <!-- wp:group {"className":"journal-item","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"4rem","margin":{"bottom":"5rem"}}}} -->
-      <div class="wp-block-group journal-item">
-
-        <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","width":"50%","style":{"border":{"radius":"12px"},"boxShadow":"0 8px 30px rgba(0,0,0,0.05)"}} /-->
-        
-        <!-- wp:html -->
-        <div class="fallback-image">
-          🎸 Gitaar
-        </div>
-        <!-- /wp:html -->
-
-        <!-- wp:group {"style":{"spacing":{"blockGap":"1rem"}},"layout":{"type":"constrained"}} -->
-        <div class="wp-block-group">
-          <!-- wp:post-date {"format":"j F Y","textColor":"accent","style":{"typography":{"fontSize":"0.875rem","fontWeight":"700","letterSpacing":"0.05em","textTransform":"uppercase"}}} /-->
-
-          <!-- wp:post-title {"isLink":true} /-->
-
-          <!-- wp:post-excerpt {"moreText":"Lees verder →","style":{"typography":{"fontSize":"1.125rem","lineHeight":"1.6"}}} /-->
-        </div>
-        <!-- /wp:group -->
-      </div>
-      <!-- /wp:group -->
-      <!-- /wp:post-template -->
+  <!-- wp:query {"queryId":1,"query":{"perPage":2,"postType":"post","order":"desc","orderBy":"date"},"displayLayout":{"type":"list"}} -->
+  <div class="wp-block-query">
+    <!-- wp:post-template -->
+    <!-- wp:group {"className":"blog-post-card","style":{"spacing":{"padding":{"top":"2rem","bottom":"2rem","left":"0","right":"0"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group blog-post-card">
+      
+      <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"border":{"radius":"8px"}}} /-->
+      
+      <!-- wp:post-date {"format":"j F Y","style":{"typography":{"fontSize":"0.875rem","fontWeight":"600","textTransform":"uppercase","letterSpacing":"0.05em"},"spacing":{"margin":{"top":"1rem","bottom":"0.5rem"}}}} /-->
+      
+      <!-- wp:post-title {"isLink":true,"level":3} /-->
+      
+      <!-- wp:post-excerpt {"moreText":"Lees meer →","style":{"typography":{"fontSize":"1rem","lineHeight":"1.6"},"spacing":{"margin":{"top":"1rem","bottom":"0"}}}} /-->
+      
     </div>
-    <!-- /wp:query -->
+    <!-- /wp:group -->
+    <!-- /wp:post-template -->
   </div>
-  <!-- /wp:group -->
+  <!-- /wp:query -->
 
-  <!-- wp:group {"layout":{"type":"constrained","contentSize":"1200px"}} -->
-  <div class="wp-block-group">
-    <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"3rem"}}}} -->
-    <div class="wp-block-buttons">
-      <!-- wp:button -->
-      <div class="wp-block-button">
-        <a class="wp-block-button__link wp-element-button" href="/blog">Bekijk alle artikelen</a>
-      </div>
-      <!-- /wp:button -->
+  <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"3rem"}}}} -->
+  <div class="wp-block-buttons">
+    <!-- wp:button -->
+    <div class="wp-block-button">
+      <a class="wp-block-button__link wp-element-button" href="/blog">Bekijk alle artikelen</a>
     </div>
-    <!-- /wp:buttons -->
+    <!-- /wp:button -->
   </div>
-  <!-- /wp:group -->
+  <!-- /wp:buttons -->
 
 </div>
 <!-- /wp:group -->
