@@ -34,21 +34,73 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Make video column taller for vertical videos */
+/* About Video Styling */
+.about-video {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-video video {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Video Controls - Clean and Simple */
+.about-video video {
+  /* Let the browser handle the controls styling */
+  /* Only add minimal customizations for consistency */
+}
+
+/* Make both columns equal height with different proportions */
+.about .wp-block-columns {
+  align-items: stretch;
+}
+
+.about .wp-block-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Text column - larger */
+.about .wp-block-column:first-child {
+  flex: 3;
+}
+
+/* Video column - much smaller */
 .about .wp-block-column:last-child {
   display: flex;
   align-items: center;
-  min-height: 80vh;
+  justify-content: center;
+  flex: 1;
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .about .wp-block-video video {
-    max-width: 400px;
-    max-height: 700px;
+  .about-video {
+    max-width: 100%;
   }
   
-  .about .wp-block-column:last-child {
-    min-height: 60vh;
+  .about .wp-block-video video {
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .about .wp-block-columns {
+    align-items: center;
+  }
+  
+  .about .wp-block-column {
+    text-align: center;
+    flex: 1 !important; /* Equal width on mobile */
   }
 }

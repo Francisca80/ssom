@@ -52,19 +52,23 @@ document.addEventListener('DOMContentLoaded', function () {
     let globalAudioContext = null;
     let audioInitialized = false;
     
-    // Initialize audio on first user interaction
+    // Initialize audio context
     function initGlobalAudio() {
         if (!audioInitialized) {
             try {
                 globalAudioContext = new (window.AudioContext || window.webkitAudioContext)();
+                console.log('Audio context created, state:', globalAudioContext.state);
+                
                 if (globalAudioContext.state === 'suspended') {
                     globalAudioContext.resume().then(() => {
                         audioInitialized = true;
+                        console.log('Audio context resumed successfully');
                     }).catch((error) => {
                         console.log('Audio resume failed:', error);
                     });
                 } else {
                     audioInitialized = true;
+                    console.log('Audio context ready immediately');
                 }
             } catch (error) {
                 console.log('Audio not supported:', error);
@@ -77,6 +81,11 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('touchstart', initGlobalAudio, { once: true });
     document.addEventListener('keydown', initGlobalAudio, { once: true });
     document.addEventListener('mousedown', initGlobalAudio, { once: true });
+    
+    // Try to initialize audio on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        initGlobalAudio();
+    });
     
             // Check if GSAP is loaded
             if (typeof gsap === 'undefined') {
@@ -263,6 +272,9 @@ document.addEventListener('DOMContentLoaded', function () {
                return updateLine;
            }
 
+           // Hero audio will use the global audio context
+           // No need for separate initialization
+
            // Create 6 guitar strings equally spaced around the hero title
            function createGuitarString(container, stringIndex) {
                
@@ -296,19 +308,23 @@ document.addEventListener('DOMContentLoaded', function () {
                // Initialize audio context
                function initAudio() {
                    if (!audioContext) {
-                       // Use global audio context if available and initialized
-                       if (globalAudioContext && audioInitialized) {
+                       // Use global audio context if available
+                       if (globalAudioContext) {
                            audioContext = globalAudioContext;
                        } else {
-                           // Don't create new audio context, wait for user interaction
-                           return false;
+                           // Create a new audio context for this string
+                           try {
+                               audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                           } catch (error) {
+                               console.log('Audio context creation failed:', error);
+                               return false;
+                           }
                        }
                    }
                    
-                   // Resume audio context if suspended (browser autoplay policy)
+                   // Resume audio context if suspended
                    if (audioContext.state === 'suspended') {
-                       audioContext.resume().then(() => {
-                       }).catch((error) => {
+                       audioContext.resume().catch((error) => {
                            console.log('Audio context resume failed:', error);
                            return false;
                        });
@@ -460,6 +476,7 @@ document.addEventListener('DOMContentLoaded', function () {
                };
                
                document.addEventListener('touchmove', touchHandler, { passive: true });
+               document.addEventListener('touchstart', touchHandler, { passive: true });
                
                // Initial line (straight)
                const path = `M 0 ${lineY} Q ${centerX} ${lineY} ${containerWidth} ${lineY}`;
@@ -720,4 +737,124 @@ document.addEventListener('DOMContentLoaded', function() {
       },
     });
   }
+});
+
+// About Section - Scroll-based Video Playback
+document.addEventListener('DOMContentLoaded', function() {
+  const aboutVideo = document.getElementById('about-video');
+  
+  if (!aboutVideo) return;
+  
+  // Start with video muted for autoplay compliance
+  aboutVideo.muted = true;
+  
+  // Add error handling
+  aboutVideo.addEventListener('error', function(e) {
+    console.log('Video error:', e);
+  });
+  
+  // Add load event to ensure video is ready
+  aboutVideo.addEventListener('loadeddata', function() {
+    console.log('About video loaded and ready');
+  });
+  
+  // Create intersection observer for video visibility
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Video is visible - unmute and try to play it
+        aboutVideo.muted = false;
+        aboutVideo.volume = 0.7; // Set a comfortable volume level
+        
+        aboutVideo.play().catch(error => {
+          console.log('Video autoplay failed:', error);
+          // If autoplay fails, show a play button or let user click
+        });
+      } else {
+        // Video is not visible - mute and pause it
+        aboutVideo.muted = true;
+        aboutVideo.pause();
+      }
+    });
+  }, {
+    threshold: 0.3, // Play when 30% of video is visible
+    rootMargin: '0px 0px -5% 0px' // Start playing slightly before fully visible
+  });
+  
+  // Start observing the video
+  videoObserver.observe(aboutVideo);
+  
+  // Add click handler to play video if autoplay fails
+  aboutVideo.addEventListener('click', function() {
+    if (aboutVideo.paused) {
+      aboutVideo.muted = false;
+      aboutVideo.volume = 0.7;
+      aboutVideo.play().catch(error => {
+        console.log('Manual play failed:', error);
+      });
+    }
+  });
+  
+  // Add user interaction to enable audio (browser requirement)
+  let audioEnabled = false;
+  function enableAudio() {
+    if (!audioEnabled) {
+      aboutVideo.muted = false;
+      aboutVideo.volume = 0.7;
+      audioEnabled = true;
+      console.log('About video audio enabled');
+    }
+  }
+  
+  // Enable audio on first user interaction
+  aboutVideo.addEventListener('click', enableAudio, { once: true });
+  aboutVideo.addEventListener('touchstart', enableAudio, { once: true });
+  document.addEventListener('click', enableAudio, { once: true });
+  document.addEventListener('touchstart', enableAudio, { once: true });
+});
+
+// Lessen Page Animations
+document.addEventListener('DOMContentLoaded', function() {
+  const lessenSection = document.querySelector('.lessen-section');
+  
+  if (!lessenSection) return;
+  
+  // Create intersection observer for lessen animations
+  const lessenObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Add animate class to trigger CSS animations
+        lessenSection.classList.add('animate');
+        
+        // Also use GSAP for more advanced animations if available
+        if (typeof gsap !== 'undefined') {
+          const blocks = lessenSection.querySelectorAll('.wp-block-columns, .lessen-block, .wp-block-image');
+          
+          gsap.fromTo(blocks, 
+            {
+              x: -100,
+              opacity: 0
+            },
+            {
+              x: 0,
+              opacity: 1,
+              duration: 0.8,
+              stagger: 0.2,
+              ease: "power2.out",
+              delay: 0.2
+            }
+          );
+        }
+        
+        // Stop observing after animation
+        lessenObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  // Start observing the lessen section
+  lessenObserver.observe(lessenSection);
 });

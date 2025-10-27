@@ -50,7 +50,7 @@
     <div class="wp-block-column">
       <!-- wp:html -->
       <figure class="about-video">
-        <video autoplay playsinline preload="auto">
+        <video id="about-video" controls playsinline preload="auto" loop>
           <source src="/wp-content/uploads/2025/10/Ssom.mp4" type="video/mp4" />
           Je browser ondersteunt geen video-tag.
         </video>

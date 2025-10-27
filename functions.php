@@ -30,6 +30,7 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style( 'header-css', get_stylesheet_directory_uri() . '/assets/css/header.css', array('child-style'), time() );
     wp_enqueue_style( 'contact-page-css', get_stylesheet_directory_uri() . '/assets/css/contact.css', array('child-style'), time() );
     wp_enqueue_style( 'blog-css', get_stylesheet_directory_uri() . '/assets/css/blog.css', array('child-style'), time() );
+    wp_enqueue_style( 'lessen-css', get_stylesheet_directory_uri() . '/assets/css/lessen.css', array('child-style'), time() );
 
     // Enqueue page-specific JS
     wp_enqueue_script( 'contact-page-js', get_stylesheet_directory_uri() . '/assets/js/contact.js', array('child-style'), time(), true );

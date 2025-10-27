@@ -135,10 +135,7 @@
     justify-content: center !important;
   }
   
-  /* Center buttons */
-  .wp-block-group.alignfull .wp-block-buttons {
-    justify-content: center !important;
-  }
+  /* Let buttons use their natural alignment */
   
   /* Center headings - but respect theme.json alignment for h1/h2 */
   .wp-block-group.alignfull .wp-block-heading:not(h1):not(h2) {
