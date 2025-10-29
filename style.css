@@ -724,6 +724,15 @@ h3.wp-block-heading {
 }
 
 /* ===========================
+   Blog Header Alignment
+   =========================== */
+
+.blog-header h1,
+.blog-header p {
+    text-align: left !important;
+}
+
+/* ===========================
    Blog Section Styling
    =========================== */
 

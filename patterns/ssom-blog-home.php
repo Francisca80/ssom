@@ -31,9 +31,9 @@
 			
 			<!-- wp:group {"className":"blog-card-content","style":{"spacing":{"padding":{"top":"1.5rem","right":"1.5rem","bottom":"1.5rem","left":"1.5rem"}}},"layout":{"type":"constrained"}} -->
 			<div class="wp-block-group blog-card-content">
-				<!-- wp:post-title {"level":3,"isLink":true,"style":{"typography":{"fontSize":"1.125rem","fontWeight":"700","lineHeight":"1.3"},"spacing":{"margin":{"bottom":"1rem"}},"color":{"text":"#111111"}}} /-->
+				<!-- wp:post-title {"level":3,"isLink":true,"align":"left","style":{"typography":{"fontSize":"1.125rem","fontWeight":"700","lineHeight":"1.3"},"spacing":{"margin":{"bottom":"1rem"}},"color":{"text":"#111111"}}} /-->
 				<!-- wp:post-excerpt {"moreText":"","align":"left","style":{"spacing":{"margin":{"bottom":"1rem"}},"color":{"text":"#666666"}},"excerptLength":25} /-->
-				<!-- wp:post-date {"style":{"typography":{"fontSize":"0.875rem","fontWeight":"500","color":"#888888","spacing":{"margin":{"bottom":"1rem"}}}}} /-->
+				<!-- wp:post-date {"align":"left","style":{"typography":{"fontSize":"0.875rem","fontWeight":"500","color":"#888888","spacing":{"margin":{"bottom":"1rem"}}}}} /-->
 				<!-- wp:button {"textColor":"accent-dark","backgroundColor":"accent","style":{"typography":{"fontSize":"var(--wp--preset--font-size--medium)","fontWeight":"var(--wp--preset--font-weight--bold)"}}} -->
 				<div class="wp-block-button"><a class="wp-block-button__link has-accent-background-color has-accent-dark-color wp-element-button">LEES MEER</a></div>
 				<!-- /wp:button -->
