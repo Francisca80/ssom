@@ -1,0 +1,154 @@
+/* Journal Section Styling */
+
+/* Section header styling - consistent with other patterns */
+.journal-section .section-intro {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #000000 !important;
+    margin-bottom: 1rem;
+    text-align: left !important;
+}
+
+.journal-section .section-heading {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #000000 !important;
+    text-align: left !important;
+}
+
+.journal-section .section-description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #000000 !important;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    text-align: left !important;
+}
+
+/* Journal section text styling */
+.journal-section,
+.journal-section * {
+    color: #000000 !important;
+    text-align: left !important;
+}
+
+/* Override layout.css centering rules */
+.wp-block-group.alignfull.journal-section p,
+.wp-block-group.alignfull.journal-section .wp-block-paragraph,
+.wp-block-group.alignfull.journal-section .section-description {
+    text-align: left !important;
+}
+
+/* Override WordPress admin alignment settings */
+.journal-section .wp-block-group {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+
+.journal-section .wp-block-group[style*="text-align: center"],
+.journal-section .wp-block-group[style*="justify-content: center"] {
+    text-align: left !important;
+    justify-content: flex-start !important;
+}
+
+/* Override footer.css white text rule */
+.wp-block-group.alignfull.has-background.has-text-color.journal-section,
+.wp-block-group.alignfull.has-background.has-text-color.journal-section * {
+    color: #000000 !important;
+    text-align: left !important;
+}
+
+/* Query layout - side by side posts */
+.journal-section .wp-block-query {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+    .journal-section .wp-block-query {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 767px) {
+    .journal-section .wp-block-query {
+        flex-direction: column;
+    }
+}
+
+/* Post card styling */
+.journal-post-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100%;
+}
+
+.journal-post-card .wp-block-post-featured-image {
+    margin-bottom: 1rem;
+}
+
+.journal-post-card .wp-block-post-featured-image img {
+    border-radius: 8px;
+}
+
+.journal-post-card .wp-block-post-title {
+    margin-bottom: 1rem;
+}
+
+.journal-post-card .wp-block-post-title a {
+    text-decoration: none;
+    color: #000000 !important;
+    text-align: left !important;
+}
+
+.journal-post-card .wp-block-post-title a:hover {
+    color: var(--wp--preset--color--accent);
+}
+
+.journal-post-card .wp-block-post-excerpt {
+    color: #000000 !important;
+    text-align: left !important;
+}
+
+.journal-post-card .wp-block-post-date {
+    color: #000000 !important;
+    text-align: left !important;
+}
+
+/* Button styling - consistent with other patterns */
+.journal-section .wp-block-button {
+    margin-top: 3rem;
+}
+
+.journal-section .wp-block-button__link {
+    background-color: var(--wp--preset--color--accent);
+    color: var(--wp--preset--color--accent-dark);
+    border: none;
+    border-radius: 8px;
+    padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--40);
+    font-family: var(--wp--preset--font-family--manrope);
+    font-size: var(--wp--preset--font-size--medium);
+    font-weight: var(--wp--preset--font-weight--bold);
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.journal-section .wp-block-button__link:hover {
+    background-color: var(--wp--preset--color--accent-dark);
+    color: var(--wp--preset--color--base);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Cache buster: Wed Oct 29 11:15:00 CET 2025 *//* Cache buster: Wed Oct 29 11:44:37 CET 2025 */

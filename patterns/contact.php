@@ -16,15 +16,15 @@
     <!-- wp:column -->
     <div class="wp-block-column contact-left">
       <!-- wp:paragraph -->
-      <p class="contact-label">Contact</p>
+      <p class="section-intro">Contact</p>
       <!-- /wp:paragraph -->
 
       <!-- wp:heading {"level":2} -->
-      <h2 class="contact-title">Neem contact<br>met ons op</h2>
+      <h2 class="section-heading">Neem contact<br>met ons op</h2>
       <!-- /wp:heading -->
 
       <!-- wp:paragraph -->
-      <p class="contact-description">Heb je vragen over gitaarlessen, tarieven of een proefles? Stuur ons een bericht — we reageren meestal binnen één dag.</p>
+      <p class="section-description">Heb je vragen over gitaarlessen, tarieven of een proefles? Stuur ons een bericht — we reageren meestal binnen één dag.</p>
       <!-- /wp:paragraph -->
 
       <!-- wp:image {"url":"http://studio-sound-of-music.local/wp-content/uploads/2025/05/fischer_portrait-marlowe_webres-9googleresize-Copy.jpg","sizeSlug":"large","style":{"border":{"radius":"12px"}}} /-->

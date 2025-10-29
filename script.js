@@ -1,3 +1,6 @@
+// IMMEDIATE TEST - This should show immediately
+console.log('=== SCRIPT.JS LOADED ===', new Date().toISOString());
+
 document.addEventListener('DOMContentLoaded', function () {
     
     // Fix Contact Form 7 deprecation warnings
@@ -674,69 +677,416 @@ document.addEventListener('wpcf7mailsent', function () {
   }
 }, false);
 
-// Swiper.js Carousel Initialization
+// Mouse Trail with Plectrum Shape for Hero Section
 document.addEventListener('DOMContentLoaded', function() {
-  // Check if Swiper is available
-  if (typeof Swiper === 'undefined') {
-    console.warn('Swiper.js is not loaded');
+  // Check if GSAP is available
+  if (typeof gsap === 'undefined') {
+    console.warn('GSAP is not loaded');
     return;
   }
 
-  // Initialize Swiper for over-ons carousel
-  const overOnsCarousel = document.querySelector('.over-ons-carousel .swiper');
-  if (overOnsCarousel) {
-    new Swiper(overOnsCarousel, {
-      // Basic settings
-      slidesPerView: 'auto',
-      spaceBetween: 16,
-      centeredSlides: true,
-      loop: true,
-      
-      // Navigation
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        hideOnClick: false,
-      },
-      
-      // Pagination - Disabled
-      pagination: {
-        enabled: false,
-      },
-      
-      // Responsive breakpoints
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 16,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 16,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 16,
-        },
-      },
-      
-      // Touch/swipe settings
-      touchRatio: 1,
-      touchAngle: 45,
-      grabCursor: true,
-      
-      // Animation settings
-      speed: 600,
-      effect: 'slide',
-      
-      // Accessibility
-      a11y: {
-        enabled: true,
-        prevSlideMessage: 'Previous slide',
-        nextSlideMessage: 'Next slide',
-      },
+  // Try multiple selectors to find the hero section
+  let heroSection = document.querySelector('.hero') || 
+                   document.querySelector('.wp-block-group.hero') || 
+                   document.querySelector('.alignfull.hero') ||
+                   document.querySelector('.wp-block-group.alignfull') ||
+                   document.querySelector('.wp-block-group[class*="hero"]') ||
+                   document.querySelector('.wp-block-group:has(.hero-line)');
+                   
+  if (!heroSection) {
+    console.warn('Hero section not found. Available elements:', document.querySelectorAll('[class*="hero"]'));
+    // Try to find the parent container of hero-line elements
+    const heroLines = document.querySelectorAll('.hero-line');
+    if (heroLines.length > 0) {
+      heroSection = heroLines[0].closest('.wp-block-group');
+    }
+    
+    if (!heroSection) {
+      console.warn('Hero section not found');
+      return;
+    }
+  }
+
+  // Create plectrum trail elements
+  const trailElements = [];
+  const trailCount = 8; // Number of plectrum elements in trail
+
+  // Create logo elements
+  for (let i = 0; i < trailCount; i++) {
+    const logo = document.createElement('div');
+    logo.className = 'logo-trail';
+    logo.style.opacity = 0;
+    logo.style.position = 'fixed';
+    logo.style.pointerEvents = 'none';
+    logo.style.zIndex = '9999';
+    logo.style.width = '40px';
+    logo.style.height = '40px';
+    logo.style.background = 'var(--wp--preset--color--accent)';
+    logo.style.borderRadius = '50%';
+    logo.style.transformOrigin = 'center';
+    logo.style.boxShadow = '0 3px 12px rgba(184, 234, 63, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)';
+    logo.style.border = 'none';
+    logo.style.display = 'flex';
+    logo.style.alignItems = 'center';
+    logo.style.justifyContent = 'center';
+    logo.style.fontSize = '8px';
+    logo.style.fontWeight = 'bold';
+    logo.style.color = 'var(--wp--preset--color--accent-dark)';
+    logo.style.textAlign = 'center';
+    logo.style.lineHeight = '1';
+    logo.style.fontFamily = 'var(--wp--preset--font-family--manrope)';
+    
+    // Simple green circle - no inner content needed
+    logo.innerHTML = '';
+    
+    document.body.appendChild(logo);
+    trailElements.push(logo);
+  }
+  
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let isMouseInHero = false;
+
+  // Track mouse movement
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    // Check if mouse is in hero section
+    const heroRect = heroSection.getBoundingClientRect();
+    isMouseInHero = (
+      mouseX >= heroRect.left &&
+      mouseX <= heroRect.right &&
+      mouseY >= heroRect.top &&
+      mouseY <= heroRect.bottom
+    );
+    
+  });
+
+  // Mouse enter/leave hero section
+  heroSection.addEventListener('mouseenter', () => {
+    isMouseInHero = true;
+  });
+
+  heroSection.addEventListener('mouseleave', () => {
+    isMouseInHero = false;
+  });
+
+  // Animation loop with performance optimization
+  let animationId;
+  function animateTrail() {
+    if (isMouseInHero) {
+      trailElements.forEach((plectrum, index) => {
+        const delay = index * 0.1; // Stagger the trail elements
+        const targetX = mouseX - 20; // Center the logo (40px / 2)
+        const targetY = mouseY - 20; // Center the logo (40px / 2)
+        
+        gsap.to(plectrum, {
+          x: targetX,
+          y: targetY,
+          opacity: Math.max(0.3, 1 - (index * 0.1)), // Fade out along the trail
+          scale: Math.max(0.5, 1 - (index * 0.05)), // Scale down along the trail
+          rotation: Math.sin(Date.now() * 0.005 + index) * 20, // Gentle rotation
+          duration: 0.3 + (index * 0.05),
+          ease: 'power2.out',
+          delay: delay
+        });
+      });
+    } else {
+      // Fade out trail when not in hero section
+      trailElements.forEach((plectrum, index) => {
+        gsap.to(plectrum, {
+          opacity: 0,
+          scale: 0.3,
+          duration: 0.5,
+          delay: index * 0.05,
+          ease: 'power2.out'
+        });
+      });
+    }
+    
+    animationId = requestAnimationFrame(animateTrail);
+  }
+
+  // Start animation loop
+  animateTrail();
+  
+
+  // Add some interactive effects
+  heroSection.addEventListener('mousemove', (e) => {
+    // Add subtle rotation based on mouse position
+    const heroRect = heroSection.getBoundingClientRect();
+    const centerX = heroRect.left + heroRect.width / 2;
+    const centerY = heroRect.top + heroRect.height / 2;
+    
+    const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX) * (180 / Math.PI);
+    
+    trailElements.forEach((plectrum, index) => {
+      gsap.to(plectrum, {
+        rotation: angle + (index * 8) + Math.sin(Date.now() * 0.005 + index) * 5,
+        duration: 0.15,
+        ease: 'power2.out'
+      });
+    });
+  });
+
+  // Cleanup function
+  function cleanup() {
+    if (animationId) {
+      cancelAnimationFrame(animationId);
+    }
+    trailElements.forEach(plectrum => {
+      if (plectrum.parentNode) {
+        plectrum.parentNode.removeChild(plectrum);
+      }
     });
   }
+
+  // Cleanup on page unload
+  window.addEventListener('beforeunload', cleanup);
+});
+
+// Test if script is loading
+console.log('Script.js loaded at', new Date().toISOString());
+
+// GSAP Carousel Initialization for Over Ons Page - Based on CodePen
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('GSAP Carousel script loaded');
+  
+  // Check if GSAP is available
+  if (typeof gsap === 'undefined') {
+    console.warn('GSAP is not loaded');
+    return;
+  }
+  
+  console.log('GSAP is available');
+
+  // Function to initialize carousel
+  function initCarousel() {
+    console.log('Looking for carousel...');
+    
+    // Try finding the Swiper structure first
+    let carousel = document.querySelector('.over-ons-carousel .swiper-wrapper');
+    
+    if (!carousel) {
+      // Fallback to GSAP structure
+      carousel = document.querySelector('.over-ons-carousel .carousel-container .carousel-wrapper') ||
+                document.querySelector('.over-ons-carousel .carousel-wrapper');
+    }
+    
+    if (!carousel) {
+      console.log('Carousel not found');
+      return false;
+    }
+
+    // Try Swiper slides first
+    let slides = carousel.querySelectorAll('.swiper-slide');
+    if (slides.length === 0) {
+      // Fallback to GSAP slides
+      slides = carousel.querySelectorAll('.carousel-slide');
+    }
+    
+    if (slides.length === 0) {
+      console.log('No slides found');
+      return false;
+    }
+    
+    console.log('Carousel found with', slides.length, 'slides');
+    return { carousel, slides };
+  }
+
+  // Try to initialize immediately
+  let result = initCarousel();
+  if (result) {
+    initializeCarousel(result.carousel, result.slides);
+    return;
+  }
+
+  // If not found, wait a bit and try again
+  setTimeout(() => {
+    result = initCarousel();
+    if (result) {
+      initializeCarousel(result.carousel, result.slides);
+      return;
+    }
+    
+    // If still not found, use MutationObserver to wait for it
+    const observer = new MutationObserver(() => {
+      result = initCarousel();
+      if (result) {
+        initializeCarousel(result.carousel, result.slides);
+        observer.disconnect();
+      }
+    });
+    
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+    
+    // Timeout after 5 seconds
+    setTimeout(() => {
+      observer.disconnect();
+      console.warn('Carousel not found after 5 seconds');
+    }, 5000);
+  }, 500);
+  
+  function initializeCarousel(carousel, slides) {
+    console.log('Initializing carousel with', slides.length, 'slides');
+
+    // Set up carousel
+    gsap.set(carousel, {
+      display: 'flex',
+      gap: '0',
+      width: '100%',
+      overflow: 'hidden'
+    });
+
+    gsap.set(slides, {
+      flex: '0 0 300px',
+      height: '250px',
+      overflow: 'hidden'
+    });
+
+    // Set up images to fill their containers
+    const images = [];
+    slides.forEach(slide => {
+      const img = slide.querySelector('img');
+      if (img) images.push(img);
+    });
+    
+    gsap.set(images, {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover'
+    });
+
+    // Set up slides in a row
+    gsap.set(slides, {
+      x: (i) => i * 305 // 300px width + 5px margin
+    });
+
+  let currentIndex = 0;
+  let isAnimating = false;
+
+  // Animate to specific slide
+  function goToSlide(index) {
+    if (isAnimating) return;
+    
+    isAnimating = true;
+    currentIndex = Math.max(0, Math.min(index, slides.length - 1));
+    
+    gsap.to(slides, {
+      x: (i) => (i - currentIndex) * 305,
+      duration: 0.6,
+      ease: 'power2.out',
+      onComplete: () => {
+        isAnimating = false;
+      }
+    });
+  }
+
+  // Navigation buttons - try both Swiper and GSAP styles
+  const prevBtn = document.querySelector('.carousel-button-prev') || 
+                  document.querySelector('.swiper-button-prev');
+  const nextBtn = document.querySelector('.carousel-button-next') || 
+                  document.querySelector('.swiper-button-next');
+
+  console.log('Navigation buttons found:', { prevBtn: !!prevBtn, nextBtn: !!nextBtn });
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      goToSlide(currentIndex - 1);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      goToSlide(currentIndex + 1);
+    });
+  }
+
+  // Add keyboard navigation as fallback
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      goToSlide(currentIndex - 1);
+    } else if (e.key === 'ArrowRight') {
+      goToSlide(currentIndex + 1);
+    }
+  });
+
+  // Add click navigation on carousel
+  carousel.addEventListener('click', (e) => {
+    const rect = carousel.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const centerX = rect.width / 2;
+    
+    if (clickX < centerX) {
+      goToSlide(currentIndex - 1);
+    } else {
+      goToSlide(currentIndex + 1);
+    }
+  });
+
+  // Draggable functionality
+  if (typeof Draggable !== 'undefined') {
+    console.log('Initializing Draggable...');
+    let dragInstance = Draggable.create(carousel, {
+      type: 'x',
+      bounds: carousel.parentElement,
+      inertia: true,
+      onDrag: function() {
+        gsap.set(slides, {
+          x: (i) => (i - currentIndex) * 305 + this.x
+        });
+      },
+      onThrowComplete: function() {
+        const velocity = this.getVelocity('x');
+        if (velocity > 500) {
+          goToSlide(currentIndex - 1);
+        } else if (velocity < -500) {
+          goToSlide(currentIndex + 1);
+        } else {
+          goToSlide(currentIndex);
+        }
+      }
+    })[0];
+    console.log('Draggable initialized:', dragInstance);
+  } else {
+    console.log('Draggable not available');
+  }
+
+  // Auto-play
+  let autoPlayInterval;
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(() => {
+      if (currentIndex < slides.length - 1) {
+        goToSlide(currentIndex + 1);
+      } else {
+        goToSlide(0);
+      }
+    }, 3000);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayInterval) {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = null;
+    }
+  }
+
+  // Pause on hover
+  carousel.addEventListener('mouseenter', stopAutoPlay);
+  carousel.addEventListener('mouseleave', startAutoPlay);
+
+  // Initialize
+  goToSlide(0);
+  startAutoPlay();
+  }
+  
 });
 
 // About Section - Scroll-based Video Playback
@@ -857,4 +1207,36 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Start observing the lessen section
   lessenObserver.observe(lessenSection);
-});
+});/* Cache buster: Wed Oct 29 12:56:33 CET 2025 */
+/* Cache buster: Wed Oct 29 13:06:41 CET 2025 */
+/* Cache buster: Wed Oct 29 14:38:48 CET 2025 */
+/* Cache buster: Wed Oct 29 14:40:31 CET 2025 */
+/* Cache buster: Wed Oct 29 14:43:48 CET 2025 */
+/* Cache buster: Wed Oct 29 14:44:45 CET 2025 */
+/* Cache buster: Wed Oct 29 14:47:07 CET 2025 */
+/* Cache buster: Wed Oct 29 14:48:46 CET 2025 */
+/* Cache buster: Wed Oct 29 14:56:50 CET 2025 */
+/* Cache buster: Wed Oct 29 14:58:41 CET 2025 */
+/* Cache buster: Wed Oct 29 15:03:02 CET 2025 */
+/* Cache buster: Wed Oct 29 15:06:07 CET 2025 */
+/* Cache buster: Wed Oct 29 15:07:01 CET 2025 */
+/* Cache buster: Wed Oct 29 15:09:05 CET 2025 */
+/* Cache buster: Wed Oct 29 15:13:16 CET 2025 */
+/* Cache buster: Wed Oct 29 15:14:47 CET 2025 */
+/* Cache buster: Wed Oct 29 15:15:22 CET 2025 */
+/* Cache buster: Wed Oct 29 15:20:10 CET 2025 */
+/* Cache buster: Wed Oct 29 15:20:44 CET 2025 */
+/* Cache buster: Wed Oct 29 15:21:30 CET 2025 */
+/* Cache buster: Wed Oct 29 15:21:58 CET 2025 */
+/* Cache buster: Wed Oct 29 15:22:21 CET 2025 */
+/* Cache buster: Wed Oct 29 15:23:43 CET 2025 */
+/* Cache buster: Wed Oct 29 15:25:15 CET 2025 */
+/* Cache buster: Wed Oct 29 15:25:59 CET 2025 */
+/* Cache buster: Wed Oct 29 15:27:13 CET 2025 */
+/* Cache buster: Wed Oct 29 15:29:18 CET 2025 */
+/* Cache buster: Wed Oct 29 15:31:15 CET 2025 */
+/* Cache buster: Wed Oct 29 15:33:58 CET 2025 */
+/* Cache buster: Wed Oct 29 15:35:04 CET 2025 */
+/* Cache buster: Wed Oct 29 15:36:42 CET 2025 */
+/* Cache buster: Wed Oct 29 15:38:00 CET 2025 */
+/* Cache buster: Wed Oct 29 15:42:05 CET 2025 */

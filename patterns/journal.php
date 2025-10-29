@@ -1,14 +1,14 @@
 <?php
 /**
- * Title: Blog Section – Studio Journal Layout
- * Slug: ssom/blog
- * Categories: blog, featured
- * Keywords: blog, nieuws, artikelen, gitaar, studio, journal
+ * Title: Journal Section – Studio Journal Layout
+ * Slug: ssom/journal
+ * Categories: journal, featured
+ * Keywords: journal, nieuws, artikelen, gitaar, studio, blog
  */
 ?>
 
 <!-- wp:group {"layout":{"type":"constrained","contentSize":"1200px"}} -->
-<div class="wp-block-group blog-journal-section">
+<div class="wp-block-group journal-section">
 
   <!-- wp:paragraph -->
   <p class="section-intro">
@@ -20,11 +20,17 @@
   <h2 class="section-heading">Notes from the Studio</h2>
   <!-- /wp:heading -->
 
+  <!-- wp:paragraph -->
+  <p class="section-description">
+    Ontdek de laatste verhalen, tips en inzichten uit onze gitaarschool. Van technieken tot inspiratie, hier vind je alles wat je moet weten over gitaar spelen.
+  </p>
+  <!-- /wp:paragraph -->
+
   <!-- wp:query {"queryId":1,"query":{"perPage":2,"postType":"post","order":"desc","orderBy":"date"},"displayLayout":{"type":"list"}} -->
   <div class="wp-block-query">
     <!-- wp:post-template -->
-    <!-- wp:group {"className":"blog-post-card","style":{"spacing":{"padding":{"top":"2rem","bottom":"2rem","left":"0","right":"0"}}},"layout":{"type":"constrained"}} -->
-    <div class="wp-block-group blog-post-card">
+    <!-- wp:group {"className":"journal-post-card","style":{"spacing":{"padding":{"top":"2rem","bottom":"2rem","left":"0","right":"0"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group journal-post-card">
       
       <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"border":{"radius":"8px"}}} /-->
       

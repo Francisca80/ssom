@@ -20,8 +20,6 @@
 
 /* About Section Video - Larger Size */
 .about .wp-block-video {
-  max-width: 100%;
-  height: auto;
   display: flex;
   justify-content: center;
 }
@@ -65,8 +63,6 @@
 }
 
 .about .wp-block-column {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
 }
 
@@ -77,10 +73,8 @@
 
 /* Video column - much smaller */
 .about .wp-block-column:last-child {
-  display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
 }
 
 /* Mobile Responsive */

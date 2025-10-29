@@ -65,15 +65,18 @@
 /* Better image styling */
 .blog-column img {
   border-radius: 8px;
-  width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
 /* Default link hover effects */
 .blog-column a:hover {
-  color: var(--wp--preset--color--accent) !important;
+  color: var(--wp--preset--color--accent);
 }
+
+/* ========================================
+   HERO SECTION - NO ALIGNMENT OVERRIDES
+   ======================================== */
 
 /* ========================================
    RESPONSIVE BREAKPOINTS
@@ -84,29 +87,29 @@
   /* Hide Contact Us button on mobile */
   .wp-block-buttons.is-style-hidden-mobile,
   .is-style-hidden-mobile {
-    display: none !important;
-    visibility: hidden !important;
+    display: none;
+    visibility: hidden;
   }
   
   /* Header responsive padding */
   .wp-block-group.alignfull:has(.wp-block-site-logo),
   .wp-block-group.alignfull:has(.wp-block-site-title) {
-    padding-left: var(--wp--preset--spacing--20) !important;
-    padding-right: var(--wp--preset--spacing--20) !important;
+    padding-left: var(--wp--preset--spacing--20);
+    padding-right: var(--wp--preset--spacing--20);
   }
   
   /* Reset any unwanted padding on mobile - Header specific */
   .wp-block-group.alignfull:has(.wp-block-site-logo) .wp-block-group,
   .wp-block-group.alignfull:has(.wp-block-site-title) .wp-block-group {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
   }
   
   /* Keep logo and title left-aligned on mobile - Header specific */
   .wp-block-group.alignfull:has(.wp-block-site-logo) .wp-block-group .wp-block-group .wp-block-group:first-child,
   .wp-block-group.alignfull:has(.wp-block-site-title) .wp-block-group .wp-block-group .wp-block-group:first-child {
-    justify-content: flex-start !important;
-    text-align: left !important;
+    justify-content: flex-start;
+    text-align: left;
   }
   
   /* Center footer content on mobile */
@@ -126,25 +129,25 @@
   
   /* Center navigation menu items */
   .wp-block-group.alignfull .wp-block-navigation {
-    justify-content: center !important;
+    justify-content: center;
     text-align: center;
   }
   
   /* Center social links */
   .wp-block-group.alignfull .wp-block-social-links {
-    justify-content: center !important;
+    justify-content: center;
   }
   
   /* Let buttons use their natural alignment */
   
   /* Center headings - but respect theme.json alignment for h1/h2 */
   .wp-block-group.alignfull .wp-block-heading:not(h1):not(h2) {
-    text-align: center !important;
+    text-align: center;
   }
   
   /* Center paragraphs */
   .wp-block-group.alignfull p {
-    text-align: center !important;
+    text-align: center;
   }
   
   /* Responsive blog layout */
@@ -153,18 +156,20 @@
     flex-direction: column;
   }
   
+  /* Lessen section uses standard responsive behavior */
+  
   .blog-column img {
     height: 180px;
   }
   
   /* Responsive testimonial adjustments */
   .testimonial-carousel {
-    padding: var(--wp--preset--spacing--30) !important;
+    padding: var(--wp--preset--spacing--30);
   }
   
   /* Responsive marquee adjustments */
   .marquee-content {
-    font-size: var(--wp--preset--font-size--xl) !important;
+    font-size: var(--wp--preset--font-size--xl);
   }
   
   /* Contact form responsive adjustments */
@@ -188,13 +193,13 @@
 @media (max-width: 480px) {
   /* Header responsive padding for mobile */
   .wp-block-group.alignfull {
-    padding-left: var(--wp--preset--spacing--15) !important;
-    padding-right: var(--wp--preset--spacing--15) !important;
+    padding-left: var(--wp--preset--spacing--15);
+    padding-right: var(--wp--preset--spacing--15);
   }
   
   /* Responsive marquee adjustments */
   .marquee-content {
-    font-size: var(--wp--preset--font-size--large) !important;
+    font-size: var(--wp--preset--font-size--large);
   }
 }
 
@@ -203,8 +208,9 @@
   /* Responsive fix for About pattern card overlap */
   .wp-block-group[style*="margin-left:-4rem"],
   .wp-block-group[style*="margin-left: -4rem"] {
-    margin-left: 0 !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    margin-left: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
+/* Cache buster: Wed Oct 29 12:45:43 CET 2025 */

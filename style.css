@@ -25,6 +25,7 @@ Tags: block-patterns, fse, bold, clean
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: flex-start;
 }
 
 /* Page-specific styles moved to their own CSS files:
@@ -33,20 +34,19 @@ Tags: block-patterns, fse, bold, clean
 */
 
 .hero h1 {
-  font-size: clamp(3rem, 8vw, 8rem) !important;
+  font-size: clamp(3rem, 8vw, 8rem);
   font-family: var(--wp--preset--font-family--manrope);
-  font-weight: 900 !important;
-  line-height: 1 !important;
-  letter-spacing: -0.02em !important;
-  margin-bottom: 3rem !important;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
 }
 
-/* Hero elements use natural WordPress alignment */
-/* Override layout.css rules that force center alignment on alignfull groups */
-.hero .wp-block-group,
-.hero p,
-.hero .wp-block-paragraph {
-  text-align: left !important;
+/* Hero section - no alignment overrides */
+
+.hero.is-layout-constrained {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
 }
 
 
@@ -104,7 +104,7 @@ h3.wp-block-heading {
 .hero-line {
   position: relative;
   z-index: 2;
-  display: block;
+  display: inline-block;
   opacity: 0;
   transform: translateX(-100px);
   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -114,7 +114,6 @@ h3.wp-block-heading {
   margin-bottom: 1rem;
   cursor: pointer;
 }
-
 
 .hero-line:nth-child(1) {
   padding-top: 0.5rem;
@@ -181,9 +180,6 @@ h3.wp-block-heading {
   font-family: var(--wp--preset--font-family--manrope) !important;
 }
 
-.hero-line {
-  display: inline-block;
-}
 
 /* Responsive hero staff lines */
 @media (max-width: 768px) {
@@ -199,46 +195,13 @@ h3.wp-block-heading {
   .hero-line {
     transform: translateX(-80px);
   }
+  
+  /* Hero section mobile - no alignment overrides */
 }
 
-/* Button styling to prevent validation errors */
-.wp-block-button__link {
-    border-radius: 8px !important;
-    font-weight: 700 !important;
-    padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--30) !important;
-    text-decoration: none !important;
-    transition: all 0.3s ease !important;
-}
-
-/* CTA Gallery Image Styling */
-.cta-gallery-image-large img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.cta-gallery-image-small-1 img,
-.cta-gallery-image-small-2 img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-}
-
-/* CTA button specific styling */
-.cta-join-now-button .wp-block-button__link {
-    background-color: var(--wp--preset--color--accent) !important;
-    color: var(--wp--preset--color--accent-dark) !important;
-    padding: 1rem 1.5rem !important;
-    letter-spacing: 0.02em !important;
-}
-
-.cta-join-now-button .wp-block-button__link:hover {
-    background-color: var(--wp--preset--color--accent-dark) !important;
-    color: var(--wp--preset--color--accent) !important;
-    transform: translateY(-2px) !important;
-}
+/* Global Button Styles - Removed to allow theme.json button styles to work */
+/* Buttons now use theme.json styles defined in theme.json */
+/* Specific button overrides remain below for sections that need custom styling */
 
 /* Hide Contact Us button on mobile */
 @media (max-width: 768px) {
@@ -322,8 +285,12 @@ h3.wp-block-heading {
 }
 
 @keyframes marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .masonry-grid {
@@ -335,16 +302,6 @@ h3.wp-block-heading {
   break-inside: avoid;
   margin-bottom: 24px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
 }
 
 @keyframes marquee-reverse {
@@ -385,8 +342,6 @@ h3.wp-block-heading {
   }
 
   .wp-block-column img {
-    width: 100%;
-    height: auto;
     border-radius: 8px;
   }
 }
@@ -405,18 +360,11 @@ h3.wp-block-heading {
   color: inherit !important;
 }
 
-/* 3. Subtle fade-in on scroll */
+/* 3. Subtle fade-in on scroll - Disabled to prevent alignment issues */
 .lessen-block,
 .wp-block-column img {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.lessen-block.is-visible,
-.wp-block-column img.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 /* ============================
@@ -452,43 +400,6 @@ h3.wp-block-heading {
   position: relative;
 }
 
-.testimonial-nav .wp-block-button__link {
-  background-color: var(--wp--preset--color--accent) !important;
-  color: var(--wp--preset--color--accent-dark) !important;
-  border-radius: 8px !important;
-  padding: 0 var(--wp--preset--spacing--20) !important;
-  font-size: var(--wp--preset--font-size--large) !important;
-  line-height: 1.1 !important;
-  text-decoration: none !important;
-  transition: all 0.3s ease !important;
-}
-
-.testimonial-nav .wp-block-button__link:hover {
-  background-color: var(--wp--preset--color--accent-dark) !important;
-  color: var(--wp--preset--color--accent) !important;
-  transform: translateY(-2px) !important;
-}
-
-  
-/* Global Button Styles - All buttons use accent colors by default */
-.wp-block-button__link {
-  background-color: var(--wp--preset--color--accent) !important;
-  color: var(--wp--preset--color--accent-dark) !important;
-  border-radius: 8px !important;
-  padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--30) !important;
-  font-family: var(--wp--preset--font-family--manrope) !important;
-  font-weight: var(--wp--preset--font-weight--bold) !important;
-  font-size: var(--wp--preset--font-size--medium) !important;
-  text-decoration: none !important;
-  transition: all 0.3s ease !important;
-}
-
-.wp-block-button__link:hover {
-  background-color: var(--wp--preset--color--accent-dark) !important;
-  color: var(--wp--preset--color--accent) !important;
-  transform: translateY(-2px) !important;
-}
-
 /* Testimonial navigation buttons specific styling */
 .testimonial-nav .wp-block-button__link {
   padding: 0 var(--wp--preset--spacing--20) !important;
@@ -496,208 +407,7 @@ h3.wp-block-heading {
   line-height: 1.1 !important;
 }
 
-/* ============================
-   Studio Sound of Music – CTA Section
-   ============================ */
-
-/* CTA Section Styling */
-.cta-join {
-    background-color: #f5f5f5;
-    margin-top: var(--wp--preset--spacing--60);
-    margin-bottom: var(--wp--preset--spacing--60);
-    padding-top: var(--wp--preset--spacing--60);
-    padding-bottom: var(--wp--preset--spacing--60);
-}
-
-/* CTA Columns alignment */
-.cta-join .wp-block-columns {
-    align-items: stretch !important;
-    min-height: 500px !important;
-    display: flex !important;
-}
-
-.cta-join .wp-block-column {
-    display: flex !important;
-    flex-direction: column !important;
-    height: 100% !important;
-    flex: 1 !important;
-}
-
-/* CTA Column with dark background */
-.cta-join .wp-block-column:nth-child(2) {
-    background-color: var(--wp--preset--color--accent-dark) !important;
-    border-radius: 12px !important;
-    overflow: hidden !important;
-    padding: 2.5rem !important;
-    justify-content: center !important;
-    height: 100% !important;
-    min-height: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    flex: 1 !important;
-}
-
-.cta-join .wp-block-column:nth-child(2) h3,
-.cta-join .wp-block-column:nth-child(2) .wp-block-heading {
-    color: var(--wp--preset--color--base) !important;
-    font-weight: 900 !important;
-    font-size: 1.75rem !important;
-    margin-bottom: 1.5rem !important;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    flex-shrink: 0;
-}
-
-.cta-join .wp-block-column:nth-child(2) p {
-    color: var(--wp--preset--color--base) !important;
-    font-size: 1.125rem !important;
-    line-height: 1.6 !important;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    flex: 1;
-    margin-bottom: 0 !important;
-}
-
-/* Ensure CTA text content is visible */
-.cta-join .wp-block-column:nth-child(2) * {
-    color: var(--wp--preset--color--base) !important;
-}
-
-/* CTA Gallery Images */
-.cta-join .wp-block-image img {
-    border-radius: 12px;
-}
-
-/* Left column (first column) height */
-.cta-join .wp-block-column:first-child {
-    height: 100% !important;
-    min-height: 100% !important;
-    display: flex !important;
-    align-items: stretch !important;
-    padding: 0 !important;
-    flex: 1 !important;
-}
-
-.cta-join .wp-block-column:first-child .wp-block-image {
-    width: 100% !important;
-    height: 100% !important;
-    display: flex !important;
-    align-items: stretch !important;
-    margin: 0 !important;
-    flex: 1 !important;
-}
-
-.cta-join .wp-block-column:first-child .wp-block-image img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    border-radius: 12px !important;
-    flex: 1 !important;
-}
-
-/* Right column (gallery column) */
-.cta-join .wp-block-column:nth-child(3) {
-    justify-content: flex-start;
-    height: 100%;
-    min-height: 100%;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.cta-join .wp-block-column:nth-child(3) .wp-block-image:first-child {
-    margin-bottom: 1rem;
-    flex: 1;
-    min-height: 0;
-    display: flex;
-}
-
-.cta-join .wp-block-column:nth-child(3) .wp-block-image:last-child {
-    margin-bottom: 1.5rem;
-    flex: 1;
-    min-height: 0;
-    display: flex;
-}
-
-.cta-join .wp-block-column:nth-child(3) .wp-block-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-/* CTA Button - same width as images */
-.cta-join .wp-block-column:nth-child(3) .wp-block-button {
-    width: 100%;
-    margin: 0;
-    flex-shrink: 0;
-    margin-top: auto;
-}
-
-.cta-join .wp-block-column:nth-child(3) .wp-block-button__link {
-    width: 100%;
-    text-align: center;
-    border-radius: 12px;
-}
-
-
-.cta-gallery-columns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.cta-gallery-columns .wp-block-column {
-  flex: 1;
-  min-width: 0;
-}
-
-.cta-text-block h3 {
-  line-height: 1.2;
-}
-
-.cta-text-block p {
-  margin-bottom: 0;
-}
-
-/* CTA Gallery Images */
-.cta-gallery-image-large,
-.cta-gallery-image-small-1,
-.cta-gallery-image-small-2 {
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.cta-gallery-image-small-1 {
-  margin-bottom: 1rem;
-}
-
-.cta-gallery-image-small-2 {
-  margin-bottom: 1.5rem;
-}
-
-.cta-join-now-button a {
-  transition: all 0.2s ease;
-  border-radius: 8px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  padding: 1rem 1.5rem;
-}
-
-
-.cta-join-now-button a:hover {
-  background-color: color-mix(in srgb, var(--wp--preset--color--accent) 80%, #fff);
-  transform: translateY(-2px);
-}
-
-/* Responsive layout */
-@media (max-width: 768px) {
-  .cta-gallery-columns {
-    flex-direction: column;
-  }
-}
+/* CTA section styles moved to assets/css/cta.css */
 
 
 
@@ -723,6 +433,16 @@ h3.wp-block-heading {
     margin-bottom: 1.5rem;
 }
 
+.section-description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #666666;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    text-align: left;
+}
+
+
 /* ===========================
    Blog Header Alignment
    =========================== */
@@ -732,59 +452,10 @@ h3.wp-block-heading {
     text-align: left !important;
 }
 
-/* ===========================
-   Blog Section Styling
-   =========================== */
 
-.blog-journal-section .wp-block-query {
-  display: flex;
-  gap: 2rem;
-}
+/* Lessen section - matches other content sections */
 
-.blog-post-card {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.blog-post-card .wp-block-post-featured-image {
-  margin-bottom: 1rem;
-}
-
-.blog-post-card .wp-block-post-featured-image img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.blog-post-card .wp-block-post-title {
-  margin-bottom: 1rem;
-}
-
-.blog-post-card .wp-block-post-title a {
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.blog-post-card .wp-block-post-title a:hover {
-  color: var(--wp--preset--color--accent);
-}
-
-.blog-post-card .wp-block-post-excerpt {
-  flex: 1;
-}
-
-/* ===========================
-   Lessen Section Styling
-   =========================== */
-
-.lessen-section {
-  padding-top: var(--wp--preset--spacing--60);
-  padding-bottom: var(--wp--preset--spacing--60);
-  min-height: 100vh;
-}
+/* Lessen section - use standard WordPress column layout */
 
 .lessen-block {
   padding-top: var(--wp--preset--spacing--40);
@@ -794,6 +465,75 @@ h3.wp-block-heading {
   border-radius: 8px;
 }
 
+/* Ensure white text is visible on dark lessen blocks */
+.lessen-block.has-accent-dark-background-color,
+.lessen-block.has-accent-dark-background-color h3,
+.lessen-block.has-accent-dark-background-color p,
+.lessen-block.has-accent-dark-background-color .wp-block-heading,
+.lessen-block.has-accent-dark-background-color .wp-block-paragraph {
+  color: #ffffff !important;
+}
+
+.lessen-block.has-accent-dark-background-color .has-base-color,
+.lessen-block.has-accent-dark-background-color .has-text-color {
+  color: #ffffff !important;
+}
+
+/* Ensure dark text is visible on white lessen blocks */
+.lessen-block.has-base-background-color,
+.lessen-block.has-base-background-color h3,
+.lessen-block.has-base-background-color p,
+.lessen-block.has-base-background-color .wp-block-heading,
+.lessen-block.has-base-background-color .wp-block-paragraph {
+  color: var(--wp--preset--color--accent-dark) !important;
+}
+
+.lessen-block.has-base-background-color .has-accent-dark-color,
+.lessen-block.has-base-background-color .has-text-color {
+  color: var(--wp--preset--color--accent-dark) !important;
+}
+
+/* Ensure colors fill entire block area */
+.lessen-block {
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+.lessen-block .wp-block-group {
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+/* Force background colors to be visible */
+.lessen-block.has-accent-background-color {
+  background-color: var(--wp--preset--color--accent) !important;
+}
+
+.lessen-block.has-accent-dark-background-color {
+  background-color: var(--wp--preset--color--accent-dark) !important;
+}
+
+.lessen-block.has-base-background-color {
+  background-color: var(--wp--preset--color--base) !important;
+}
+
+/* Force text colors to be visible */
+.lessen-block.has-accent-background-color h3,
+.lessen-block.has-accent-background-color p {
+  color: var(--wp--preset--color--accent-dark) !important;
+}
+
+.lessen-block.has-accent-dark-background-color h3,
+.lessen-block.has-accent-dark-background-color p {
+  color: var(--wp--preset--color--base) !important;
+}
+
+.lessen-block.has-base-background-color h3,
+.lessen-block.has-base-background-color p {
+  color: var(--wp--preset--color--accent-dark) !important;
+}
+
+
 /* ===========================
    Contact Section Styling
    =========================== */
@@ -802,22 +542,46 @@ h3.wp-block-heading {
   position: relative;
 }
 
-.contact-left h2 {
+/* Contact section text styling - consolidated */
+.contact-section .section-heading,
+.contact-section h2.section-heading,
+.contact-left .section-heading,
+.wp-block-group.contact-section .section-heading,
+.wp-block-group.contact-section h2.section-heading {
   font-family: var(--wp--preset--font-family--manrope);
   font-weight: 900;
   letter-spacing: -0.02em;
-  color: #000 !important;
+  color: #000000 !important;
 }
 
-.contact-left p {
-  color: #000 !important;
+.contact-section .section-description,
+.contact-left .section-description {
+  color: #000000 !important;
+}
+
+.contact-section .section-intro,
+.contact-left .section-intro {
+  color: #000000 !important;
+}
+
+/* Contact section text color override */
+.contact-section,
+.contact-section * {
+  color: #000000 !important;
+}
+
+
+/* Override footer.css white text rule for contact section */
+.wp-block-group.alignfull.has-background.has-text-color.contact-section,
+.wp-block-group.alignfull.has-background.has-text-color.contact-section * {
+  color: #000000 !important;
 }
 
 .contact-form-wrapper {
   background: #f9f9f9;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -829,10 +593,12 @@ h3.wp-block-heading {
 }
 
 .contact-form-wrapper h3 {
-  color: #000 !important;
+  color: #000000 !important;
   text-align: center;
   width: 100%;
 }
+
+
 
 /* Contact Form 7 field styling */
 .wpcf7 form {
@@ -897,7 +663,8 @@ h3.wp-block-heading {
   text-align: center;
 }
 
-/* Nuclear option - Force all contact section text to be black */
+/* Contact Section - Consolidated text color overrides */
+.contact-section,
 .contact-section *,
 .contact-section h1,
 .contact-section h2,
@@ -912,137 +679,25 @@ h3.wp-block-heading {
 .contact-section .wp-block-heading,
 .contact-section .wp-block-paragraph,
 .contact-section .wp-block-column,
-.contact-section .wp-block-group {
-  color: #000000 !important;
-}
-
-/* Force form elements to be black */
+.contact-section .wp-block-group,
 .contact-section .wpcf7 *,
 .contact-section .wpcf7 input,
 .contact-section .wpcf7 textarea,
 .contact-section .wpcf7 select,
 .contact-section .wpcf7 label,
-.contact-section .wpcf7 p {
+.contact-section .wpcf7 p,
+.contact-section .wpcf7 span {
   color: #000000 !important;
 }
 
-/* Force submit button styling */
+/* Contact Form 7 submit button */
 .contact-section .wpcf7 input[type="submit"] {
   background: var(--wp--preset--color--accent) !important;
   color: #000000 !important;
   border: none !important;
 }
 
-/* Override any WordPress block styling */
-body .contact-section .wp-block-group.contact-form-wrapper *,
-body .contact-section .wp-block-group.contact-form-wrapper h3,
-body .contact-section .wp-block-group.contact-form-wrapper p,
-body .contact-section .wp-block-group.contact-form-wrapper input,
-body .contact-section .wp-block-group.contact-form-wrapper textarea,
-body .contact-section .wp-block-group.contact-form-wrapper select {
-  color: #000000 !important;
-}
-
-/* Maximum specificity override - Nuclear option */
-html body .wp-block-group.contact-section *,
-html body .wp-block-group.contact-section h1,
-html body .wp-block-group.contact-section h2,
-html body .wp-block-group.contact-section h3,
-html body .wp-block-group.contact-section h4,
-html body .wp-block-group.contact-section h5,
-html body .wp-block-group.contact-section h6,
-html body .wp-block-group.contact-section p,
-html body .wp-block-group.contact-section a,
-html body .wp-block-group.contact-section div,
-html body .wp-block-group.contact-section span,
-html body .wp-block-group.contact-section input,
-html body .wp-block-group.contact-section textarea,
-html body .wp-block-group.contact-section select,
-html body .wp-block-group.contact-section label {
-  color: #000000 !important;
-}
-
-/* Override Contact Form 7 with maximum specificity */
-html body .wp-block-group.contact-section .wpcf7 *,
-html body .wp-block-group.contact-section .wpcf7 input,
-html body .wp-block-group.contact-section .wpcf7 textarea,
-html body .wp-block-group.contact-section .wpcf7 select,
-html body .wp-block-group.contact-section .wpcf7 label,
-html body .wp-block-group.contact-section .wpcf7 p,
-html body .wp-block-group.contact-section .wpcf7 span {
-  color: #000000 !important;
-}
-
-/* Force form wrapper content */
-html body .wp-block-group.contact-section .wp-block-group.contact-form-wrapper *,
-html body .wp-block-group.contact-section .wp-block-group.contact-form-wrapper h3,
-html body .wp-block-group.contact-section .wp-block-group.contact-form-wrapper p,
-html body .wp-block-group.contact-section .wp-block-group.contact-form-wrapper input,
-html body .wp-block-group.contact-section .wp-block-group.contact-form-wrapper textarea,
-html body .wp-block-group.contact-section .wp-block-group.contact-form-wrapper select {
-  color: #000000 !important;
-}
-
-/* Override the white text rule specifically for contact section */
-.wp-block-group.alignfull.has-background.has-text-color.contact-section,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section *,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section h1,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section h2,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section h3,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section h4,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section h5,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section h6,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section p,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section a,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section div,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section span,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section .wp-block-heading,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section .wp-block-paragraph,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section .wp-block-column,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section .wp-block-social-links,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section .wp-block-buttons,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section .wp-block-button,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section .wp-block-button__link,
-.wp-block-group.alignfull.has-background.has-text-color.contact-section .hero-line {
-  color: #000000 !important;
-}
-
 /* Footer styles moved to assets/css/footer.css */
-
-/* Fix hero-line in footer - Override conflicting styles from hero section */
-footer .hero-line {
-  color: #ffffff !important;
-  position: static !important;
-  opacity: 1 !important;
-  transform: none !important;
-  left: auto !important;
-  top: auto !important;
-  z-index: auto !important;
-}
-
-/* Fallback: Force hero-line white in footer - Maximum specificity */
-html body .wp-block-group.alignfull.has-background.has-text-color .hero-line,
-html body footer .hero-line,
-html body .footer-section .hero-line,
-[style*="background-color:var(--wp--preset--color--accent-dark)"] .hero-line {
-  color: #ffffff !important;
-}
-
-/* Nuclear option - Force hero-line white ONLY in footer contexts */
-footer .hero-line,
-.footer-section .hero-line,
-.wp-block-group.alignfull.has-background.has-text-color .hero-line,
-[style*="background-color:var(--wp--preset--color--accent-dark)"] .hero-line {
-  color: #ffffff !important;
-}
-
-/* Ultra-specific footer hero-line targeting */
-footer h3 .hero-line,
-.wp-block-group.alignfull.has-background.has-text-color h3 .hero-line,
-.wp-block-column .hero-line {
-  color: #ffffff !important;
-  color: white !important;
-}
 
 
 /* Fallback CSS animation for typewriter effect */
@@ -1109,3 +764,76 @@ footer h3 .hero-line,
 }
 
 
+/* Cache buster: Wed Oct 29 10:11:10 CET 2025 */
+/* Cache buster: Wed Oct 29 10:30:32 CET 2025 */
+/* Cache buster: Wed Oct 29 10:31:13 CET 2025 */
+/* Cache buster: Wed Oct 29 10:32:45 CET 2025 */
+/* Cache buster: Wed Oct 29 10:33:19 CET 2025 */
+/* Cache buster: Wed Oct 29 10:33:56 CET 2025 */
+/* Cache buster: Wed Oct 29 10:34:29 CET 2025 */
+/* Cache buster: Wed Oct 29 10:34:53 CET 2025 */
+/* Cache buster: Wed Oct 29 10:35:28 CET 2025 */
+/* Cache buster: Wed Oct 29 10:35:57 CET 2025 */
+/* Cache buster: Wed Oct 29 10:37:03 CET 2025 */
+/* Cache buster: Wed Oct 29 10:38:05 CET 2025 */
+/* Cache buster: Wed Oct 29 10:38:47 CET 2025 */
+/* Cache buster: Wed Oct 29 10:39:39 CET 2025 */
+/* Cache buster: Wed Oct 29 10:41:10 CET 2025 */
+/* Cache buster: Wed Oct 29 10:42:33 CET 2025 */
+/* Cache buster: Wed Oct 29 10:43:23 CET 2025 */
+/* Cache buster: Wed Oct 29 10:44:04 CET 2025 */
+/* Cache buster: Wed Oct 29 10:44:50 CET 2025 */
+/* Cache buster: Wed Oct 29 10:45:29 CET 2025 */
+/* Cache buster: Wed Oct 29 10:50:12 CET 2025 */
+/* Cache buster: Wed Oct 29 10:51:24 CET 2025 */
+/* Cache buster: Wed Oct 29 10:53:59 CET 2025 */
+/* Cache buster: Wed Oct 29 10:56:17 CET 2025 */
+/* Cache buster: Wed Oct 29 10:57:56 CET 2025 */
+/* Cache buster: Wed Oct 29 11:00:08 CET 2025 */
+/* Cache buster: Wed Oct 29 11:01:09 CET 2025 */
+/* Cache buster: Wed Oct 29 11:44:27 CET 2025 */
+/* Cache buster: Wed Oct 29 12:46:41 CET 2025 */
+/* Cache buster: Wed Oct 29 13:30:05 CET 2025 */
+/* Cache buster: Wed Oct 29 14:31:22 CET 2025 */
+/* Cache buster: Wed Oct 29 14:33:27 CET 2025 */
+
+/* Logo Mouse Trail Styles */
+.logo-trail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  background: var(--wp--preset--color--accent);
+  border-radius: 50%;
+  transform-origin: center;
+  box-shadow: 0 3px 12px rgba(184, 234, 63, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: bold;
+  color: var(--wp--preset--color--accent-dark);
+  text-align: center;
+  line-height: 1;
+  font-family: var(--wp--preset--font-family--manrope);
+  transition: all 0.1s ease;
+}
+
+/* Hero section mouse trail container */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Enhanced logo trail on hover */
+.hero:hover .logo-trail {
+  box-shadow: 0 4px 16px rgba(184, 234, 63, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+/* Cache buster: Wed Oct 29 14:47:07 CET 2025 */
+/* Cache buster: Wed Oct 29 14:48:46 CET 2025 */
+/* Cache buster: Wed Oct 29 14:56:50 CET 2025 */
+/* Cache buster: Wed Oct 29 14:58:41 CET 2025 */
+/* Cache buster: Wed Oct 29 15:06:07 CET 2025 */

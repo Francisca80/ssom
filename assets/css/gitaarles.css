@@ -61,13 +61,14 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Extras section columns - no borders, no motion */
+/* Extras section columns - clean white background, no card styling */
 .gitaarles-extras .wp-block-column {
     border: none;
     padding: 0;
-    background: transparent;
+    background: var(--wp--preset--color--base);
     transition: none;
     transform: none;
+    box-shadow: none;
 }
 
 .gitaarles-extras .wp-block-column:hover {
@@ -100,28 +101,15 @@
     opacity: 0.8;
 }
 
-/* Buttons */
+/* Buttons - Use theme.json styles */
 .gitaarles-page .wp-block-button {
     margin-top: var(--wp--preset--spacing--20);
 }
 
-.gitaarles-page .wp-block-button__link {
-    background-color: var(--wp--preset--color--accent);
-    color: var(--wp--preset--color--accent-dark);
-    border-radius: 8px;
-    padding: var(--wp--preset--spacing--15) var(--wp--preset--spacing--30);
-    font-weight: var(--wp--preset--font-weight--bold);
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
+/* Let theme.json handle button styling, only add width for full-width buttons */
+.gitaarles-page .wp-block-button__width-100 .wp-block-button__link {
     width: 100%;
     text-align: center;
-}
-
-.gitaarles-page .wp-block-button__link:hover {
-    background-color: var(--wp--preset--color--accent-dark);
-    color: var(--wp--preset--color--base);
-    transform: translateY(-2px);
 }
 
 /* Separator */
@@ -131,7 +119,7 @@
     opacity: 0.3;
 }
 
-/* Lists */
+/* Lists - Remove custom checkmarks to avoid double checkmarks */
 .gitaarles-page .wp-block-list {
     margin: var(--wp--preset--spacing--20) 0;
 }
@@ -139,11 +127,15 @@
 .gitaarles-page .wp-block-list li {
     color: var(--wp--preset--color--text);
     margin-bottom: var(--wp--preset--spacing--10);
+}
+
+/* Only add checkmarks for lists that don't have the checkmark-list style */
+.gitaarles-page .wp-block-list:not(.is-style-checkmark-list) li {
     padding-left: var(--wp--preset--spacing--20);
     position: relative;
 }
 
-.gitaarles-page .wp-block-list li::before {
+.gitaarles-page .wp-block-list:not(.is-style-checkmark-list) li::before {
     content: "✓";
     color: var(--wp--preset--color--accent);
     font-weight: bold;
@@ -171,21 +163,22 @@
     margin-bottom: var(--wp--preset--spacing--30);
 }
 
-/* Extras Columns */
+/* Extras Columns - Simple white background, no card styling */
 .gitaarles-extras .wp-block-columns {
     gap: var(--wp--preset--spacing--40);
     padding: var(--wp--preset--spacing--30);
 }
 
-
+/* Remove card hover effects from extras section */
 .gitaarles-extras .wp-block-column:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: none;
+    box-shadow: none;
 }
 
-/* Extras List */
+/* Extras List - Add checkmarks */
 .gitaarles-extras .wp-block-list {
     margin: var(--wp--preset--spacing--20) 0;
+    list-style: none;
 }
 
 .gitaarles-extras .wp-block-list li {
@@ -194,7 +187,6 @@
     text-align: left;
     padding-left: var(--wp--preset--spacing--20);
     position: relative;
-    list-style: none;
 }
 
 .gitaarles-extras .wp-block-list li::before {
@@ -209,8 +201,6 @@
 /* Image */
 .gitaarles-page .wp-block-image img {
     border-radius: 8px;
-    width: 100%;
-    height: auto;
     object-fit: cover;
 }
 
@@ -228,3 +218,6 @@
         padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--30);
     }
 }
+/* Cache buster: Wed Oct 29 12:48:29 CET 2025 */
+/* Cache buster: Wed Oct 29 12:50:14 CET 2025 */
+/* Cache buster: Wed Oct 29 12:53:02 CET 2025 */

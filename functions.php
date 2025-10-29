@@ -15,12 +15,11 @@ add_action( 'wp_enqueue_scripts', function() {
                 // Enqueue GSAP TextPlugin for text animations
                 wp_enqueue_script( 'gsap-textplugin', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js', array('gsap'), time(), true );
                 
-                // Enqueue Swiper.js for carousels
-                wp_enqueue_style( 'swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0' );
-                wp_enqueue_script( 'swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true );
+                // Enqueue GSAP Draggable for carousel drag/swipe functionality
+                wp_enqueue_script( 'gsap-draggable', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js', array('gsap'), time(), true );
                 
                 // Enqueue custom animations with cache busting
-                wp_enqueue_script( 'ssom-animations', get_stylesheet_directory_uri() . '/script.js', array('gsap', 'gsap-scrolltrigger', 'gsap-textplugin', 'swiper-js'), time(), true );
+                wp_enqueue_script( 'ssom-animations', get_stylesheet_directory_uri() . '/script.js', array('gsap', 'gsap-scrolltrigger', 'gsap-textplugin', 'gsap-draggable'), time(), true );
     
     // Enqueue page-specific CSS
     wp_enqueue_style( 'about-css', get_stylesheet_directory_uri() . '/assets/css/about.css', array('child-style'), time() );
@@ -28,9 +27,10 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style( 'over-page-css', get_stylesheet_directory_uri() . '/assets/css/over.css', array('child-style'), time() );
     wp_enqueue_style( 'footer-css', get_stylesheet_directory_uri() . '/assets/css/footer.css', array('child-style'), time() . '.1' );
     wp_enqueue_style( 'header-css', get_stylesheet_directory_uri() . '/assets/css/header.css', array('child-style'), time() );
-    wp_enqueue_style( 'contact-page-css', get_stylesheet_directory_uri() . '/assets/css/contact.css', array('child-style'), time() );
     wp_enqueue_style( 'blog-css', get_stylesheet_directory_uri() . '/assets/css/blog.css', array('child-style'), time() );
     wp_enqueue_style( 'lessen-css', get_stylesheet_directory_uri() . '/assets/css/lessen.css', array('child-style'), time() );
+    wp_enqueue_style( 'cta-css', get_stylesheet_directory_uri() . '/assets/css/cta.css', array('child-style'), time() );
+    wp_enqueue_style( 'journal-css', get_stylesheet_directory_uri() . '/assets/css/journal.css', array('child-style'), time() );
 
     // Enqueue page-specific JS
     wp_enqueue_script( 'contact-page-js', get_stylesheet_directory_uri() . '/assets/js/contact.js', array('child-style'), time(), true );
@@ -126,6 +126,9 @@ add_action( 'init', function () {
 	register_block_pattern_category( 'blog', [
 		'label' => __( 'Blog Sections', 'ssom' ),
 	] );
+	register_block_pattern_category( 'journal', [
+		'label' => __( 'Journal Sections', 'ssom' ),
+	] );
 	register_block_pattern_category( 'lessen', [
 		'label' => __( 'Lessen Sections', 'ssom' ),
 	] );
@@ -163,4 +166,4 @@ add_action( 'init', function() {
             'categories'  => array( 'ssom-blog-home' ),
         )
     );
-} );
+} );/* Cache buster: Wed Oct 29 13:31:30 CET 2025 */

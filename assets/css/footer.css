@@ -119,74 +119,84 @@ footer p a:hover {
   opacity: 0.6;
 }
 
-/* Force all footer text to be white/light - Maximum specificity */
-.wp-block-group.alignfull.has-background.has-text-color,
-.wp-block-group.alignfull.has-background.has-text-color *,
-.wp-block-group.alignfull.has-background.has-text-color h1,
-.wp-block-group.alignfull.has-background.has-text-color h2,
-.wp-block-group.alignfull.has-background.has-text-color h3,
-.wp-block-group.alignfull.has-background.has-text-color h4,
-.wp-block-group.alignfull.has-background.has-text-color h5,
-.wp-block-group.alignfull.has-background.has-text-color h6,
-.wp-block-group.alignfull.has-background.has-text-color p,
-.wp-block-group.alignfull.has-background.has-text-color a,
-.wp-block-group.alignfull.has-background.has-text-color div,
-.wp-block-group.alignfull.has-background.has-text-color span,
-.wp-block-group.alignfull.has-background.has-text-color .wp-block-heading,
-.wp-block-group.alignfull.has-background.has-text-color .wp-block-paragraph,
-.wp-block-group.alignfull.has-background.has-text-color .wp-block-column,
-.wp-block-group.alignfull.has-background.has-text-color .wp-block-social-links,
-.wp-block-group.alignfull.has-background.has-text-color .wp-block-buttons,
-.wp-block-group.alignfull.has-background.has-text-color .wp-block-button,
-.wp-block-group.alignfull.has-background.has-text-color .wp-block-button__link,
-.wp-block-group.alignfull.has-background.has-text-color .hero-line {
+/* Force all footer text to be white/light - Footer specific only */
+/* Footer-specific white text for all elements */
+footer .wp-block-group.alignfull.has-background.has-text-color h1,
+footer .wp-block-group.alignfull.has-background.has-text-color h2,
+footer .wp-block-group.alignfull.has-background.has-text-color h3,
+footer .wp-block-group.alignfull.has-background.has-text-color h4,
+footer .wp-block-group.alignfull.has-background.has-text-color h5,
+footer .wp-block-group.alignfull.has-background.has-text-color h6,
+footer .wp-block-group.alignfull.has-background.has-text-color p,
+footer .wp-block-group.alignfull.has-background.has-text-color a,
+footer .wp-block-group.alignfull.has-background.has-text-color div,
+footer .wp-block-group.alignfull.has-background.has-text-color span,
+footer .wp-block-group.alignfull.has-background.has-text-color .wp-block-heading,
+footer .wp-block-group.alignfull.has-background.has-text-color .wp-block-paragraph,
+footer .wp-block-group.alignfull.has-background.has-text-color .wp-block-column,
+footer .wp-block-group.alignfull.has-background.has-text-color .wp-block-social-links,
+footer .wp-block-group.alignfull.has-background.has-text-color .wp-block-buttons,
+footer .wp-block-group.alignfull.has-background.has-text-color .wp-block-button,
+footer .wp-block-group.alignfull.has-background.has-text-color .hero-line,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color h1,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color h2,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color h3,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color h4,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color h5,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color h6,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color p,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color a,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color div,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color span,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color .wp-block-heading,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color .wp-block-paragraph,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color .wp-block-column,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color .wp-block-social-links,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color .wp-block-buttons,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color .wp-block-button,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color .hero-line {
   color: #ffffff !important;
 }
 
-/* Additional overrides for specific elements */
-body .wp-block-group.alignfull.has-background.has-text-color h3,
-body .wp-block-group.alignfull.has-background.has-text-color h4,
-body .wp-block-group.alignfull.has-background.has-text-color p,
-body .wp-block-group.alignfull.has-background.has-text-color a,
-body .wp-block-group.alignfull.has-background.has-text-color .hero-line {
+/* Footer button styling - Simple and clean */
+footer .wp-block-button__link {
+  background-color: #b8ea3f !important;
+  color: #000000 !important;
+  font-family: var(--wp--preset--font-family--manrope) !important;
+  font-weight: var(--wp--preset--font-weight--bold) !important;
+  font-size: var(--wp--preset--font-size--medium) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--30) !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+footer .wp-block-button__link:hover {
+  background-color: #000000 !important;
+  color: #b8ea3f !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Footer white text - consolidated */
+footer .wp-block-group.alignfull.has-background.has-text-color *,
+footer .wp-block-group.has-background.has-text-color *,
+.footer-section .wp-block-group.alignfull.has-background.has-text-color *,
+.footer-section .wp-block-group.has-background.has-text-color * {
   color: #ffffff !important;
 }
 
-/* Force white text on all footer elements */
-html body .wp-block-group.alignfull.has-background.has-text-color * {
-  color: #ffffff !important;
-}
 
-/* Ensure hero-line is white in footer - High specificity for all templates */
-.footer-section .hero-line,
+/* Footer hero-line styling - consolidated */
 footer .hero-line,
-.wp-block-group.alignfull.has-background.has-text-color .hero-line,
-body .wp-block-group.alignfull.has-background.has-text-color .hero-line,
-html body .wp-block-group.alignfull.has-background.has-text-color .hero-line {
+.footer-section .hero-line {
   color: #ffffff !important;
-}
-
-/* Nuclear option - force white on everything in footer */
-[style*="background-color:var(--wp--preset--color--accent-dark)"] *,
-[style*="background-color:var(--wp--preset--color--accent-dark)"] h1,
-[style*="background-color:var(--wp--preset--color--accent-dark)"] h2,
-[style*="background-color:var(--wp--preset--color--accent-dark)"] h3,
-[style*="background-color:var(--wp--preset--color--accent-dark)"] h4,
-[style*="background-color:var(--wp--preset--color--accent-dark)"] h5,
-[style*="background-color:var(--wp--preset--color--accent-dark)"] h6,
-[style*="background-color:var(--wp--preset--color--accent-dark)"] p,
-[style*="background-color:var(--wp--preset--color--accent-dark)"] a,
-[style*="background-color:var(--wp--preset--color--accent-dark)"] div,
-[style*="background-color:var(--wp--preset--color--accent-dark)"] span,
-[style*="background-color:var(--wp--preset--color--accent-dark)"] .hero-line {
-  color: #ffffff !important;
-}
-
-/* Maximum specificity for hero-line in footer across all templates */
-html body .wp-block-group.alignfull.has-background.has-text-color .hero-line,
-html body footer .hero-line,
-html body .footer-section .hero-line {
-  color: #ffffff !important;
+  position: static !important;
+  opacity: 1 !important;
+  transform: none !important;
+  left: auto !important;
+  top: auto !important;
+  z-index: auto !important;
 }
 
 /* Responsive Design */
@@ -211,3 +221,11 @@ html body .footer-section .hero-line {
     color: black !important;
   }
 }
+/* Cache buster: Wed Oct 29 10:55:50 CET 2025 */
+/* Cache buster: Wed Oct 29 13:30:22 CET 2025 */
+/* Cache buster: Wed Oct 29 13:33:05 CET 2025 */
+/* Cache buster: Wed Oct 29 13:34:15 CET 2025 */
+/* Cache buster: Wed Oct 29 13:37:24 CET 2025 */
+/* Cache buster: Wed Oct 29 13:39:30 CET 2025 */
+/* Cache buster: Wed Oct 29 13:40:56 CET 2025 */
+/* Cache buster: Wed Oct 29 14:31:22 CET 2025 */

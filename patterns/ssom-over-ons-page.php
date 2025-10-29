@@ -80,18 +80,22 @@
 
 	<!-- wp:group {"className":"over-ons-carousel","layout":{"type":"constrained","contentSize":"1200px"}} -->
 	<div class="wp-block-group over-ons-carousel">
-		<!-- wp:heading {"textAlign":"center"} -->
-		<h2 class="wp-block-heading has-text-align-center">Bekijk onze studio</h2>
+		<!-- wp:paragraph -->
+		<p class="section-intro">
+			Studio
+		</p>
+		<!-- /wp:paragraph -->
+		
+		<!-- wp:heading {"level":2} -->
+		<h2 class="section-heading">Bekijk onze studio</h2>
 		<!-- /wp:heading -->
 
-		<!-- wp:group {"className":"swiper-container","layout":{"type":"constrained"}} -->
-		<div class="wp-block-group swiper-container">
-			<!-- wp:group {"className":"swiper","layout":{"type":"constrained"}} -->
-			<div class="wp-block-group swiper">
-				<!-- wp:group {"className":"swiper-wrapper","layout":{"type":"constrained"}} -->
-				<div class="wp-block-group swiper-wrapper">
-					<!-- wp:group {"className":"swiper-slide","layout":{"type":"constrained"}} -->
-					<div class="wp-block-group swiper-slide">
+		<!-- wp:group {"className":"carousel-container","layout":{"type":"constrained"}} -->
+		<div class="wp-block-group carousel-container">
+			<!-- wp:group {"className":"carousel-wrapper","layout":{"type":"constrained"}} -->
+			<div class="wp-block-group carousel-wrapper">
+					<!-- wp:group {"className":"carousel-slide","layout":{"type":"constrained"}} -->
+					<div class="wp-block-group carousel-slide">
 						<!-- wp:image {"id":44,"sizeSlug":"medium","linkDestination":"none"} -->
 						<figure class="wp-block-image size-medium">
 							<img src="http://ssom.local/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-10-1024x683.jpg" alt="Studio 1" class="wp-image-44"/>
@@ -100,8 +104,8 @@
 					</div>
 					<!-- /wp:group -->
 
-					<!-- wp:group {"className":"swiper-slide","layout":{"type":"constrained"}} -->
-					<div class="wp-block-group swiper-slide">
+					<!-- wp:group {"className":"carousel-slide","layout":{"type":"constrained"}} -->
+					<div class="wp-block-group carousel-slide">
 						<!-- wp:image {"id":45,"sizeSlug":"medium","linkDestination":"none"} -->
 						<figure class="wp-block-image size-medium">
 							<img src="http://ssom.local/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-4-683x1024.jpg" alt="Studio 2" class="wp-image-45"/>
@@ -110,8 +114,8 @@
 					</div>
 					<!-- /wp:group -->
 
-					<!-- wp:group {"className":"swiper-slide","layout":{"type":"constrained"}} -->
-					<div class="wp-block-group swiper-slide">
+					<!-- wp:group {"className":"carousel-slide","layout":{"type":"constrained"}} -->
+					<div class="wp-block-group carousel-slide">
 						<!-- wp:image {"id":46,"sizeSlug":"medium","linkDestination":"none"} -->
 						<figure class="wp-block-image size-medium">
 							<img src="http://ssom.local/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-10-1024x683.jpg" alt="Studio 3" class="wp-image-46"/>
@@ -120,8 +124,8 @@
 					</div>
 					<!-- /wp:group -->
 
-					<!-- wp:group {"className":"swiper-slide","layout":{"type":"constrained"}} -->
-					<div class="wp-block-group swiper-slide">
+					<!-- wp:group {"className":"carousel-slide","layout":{"type":"constrained"}} -->
+					<div class="wp-block-group carousel-slide">
 						<!-- wp:image {"id":47,"sizeSlug":"medium","linkDestination":"none"} -->
 						<figure class="wp-block-image size-medium">
 							<img src="http://ssom.local/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-4-683x1024.jpg" alt="Studio 4" class="wp-image-47"/>
@@ -130,8 +134,8 @@
 					</div>
 					<!-- /wp:group -->
 
-					<!-- wp:group {"className":"swiper-slide","layout":{"type":"constrained"}} -->
-					<div class="wp-block-group swiper-slide">
+					<!-- wp:group {"className":"carousel-slide","layout":{"type":"constrained"}} -->
+					<div class="wp-block-group carousel-slide">
 						<!-- wp:image {"id":48,"sizeSlug":"medium","linkDestination":"none"} -->
 						<figure class="wp-block-image size-medium">
 							<img src="http://ssom.local/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-10-1024x683.jpg" alt="Studio 5" class="wp-image-48"/>
@@ -140,8 +144,8 @@
 					</div>
 					<!-- /wp:group -->
 
-					<!-- wp:group {"className":"swiper-slide","layout":{"type":"constrained"}} -->
-					<div class="wp-block-group swiper-slide">
+					<!-- wp:group {"className":"carousel-slide","layout":{"type":"constrained"}} -->
+					<div class="wp-block-group carousel-slide">
 						<!-- wp:image {"id":49,"sizeSlug":"medium","linkDestination":"none"} -->
 						<figure class="wp-block-image size-medium">
 							<img src="http://ssom.local/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-4-683x1024.jpg" alt="Studio 6" class="wp-image-49"/>
@@ -153,8 +157,16 @@
 				<!-- /wp:group -->
 
 				<!-- Swiper Navigation Buttons -->
-				<div class="swiper-button-prev"></div>
-				<div class="swiper-button-next"></div>
+			<!-- wp:buttons {"className":"carousel-navigation","layout":{"type":"flex","justifyContent":"space-between"}} -->
+			<div class="wp-block-buttons carousel-navigation">
+				<!-- wp:button {"className":"carousel-button-prev","style":{"border":{"radius":"50px"},"color":{"background":"var(--wp--preset--color--accent)","text":"var(--wp--preset--color--accent-dark)"}}} -->
+				<div class="wp-block-button carousel-button-prev"><a class="wp-block-button__link wp-element-button">‹</a></div>
+				<!-- /wp:button -->
+				<!-- wp:button {"className":"carousel-button-next","style":{"border":{"radius":"50px"},"color":{"background":"var(--wp--preset--color--accent)","text":"var(--wp--preset--color--accent-dark)"}}} -->
+				<div class="wp-block-button carousel-button-next"><a class="wp-block-button__link wp-element-button">›</a></div>
+				<!-- /wp:button -->
+			</div>
+			<!-- /wp:buttons -->
 			</div>
 			<!-- /wp:group -->
 		</div>

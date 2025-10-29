@@ -8,10 +8,18 @@
 ?>
 
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","right":"var:preset|spacing|30","bottom":"var:preset|spacing|50","left":"var:preset|spacing|30"},"blockGap":"0px","margin":{"top":"0px","bottom":"0px"}},"dimensions":{"minHeight":"40vh"}},"layout":{"type":"constrained","contentSize":"1200px"},"className":"reviews-section"} -->
-<div class="wp-block-group alignfull reviews-section" style="margin-top:0px;margin-bottom:0px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--30);min-height:40vh"><!-- wp:columns {"verticalAlignment":null,"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":{"top":"0px","left":"var:preset|spacing|100"}}}} -->
-<div class="wp-block-columns" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:column {"verticalAlignment":"center","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"blockGap":"0px"}}} -->
-<div class="wp-block-column is-vertically-aligned-center" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"blockGap":"0px","margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:paragraph -->
+<div class="wp-block-group alignfull reviews-section" style="margin-top:0px;margin-bottom:0px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--30);min-height:40vh">
+  
+  <!-- wp:columns {"verticalAlignment":null,"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":{"top":"0px","left":"var:preset|spacing|100"}}}} -->
+  <div class="wp-block-columns" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
+    
+    <!-- wp:column {"verticalAlignment":"center","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"blockGap":"0px"}}} -->
+    <div class="wp-block-column is-vertically-aligned-center" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
+      
+      <!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"blockGap":"0px","margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"constrained"}} -->
+      <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
+        
+        <!-- wp:paragraph -->
 <p class="section-intro">
   Reviews
 </p>
@@ -21,13 +29,15 @@
 <h2 class="section-heading">Wat onze leerlingen over Studio Sound of Music zeggen!</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|medium","lineHeight":"1.6"},"spacing":{"padding":{"top":"0px","right":"0px","bottom":"var:preset|spacing|50","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
-<p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:var(--wp--preset--spacing--50);padding-left:0px;font-size:var(--wp--preset--font-size--medium);line-height:1.6">Ontdek wat onze leerlingen vertellen over hun ervaring bij Studio Sound of Music. Van beginners tot gevorderde muzikanten, onze leerlingen delen hun reis en succesverhalen.</p>
-<!-- /wp:paragraph -->
-
-
-<!-- /wp:group --></div>
-<!-- /wp:column -->
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|medium","lineHeight":"1.6"},"spacing":{"padding":{"top":"0px","right":"0px","bottom":"var:preset|spacing|50","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
+        <p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:var(--wp--preset--spacing--50);padding-left:0px;font-size:var(--wp--preset--font-size--medium);line-height:1.6">Ontdek wat onze leerlingen vertellen over hun ervaring bij Studio Sound of Music. Van beginners tot gevorderde muzikanten, onze leerlingen delen hun reis en succesverhalen.</p>
+        <!-- /wp:paragraph -->
+        
+      </div>
+      <!-- /wp:group -->
+      
+    </div>
+    <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
 <div class="wp-block-column is-vertically-aligned-center" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"blockGap":"0px","margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"constrained"}} -->
