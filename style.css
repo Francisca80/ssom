@@ -797,40 +797,10 @@ h3.wp-block-heading {
 /* Cache buster: Wed Oct 29 14:31:22 CET 2025 */
 /* Cache buster: Wed Oct 29 14:33:27 CET 2025 */
 
-/* Logo Mouse Trail Styles */
-.logo-trail {
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  width: 40px;
-  height: 40px;
-  background: var(--wp--preset--color--accent);
-  border-radius: 50%;
-  transform-origin: center;
-  box-shadow: 0 3px 12px rgba(184, 234, 63, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 8px;
-  font-weight: bold;
-  color: var(--wp--preset--color--accent-dark);
-  text-align: center;
-  line-height: 1;
-  font-family: var(--wp--preset--font-family--manrope);
-  transition: all 0.1s ease;
-}
-
-/* Hero section mouse trail container */
+/* Hero section */
 .hero {
   position: relative;
   overflow: hidden;
-}
-
-/* Enhanced logo trail on hover */
-.hero:hover .logo-trail {
-  box-shadow: 0 4px 16px rgba(184, 234, 63, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
 }
 /* Cache buster: Wed Oct 29 14:47:07 CET 2025 */
 /* Cache buster: Wed Oct 29 14:48:46 CET 2025 */

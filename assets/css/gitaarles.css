@@ -206,6 +206,105 @@
 
 
 
+/* FAQ Section */
+.gitaarles-faq {
+    background-color: #f5f5f5;
+}
+
+.gitaarles-faq h2 {
+    color: var(--wp--preset--color--accent-dark);
+    font-size: var(--wp--preset--font-size--xl);
+    font-weight: var(--wp--preset--font-weight--bold);
+    margin-bottom: var(--wp--preset--spacing--20);
+}
+
+.gitaarles-faq > p {
+    color: var(--wp--preset--color--text);
+    font-size: var(--wp--preset--font-size--medium);
+    margin-bottom: var(--wp--preset--spacing--40);
+    opacity: 0.9;
+}
+
+/* Details/Summary (Accordion) Styling */
+.gitaarles-faq .wp-block-details {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: var(--wp--preset--spacing--20);
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.gitaarles-faq .wp-block-details:hover {
+    border-color: var(--wp--preset--color--accent-dark);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gitaarles-faq .wp-block-details summary {
+    cursor: pointer;
+    padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--30);
+    font-size: var(--wp--preset--font-size--medium);
+    font-weight: var(--wp--preset--font-weight--semibold);
+    color: var(--wp--preset--color--text);
+    list-style: none;
+    position: relative;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.gitaarles-faq .wp-block-details summary:hover {
+    color: var(--wp--preset--color--accent-dark);
+}
+
+/* Remove default disclosure triangle */
+.gitaarles-faq .wp-block-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.gitaarles-faq .wp-block-details summary::marker {
+    display: none;
+}
+
+/* Custom arrow icon */
+.gitaarles-faq .wp-block-details summary::after {
+    content: "+";
+    position: absolute;
+    right: var(--wp--preset--spacing--30);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: var(--wp--preset--font-weight--bold);
+    color: var(--wp--preset--color--accent-dark);
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when open */
+.gitaarles-faq .wp-block-details[open] summary::after {
+    content: "−";
+    transform: translateY(-50%) rotate(0deg);
+}
+
+/* FAQ answer content */
+.gitaarles-faq .wp-block-details p {
+    padding: 0 var(--wp--preset--spacing--30) var(--wp--preset--spacing--30) var(--wp--preset--spacing--30);
+    color: var(--wp--preset--color--text);
+    font-size: var(--wp--preset--font-size--medium);
+    line-height: 1.6;
+    opacity: 0.9;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .gitaarles-page .wp-block-columns {
@@ -214,10 +313,24 @@
     
     .gitaarles-page-header,
     .gitaarles-pricing,
-    .gitaarles-extras {
+    .gitaarles-extras,
+    .gitaarles-faq {
         padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--30);
     }
+
+    .gitaarles-faq .wp-block-details summary {
+        padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--40) var(--wp--preset--spacing--20) var(--wp--preset--spacing--20);
+        font-size: var(--wp--preset--font-size--small);
+    }
+
+    .gitaarles-faq .wp-block-details summary::after {
+        right: var(--wp--preset--spacing--20);
+    }
+
+    .gitaarles-faq .wp-block-details p {
+        padding: 0 var(--wp--preset--spacing--20) var(--wp--preset--spacing--20) var(--wp--preset--spacing--20);
+        font-size: var(--wp--preset--font-size--small);
+    }
 }
-/* Cache buster: Wed Oct 29 12:48:29 CET 2025 */
-/* Cache buster: Wed Oct 29 12:50:14 CET 2025 */
-/* Cache buster: Wed Oct 29 12:53:02 CET 2025 */
+
+/* Cache buster: Thu Oct 30 2025 - Added FAQ section */

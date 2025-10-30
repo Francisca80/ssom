@@ -1,0 +1,168 @@
+/* Contact Page Styles */
+
+/* Contact Form 7 Styling */
+.contact-form-wrapper .wpcf7 {
+    width: 100%;
+}
+
+.contact-form-wrapper .wpcf7-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form-wrapper .wpcf7-form-control-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+/* Form Labels */
+.contact-form-wrapper .wpcf7-form label {
+    color: #000000;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: left;
+    width: 100%;
+}
+
+/* Input Fields */
+.contact-form-wrapper .wpcf7-form input[type="text"],
+.contact-form-wrapper .wpcf7-form input[type="email"],
+.contact-form-wrapper .wpcf7-form input[type="tel"],
+.contact-form-wrapper .wpcf7-form input[type="url"],
+.contact-form-wrapper .wpcf7-form input[type="number"],
+.contact-form-wrapper .wpcf7-form input[type="date"],
+.contact-form-wrapper .wpcf7-form select,
+.contact-form-wrapper .wpcf7-form textarea {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #ffffff;
+    color: #000000;
+    width: 100%;
+    font-family: var(--wp--preset--font-family--manrope);
+    transition: box-shadow 0.3s ease;
+}
+
+.contact-form-wrapper .wpcf7-form input:focus,
+.contact-form-wrapper .wpcf7-form textarea:focus,
+.contact-form-wrapper .wpcf7-form select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--wp--preset--color--accent);
+}
+
+/* Textarea */
+.contact-form-wrapper .wpcf7-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Checkbox */
+.contact-form-wrapper .wpcf7-form .wpcf7-list-item {
+    margin: 0;
+}
+
+.contact-form-wrapper .wpcf7-form input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.5rem;
+}
+
+.contact-form-wrapper .wpcf7-form .wpcf7-list-item-label {
+    font-size: 0.875rem;
+    color: #000000;
+}
+
+/* Submit Button */
+.contact-form-wrapper .wpcf7-form input[type="submit"],
+.contact-form-wrapper .wpcf7-form button[type="submit"] {
+    background-color: var(--wp--preset--color--accent);
+    color: var(--wp--preset--color--accent-dark);
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-size: var(--wp--preset--font-size--medium);
+    font-weight: var(--wp--preset--font-weight--bold);
+    font-family: var(--wp--preset--font-family--manrope);
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    width: auto;
+}
+
+.contact-form-wrapper .wpcf7-form input[type="submit"]:hover,
+.contact-form-wrapper .wpcf7-form button[type="submit"]:hover {
+    background-color: var(--wp--preset--color--accent-dark);
+    color: var(--wp--preset--color--base);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Validation Errors */
+.contact-form-wrapper .wpcf7-not-valid-tip {
+    color: #d32f2f;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.contact-form-wrapper .wpcf7-form .wpcf7-not-valid {
+    border: 1px solid #d32f2f;
+}
+
+/* Success/Error Messages */
+.contact-form-wrapper .wpcf7-response-output {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    border: none;
+}
+
+.contact-form-wrapper .wpcf7-mail-sent-ok {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.contact-form-wrapper .wpcf7-validation-errors,
+.contact-form-wrapper .wpcf7-mail-sent-ng {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.contact-form-wrapper .wpcf7-spam-blocked {
+    background-color: #fff3e0;
+    color: #e65100;
+}
+
+/* Loading Spinner */
+.contact-form-wrapper .wpcf7-spinner {
+    margin-left: 1rem;
+}
+
+/* Honeypot - Hide from users but not bots */
+.contact-form-wrapper .wpcf7-form .wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required[aria-required="false"],
+.contact-form-wrapper .wpcf7-form .wpcf7-form-control.wpcf7-textarea[aria-required="false"],
+.contact-form-wrapper .wpcf7-form input[name^="honeypot"],
+.contact-form-wrapper .wpcf7-form .hp-wrap {
+    opacity: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-form-wrapper {
+        padding: 2rem 1.5rem !important;
+    }
+}
+
+/* Cache buster: Thu Oct 30 2025 - v2 Added honeypot and spam prevention */
+

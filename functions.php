@@ -1,4 +1,53 @@
 <?php
+// Add Schema.org Structured Data for LocalBusiness
+add_action('wp_head', function() {
+    if (is_front_page() || is_page('over-ons') || is_page('contact')) {
+        ?>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "MusicSchool",
+            "name": "Studio Sound of Music",
+            "image": "<?php echo get_stylesheet_directory_uri(); ?>/screenshot.png",
+            "url": "<?php echo home_url(); ?>",
+            "telephone": "+31657461677",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Lierseschans 12",
+                "addressLocality": "Nieuwegein",
+                "postalCode": "3432 GS",
+                "addressCountry": "NL"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "52.0293",
+                "longitude": "5.0931"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday"],
+                    "opens": "14:00",
+                    "closes": "21:00"
+                }
+            ],
+            "priceRange": "€€",
+            "areaServed": ["Nieuwegein", "IJsselstein", "Houten", "Vianen", "Utrecht"],
+            "sameAs": [
+                "https://www.instagram.com/marlowemcqueen/",
+                "https://facebook.com/studiosoundofmusic"
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "25"
+            }
+        }
+        </script>
+        <?php
+    }
+});
+
 add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style'), '1.2.0' );

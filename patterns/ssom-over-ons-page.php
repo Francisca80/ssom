@@ -56,7 +56,7 @@
 				<div class="wp-block-buttons">
 					<!-- wp:button -->
 					<div class="wp-block-button">
-						<a class="wp-block-button__link wp-element-button" href="#">Gratis Proefles aanvragen</a>
+						<a class="wp-block-button__link wp-element-button" href="/contact">Gratis Proefles aanvragen</a>
 					</div>
 					<!-- /wp:button -->
 				</div>
@@ -78,100 +78,43 @@
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:group {"className":"over-ons-carousel","layout":{"type":"constrained","contentSize":"1200px"}} -->
-	<div class="wp-block-group over-ons-carousel">
-		<!-- wp:paragraph -->
-		<p class="section-intro">
-			Studio
-		</p>
-		<!-- /wp:paragraph -->
-		
-		<!-- wp:heading {"level":2} -->
-		<h2 class="section-heading">Bekijk onze studio</h2>
-		<!-- /wp:heading -->
+<!-- wp:group {"metadata":{"categories":["media","gallery","featured"],"patternName":"ssom/studio-gallery","name":"Studio Gallery"},"align":"full","className":"studio-gallery-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<div class="wp-block-group alignfull studio-gallery-section" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"grid","minimumColumnWidth":"18rem"}} -->
+<div class="wp-block-group"><!-- wp:group {"className":"is-style-section-3","style":{"dimensions":{"minHeight":"297px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-section-3" style="min-height:297px"><!-- wp:group {"style":{"dimensions":{"minHeight":"100%"},"spacing":{"blockGap":"var:preset|spacing|20"},"border":{"radius":"8px"}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"center","justifyContent":"center"}} -->
+<div class="wp-block-group" style="border-radius:8px;min-height:100%"><!-- wp:heading {"fontSize":"large"} -->
+<h2 class="wp-block-heading has-large-font-size">Onze Studio</h2>
+<!-- /wp:heading -->
 
-		<!-- wp:group {"className":"carousel-container","layout":{"type":"constrained"}} -->
-		<div class="wp-block-group carousel-container">
-			<!-- wp:group {"className":"carousel-wrapper","layout":{"type":"constrained"}} -->
-			<div class="wp-block-group carousel-wrapper">
-					<!-- wp:group {"className":"carousel-slide","layout":{"type":"constrained"}} -->
-					<div class="wp-block-group carousel-slide">
-						<!-- wp:image {"id":44,"sizeSlug":"medium","linkDestination":"none"} -->
-						<figure class="wp-block-image size-medium">
-							<img src="http://ssom.local/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-10-1024x683.jpg" alt="Studio 1" class="wp-image-44"/>
-						</figure>
-						<!-- /wp:image -->
-					</div>
-					<!-- /wp:group -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://www.instagram.com/marlowemcqueen/" target="_blank" rel="noopener">@marlowemcqueen</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
 
-					<!-- wp:group {"className":"carousel-slide","layout":{"type":"constrained"}} -->
-					<div class="wp-block-group carousel-slide">
-						<!-- wp:image {"id":45,"sizeSlug":"medium","linkDestination":"none"} -->
-						<figure class="wp-block-image size-medium">
-							<img src="http://ssom.local/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-4-683x1024.jpg" alt="Studio 2" class="wp-image-45"/>
-						</figure>
-						<!-- /wp:image -->
-					</div>
-					<!-- /wp:group -->
+<!-- wp:image {"id":329,"aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="http://ssom.local/wp-content/uploads/2025/10/versterker-scaled.webp" alt="Gitaarversterker in Studio Sound of Music" class="wp-image-329" style="border-radius:8px;aspect-ratio:1;object-fit:cover"/></figure>
+<!-- /wp:image -->
 
-					<!-- wp:group {"className":"carousel-slide","layout":{"type":"constrained"}} -->
-					<div class="wp-block-group carousel-slide">
-						<!-- wp:image {"id":46,"sizeSlug":"medium","linkDestination":"none"} -->
-						<figure class="wp-block-image size-medium">
-							<img src="http://ssom.local/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-10-1024x683.jpg" alt="Studio 3" class="wp-image-46"/>
-						</figure>
-						<!-- /wp:image -->
-					</div>
-					<!-- /wp:group -->
+<!-- wp:image {"id":450,"aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="http://ssom.local/wp-content/uploads/2025/10/IMG_4727-scaled.jpg" alt="Gitaarles studio interieur" class="wp-image-450" style="border-radius:8px;aspect-ratio:1;object-fit:cover"/></figure>
+<!-- /wp:image -->
 
-					<!-- wp:group {"className":"carousel-slide","layout":{"type":"constrained"}} -->
-					<div class="wp-block-group carousel-slide">
-						<!-- wp:image {"id":47,"sizeSlug":"medium","linkDestination":"none"} -->
-						<figure class="wp-block-image size-medium">
-							<img src="http://ssom.local/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-4-683x1024.jpg" alt="Studio 4" class="wp-image-47"/>
-						</figure>
-						<!-- /wp:image -->
-					</div>
-					<!-- /wp:group -->
+<!-- wp:image {"id":451,"aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="http://ssom.local/wp-content/uploads/2025/10/IMG_4728-scaled.jpg" alt="Professionele muziekstudio Nieuwegein" class="wp-image-451" style="border-radius:8px;aspect-ratio:1;object-fit:cover"/></figure>
+<!-- /wp:image -->
 
-					<!-- wp:group {"className":"carousel-slide","layout":{"type":"constrained"}} -->
-					<div class="wp-block-group carousel-slide">
-						<!-- wp:image {"id":48,"sizeSlug":"medium","linkDestination":"none"} -->
-						<figure class="wp-block-image size-medium">
-							<img src="http://ssom.local/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-10-1024x683.jpg" alt="Studio 5" class="wp-image-48"/>
-						</figure>
-						<!-- /wp:image -->
-					</div>
-					<!-- /wp:group -->
+<!-- wp:image {"id":44,"aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="http://ssom.local/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-9.jpg" alt="Marlowe McQueen - Gitaardocent" class="wp-image-44" style="border-radius:8px;aspect-ratio:1;object-fit:cover"/></figure>
+<!-- /wp:image -->
 
-					<!-- wp:group {"className":"carousel-slide","layout":{"type":"constrained"}} -->
-					<div class="wp-block-group carousel-slide">
-						<!-- wp:image {"id":49,"sizeSlug":"medium","linkDestination":"none"} -->
-						<figure class="wp-block-image size-medium">
-							<img src="http://ssom.local/wp-content/uploads/2025/07/fischer_portrait-marlowe_webres-4-683x1024.jpg" alt="Studio 6" class="wp-image-49"/>
-						</figure>
-						<!-- /wp:image -->
-					</div>
-					<!-- /wp:group -->
-				</div>
-				<!-- /wp:group -->
+<!-- wp:image {"id":457,"aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="http://ssom.local/wp-content/uploads/2025/10/IMG_4729-scaled.jpg" alt="Studio Sound of Music lesruimte" class="wp-image-457" style="border-radius:8px;aspect-ratio:1;object-fit:cover"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
 
-				<!-- Swiper Navigation Buttons -->
-			<!-- wp:buttons {"className":"carousel-navigation","layout":{"type":"flex","justifyContent":"space-between"}} -->
-			<div class="wp-block-buttons carousel-navigation">
-				<!-- wp:button {"className":"carousel-button-prev","style":{"border":{"radius":"50px"},"color":{"background":"var(--wp--preset--color--accent)","text":"var(--wp--preset--color--accent-dark)"}}} -->
-				<div class="wp-block-button carousel-button-prev"><a class="wp-block-button__link wp-element-button">‹</a></div>
-				<!-- /wp:button -->
-				<!-- wp:button {"className":"carousel-button-next","style":{"border":{"radius":"50px"},"color":{"background":"var(--wp--preset--color--accent)","text":"var(--wp--preset--color--accent-dark)"}}} -->
-				<div class="wp-block-button carousel-button-next"><a class="wp-block-button__link wp-element-button">›</a></div>
-				<!-- /wp:button -->
-			</div>
-			<!-- /wp:buttons -->
-			</div>
-			<!-- /wp:group -->
-		</div>
-		<!-- /wp:group -->
-	</div>
-	<!-- /wp:group -->
+<!-- wp:template-part {"slug":"footer","theme":"ssom","area":"footer"} /-->
 </div>
 <!-- /wp:group -->

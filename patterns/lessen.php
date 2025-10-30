@@ -88,7 +88,7 @@
           <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
           <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--30)">
             <!-- wp:button -->
-            <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#proefles">Proefles Boeken</a></div>
+            <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/gitaarles#faq">Veelgestelde Vragen</a></div>
             <!-- /wp:button -->
           </div>
           <!-- /wp:buttons -->

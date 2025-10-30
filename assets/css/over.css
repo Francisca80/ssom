@@ -1,210 +1,5 @@
 /* ============================ Studio Sound of Music – Over Ons Page ============================ */
 
-/* Image Carousel Styles */
-.over-ons-carousel {
-    padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--30);
-    background-color: var(--wp--preset--color--base);
-}
-
-.over-ons-carousel .section-intro {
-    margin-bottom: var(--wp--preset--spacing--10) !important;
-}
-
-.over-ons-carousel .section-heading {
-    margin-bottom: var(--wp--preset--spacing--20) !important;
-}
-
-
-
-
-/* GSAP Carousel Styles */
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-    padding: var(--wp--preset--spacing--10) 0;
-}
-
-.carousel-wrapper {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 20px;
-    width: 100%;
-    overflow: hidden;
-    align-items: stretch;
-    flex-wrap: nowrap !important;
-    position: relative;
-}
-
-.carousel-slide {
-    flex: 0 0 300px !important;
-    width: 300px !important;
-    height: 250px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: none !important; /* Let GSAP handle animations */
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Swiper structure styles for GSAP conversion */
-.swiper-container {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.swiper {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.swiper-wrapper {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 0;
-    width: 100%;
-    overflow: hidden;
-    align-items: stretch;
-    flex-wrap: nowrap !important;
-    position: relative;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.swiper-slide {
-    flex: 0 0 250px !important;
-    width: 250px !important;
-    height: 200px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: none !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.swiper-slide:not(:last-child) {
-    margin-right: 10px !important;
-}
-
-.swiper-slide img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    display: block !important;
-    border-radius: 12px;
-}
-
-/* Ensure all images are properly aligned */
-.swiper-slide .wp-block-image {
-    width: 100% !important;
-    height: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-.swiper-slide .wp-block-image figure {
-    width: 100% !important;
-    height: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-/* Carousel Navigation Buttons */
-.carousel-navigation {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.carousel-button-prev,
-.carousel-button-next {
-    pointer-events: all;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    background: var(--wp--preset--color--accent) !important;
-    color: var(--wp--preset--color--accent-dark) !important;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    margin: 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.carousel-button-prev {
-    left: 10px;
-}
-
-.carousel-button-next {
-    right: 10px;
-}
-
-.carousel-button-prev:hover,
-.carousel-button-next:hover {
-    background: var(--wp--preset--color--accent-dark) !important;
-    color: var(--wp--preset--color--accent) !important;
-    transform: translateY(-50%) scale(1.1);
-}
-
-.carousel-button-prev .wp-block-button__link,
-.carousel-button-next .wp-block-button__link {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    background: transparent !important;
-    border-radius: 50%;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .over-ons-carousel {
-        padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--30);
-    }
-    
-    .carousel-slide {
-        width: 200px;
-        height: 200px;
-    }
-    
-    .carousel-button-prev,
-    .carousel-button-next {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-}
-
 /* Main Page Container */
 .over-ons-page {
     max-width: var(--wp--preset--layout--content-size);
@@ -382,3 +177,47 @@
         gap: var(--wp--preset--spacing--40);
     }
 }
+
+/* Studio Gallery Section */
+.studio-gallery-section {
+    background-color: var(--wp--preset--color--base);
+    overflow: hidden;
+}
+
+.studio-gallery-section .wp-block-heading {
+    color: var(--wp--preset--color--accent-dark);
+    text-align: center;
+}
+
+.studio-gallery-section a {
+    color: var(--wp--preset--color--accent-dark);
+    text-decoration: none;
+    font-weight: var(--wp--preset--font-weight--bold);
+    transition: color 0.3s ease;
+}
+
+.studio-gallery-section a:hover {
+    color: var(--wp--preset--color--accent);
+}
+
+/* Gallery Images - Prepare for animations */
+.studio-gallery-section .wp-block-image {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.studio-gallery-section .wp-block-image img {
+    transition: transform 0.4s ease;
+    will-change: transform;
+}
+
+.studio-gallery-section .wp-block-image:hover img {
+    transform: scale(1.08);
+}
+
+/* Header card animation setup */
+.studio-gallery-section .is-style-section-3 {
+    will-change: transform, opacity;
+}
+
+/* Cache buster: Thu Oct 30 2025 - v3 Added gallery animations */

@@ -196,6 +196,58 @@
 		<!-- /wp:columns -->
 	</div>
 	<!-- /wp:group -->
+
+	<!-- wp:group {"align":"full","className":"gitaarles-faq","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"},"anchor":"faq"} -->
+	<div class="wp-block-group alignfull gitaarles-faq" id="faq" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+		<!-- wp:heading {"textAlign":"left","level":2} -->
+		<h2 class="wp-block-heading has-text-align-left">Veelgestelde Vragen</h2>
+		<!-- /wp:heading -->
+
+		<!-- wp:paragraph {"textAlign":"left"} -->
+		<p class="has-text-align-left">Heb je vragen over onze gitaarlessen? Hier vind je antwoorden op de meest gestelde vragen.</p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:details {"summary":"Moet ik een eigen gitaar hebben?"} -->
+		<details class="wp-block-details"><summary>Moet ik een eigen gitaar hebben?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block"} -->
+		<p>Ja, het is belangrijk dat je thuis een gitaar hebt om te oefenen. Tijdens de lessen hebben we gitaren beschikbaar die je kunt gebruiken. Wil je een gitaar aanschaffen? We geven graag advies over welk type en merk het beste bij jou past.</p>
+		<!-- /wp:paragraph --></details>
+		<!-- /wp:details -->
+
+		<!-- wp:details {"summary":"Voor welke leeftijd zijn de lessen geschikt?"} -->
+		<details class="wp-block-details"><summary>Voor welke leeftijd zijn de lessen geschikt?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block"} -->
+		<p>Onze lessen zijn geschikt voor alle leeftijden! Kinderen kunnen meestal rond 7-8 jaar beginnen, maar het hangt ook af van de motivatie en handgrootte van het kind. Voor volwassenen is er geen leeftijdsgrens – het is nooit te laat om gitaar te leren spelen.</p>
+		<!-- /wp:paragraph --></details>
+		<!-- /wp:details -->
+
+		<!-- wp:details {"summary":"Kan ik kiezen welke nummers ik leer?"} -->
+		<details class="wp-block-details"><summary>Kan ik kiezen welke nummers ik leer?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block"} -->
+		<p>Absoluut! We vinden het belangrijk dat je leert met muziek die je leuk vindt. Of je nu van rock, pop, blues, klassiek of andere stijlen houdt – we passen de lessen aan jouw muzikale voorkeuren aan. Dit maakt leren leuker en motiverender.</p>
+		<!-- /wp:paragraph --></details>
+		<!-- /wp:details -->
+
+		<!-- wp:details {"summary":"Hoe vaak moet ik oefenen tussen de lessen?"} -->
+		<details class="wp-block-details"><summary>Hoe vaak moet ik oefenen tussen de lessen?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block"} -->
+		<p>Voor goede vooruitgang raden we aan om minimaal 3-4 keer per week te oefenen, zo'n 15-30 minuten per keer. Hoe meer je oefent, hoe sneller je vooruitgang boekt. Maar het belangrijkste is consistentie – liever kort en regelmatig dan lang en sporadisch.</p>
+		<!-- /wp:paragraph --></details>
+		<!-- /wp:details -->
+
+		<!-- wp:details {"summary":"Werken jullie met de Nieuwegein Stadspas?"} -->
+		<details class="wp-block-details"><summary>Werken jullie met de Nieuwegein Stadspas?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block"} -->
+		<p>Ja! Studio Sound of Music is aangesloten bij de Nieuwegein Stadspas. Dit betekent dat mensen met een lager inkomen ook toegang hebben tot onze gitaarlessen tegen een gereduceerd tarief. Neem contact met ons op voor meer informatie over de voorwaarden.</p>
+		<!-- /wp:paragraph --></details>
+		<!-- /wp:details -->
+
+		<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
+		<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--50)">
+			<!-- wp:button -->
+			<div class="wp-block-button">
+				<a class="wp-block-button__link wp-element-button" href="/contact">Nog vragen? Neem contact op</a>
+			</div>
+			<!-- /wp:button -->
+		</div>
+		<!-- /wp:buttons -->
+	</div>
+	<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 </div>
