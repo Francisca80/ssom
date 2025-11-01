@@ -40,15 +40,84 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Current page indicator - green underline */
+.primary-navigation .current-menu-item > a,
+.primary-navigation .wp-block-navigation-item.current-menu-item > a,
+.primary-navigation .wp-block-pages-list__item.current_page_item > a,
+.primary-navigation .wp-block-navigation-link.current-menu-item > a {
+  border-bottom: 2px solid var(--wp--preset--color--accent) !important;
+  padding-bottom: 4px !important;
+}
+
+/* Hide nav link version on desktop (show button instead) */
+.mobile-only-nav-item {
+  display: none !important;
+}
+
 /* Mobile tweaks */
 @media (max-width: 768px) {
   .ssom-header {
     padding: 1rem;
   }
-  .primary-navigation {
-    display: none;
-  }
+  
+  /* Hide desktop button on mobile */
   .header-cta {
-    display: none;
+    display: none !important;
+  }
+
+  /* Remove borders from mobile navigation */
+  .primary-navigation .wp-block-navigation__responsive-container {
+    border: none !important;
+  }
+
+  .primary-navigation .wp-block-navigation__responsive-container-content {
+    border: none !important;
+  }
+
+  /* Left align mobile navigation */
+  .primary-navigation .wp-block-navigation__responsive-container-content {
+    align-items: flex-start !important;
+  }
+
+  .primary-navigation .wp-block-pages-list,
+  .primary-navigation .wp-block-navigation__container {
+    align-items: flex-start !important;
+  }
+
+  .primary-navigation .wp-block-navigation-item,
+  .primary-navigation .wp-block-pages-list__item {
+    width: 100% !important;
+    border: none !important;
+  }
+
+  .primary-navigation .wp-block-navigation-item a,
+  .primary-navigation .wp-block-pages-list__item a {
+    text-align: left !important;
+    width: 100% !important;
+    border: none !important;
+  }
+
+  .primary-navigation .wp-block-navigation-link {
+    border: none !important;
+  }
+
+  /* Show Gratis Proefles link on mobile (as nav item) */
+  .primary-navigation .mobile-only-nav-item {
+    display: block !important;
+  }
+
+  .primary-navigation .mobile-only-nav-item a {
+    text-align: left !important;
+    width: 100% !important;
+  }
+
+  /* Current page indicator on mobile - green underline */
+  .primary-navigation .current-menu-item > a,
+  .primary-navigation .wp-block-navigation-item.current-menu-item > a,
+  .primary-navigation .wp-block-pages-list__item.current_page_item > a,
+  .primary-navigation .wp-block-navigation-link.current-menu-item > a {
+    border-bottom: 2px solid var(--wp--preset--color--accent) !important;
+    padding-bottom: 4px !important;
   }
 }
+

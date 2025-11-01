@@ -253,7 +253,83 @@
   .cta-gallery-columns {
     flex-direction: column;
   }
+
+  /* Reset CTA section padding on mobile */
+  .cta-join {
+    padding-top: var(--wp--preset--spacing--40);
+    padding-bottom: var(--wp--preset--spacing--40);
+    margin-top: var(--wp--preset--spacing--40);
+    margin-bottom: var(--wp--preset--spacing--40);
+  }
+
+  /* Stack columns vertically on mobile */
+  .cta-join .wp-block-columns {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Remove fixed heights on mobile */
+  .cta-join .wp-block-column {
+    min-height: auto !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  /* Left column (first image) - reasonable mobile height */
+  .cta-join .wp-block-column:first-child {
+    min-height: 400px !important;
+    height: 400px !important;
+  }
+
+  .cta-join .wp-block-column:first-child .wp-block-image,
+  .cta-join .wp-block-column:first-child .wp-block-image figure,
+  .cta-join .wp-block-column:first-child .wp-block-image img {
+    min-height: 400px !important;
+    height: 400px !important;
+  }
+
+  /* Middle column (text) - auto height on mobile */
+  .cta-join .wp-block-column:nth-child(2) {
+    padding: 2rem !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .cta-join .wp-block-column:nth-child(2) h3,
+  .cta-join .wp-block-column:nth-child(2) .wp-block-heading {
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .cta-join .wp-block-column:nth-child(2) p {
+    font-size: 1rem !important;
+  }
+
+  /* Right column (gallery) - auto height on mobile */
+  .cta-join .wp-block-column:nth-child(3) {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .cta-join .wp-block-column:nth-child(3) .wp-block-image:first-child,
+  .cta-join .wp-block-column:nth-child(3) .wp-block-image:last-child {
+    height: 250px !important;
+    min-height: 250px !important;
+  }
+
+  .cta-join .wp-block-column:nth-child(3) .wp-block-image:first-child {
+    margin-bottom: 1rem !important;
+  }
+
+  .cta-join .wp-block-column:nth-child(3) .wp-block-image img {
+    height: 250px !important;
+    min-height: 250px !important;
+  }
+
+  /* Button spacing on mobile */
+  .cta-join .wp-block-column:nth-child(3) .wp-block-button,
+  .cta-join .wp-block-column:nth-child(3) > .wp-block-button {
+    margin-top: 1.5rem !important;
+  }
 }
 
-/* Cache buster: Wed Oct 29 10:18:36 CET 2025 */
-/* Cache buster: Wed Oct 29 14:33:27 CET 2025 */

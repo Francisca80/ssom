@@ -21,14 +21,14 @@
 		<!-- /wp:heading -->
 
 		<!-- wp:paragraph {"textAlign":"left"} -->
-		<p class="has-text-align-left">Bij Studio Sound of Music leer je gitaar spelen op een manier die bij jóu past. Of je nu net begint of al wat akkoorden kent, onze lessen zijn persoonlijk, creatief en motiverend. Je leert de nummers die jij leuk vindt in jouw eigen tempo, met aandacht voor techniek, muzikaliteit en speelplezier. Van rock tot klassiek en van pop tot blues – alles is mogelijk.<br><br>Ontdek hoe leuk en toegankelijk gitaarspelen kan zijn, onder begeleiding van gepassioneerde en ervaren docenten. Probeer het zelf met een vrijblijvende proefles en krijg korting bij het aanschaffen van het eerste lespakket!!</p>
+		<p class="has-text-align-left">Bij Studio Sound of Music leer je gitaar spelen op een manier die bij jóu past. Of je nu net begint of al wat akkoorden kent, onze lessen zijn persoonlijk, creatief en motiverend. Je leert de nummers die jij leuk vindt in jouw eigen tempo, met aandacht voor techniek, muzikaliteit en speelplezier. Van rock tot klassiek en van pop tot blues. Voor alle leeftijden en niveaus is mogelijk.<br><br>Ontdek hoe leuk en toegankelijk gitaarspelen kan zijn, onder begeleiding van gepassioneerde en ervaren docenten. Probeer het zelf met een vrijblijvende proefles en krijg korting bij het aanschaffen van het eerste lespakket.</p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:buttons -->
 		<div class="wp-block-buttons">
 			<!-- wp:button -->
 			<div class="wp-block-button">
-				<a class="wp-block-button__link wp-element-button">Gratis proefles aanvragen</a>
+				<a class="wp-block-button__link wp-element-button" href="/contact">Gratis proefles aanvragen</a>
 			</div>
 			<!-- /wp:button -->
 		</div>
@@ -58,15 +58,15 @@
 <p class="has-small-font-size">Ben je ouder dan 21 jaar? Dan komt er&nbsp;21% BTW&nbsp;bij. Wij werken ook met de&nbsp;Nieuwegein Stadspas.</p>
 <!-- /wp:paragraph -->
 
-			<!-- wp:buttons -->
-			<div class="wp-block-buttons">
-				<!-- wp:button {"width":100} -->
-				<div class="wp-block-button has-custom-width wp-block-button__width-100">
-					<a class="wp-block-button__link wp-element-button">Start je Prive lessen</a>
-				</div>
-				<!-- /wp:button -->
+		<!-- wp:buttons -->
+		<div class="wp-block-buttons">
+			<!-- wp:button {"width":100} -->
+			<div class="wp-block-button has-custom-width wp-block-button__width-100">
+				<a class="wp-block-button__link wp-element-button" href="/contact">Start je Prive lessen</a>
 			</div>
-			<!-- /wp:buttons -->
+			<!-- /wp:button -->
+		</div>
+		<!-- /wp:buttons -->
 
 <!-- wp:separator -->
 <hr class="wp-block-separator has-alpha-channel-opacity"/>
@@ -95,26 +95,26 @@
 			<!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Introductieprijs €210,00.<br>10 lessen van 30 minuten</p>
+<p>Introductieprijs €150,00 per persoon.<br>10 lessen van 30 minuten</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Vervolgprijs €229,00 per lespakket van 10 lessen van<br>30 minuten</p>
+<p>Vervolgprijs €165,00 per persoon per lespakket van 10 lessen van 30 minuten </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size">Ben je ouder dan 21 jaar? Dan komt er&nbsp;21% BTW&nbsp;bij. Wij werken ook met de&nbsp;Nieuwegein Stadspas.</p>
 <!-- /wp:paragraph -->
 
-			<!-- wp:buttons -->
-			<div class="wp-block-buttons">
-				<!-- wp:button {"width":100} -->
-				<div class="wp-block-button has-custom-width wp-block-button__width-100">
-					<a class="wp-block-button__link wp-element-button">Start je Prive lessen</a>
-				</div>
-				<!-- /wp:button -->
+		<!-- wp:buttons -->
+		<div class="wp-block-buttons">
+			<!-- wp:button {"width":100} -->
+			<div class="wp-block-button has-custom-width wp-block-button__width-100">
+				<a class="wp-block-button__link wp-element-button" href="/contact">Start je Duo lessen</a>
 			</div>
-			<!-- /wp:buttons -->
+			<!-- /wp:button -->
+		</div>
+		<!-- /wp:buttons -->
 
 <!-- wp:separator -->
 <hr class="wp-block-separator has-alpha-channel-opacity"/>
@@ -122,15 +122,15 @@
 
 <!-- wp:list {"className":"is-style-checkmark-list"} -->
 <ul class="wp-block-list is-style-checkmark-list"><!-- wp:list-item -->
-<li>Je krijgt extra aandacht voor jouw uitdagingen.</li>
+<li>Je leert samen met een ander.</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Je leert op je eigen tempo.</li>
+<li>Je leert direct met elkaar samen spelen.</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Je leert gitaarspelen aan de hand van jouw lievelingsnummers.</li>
+<li>Je leert samengitaarspelen aan de hand van jouw lievelingsnummers.</li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list -->
 		</div>
@@ -171,15 +171,15 @@
 				</ul>
 				<!-- /wp:list -->
 
-				<!-- wp:buttons -->
-				<div class="wp-block-buttons">
-					<!-- wp:button {"width":100} -->
-					<div class="wp-block-button has-custom-width wp-block-button__width-100">
-						<a class="wp-block-button__link wp-element-button">Gratis Proefles aanvragen</a>
-					</div>
-					<!-- /wp:button -->
+			<!-- wp:buttons -->
+			<div class="wp-block-buttons">
+				<!-- wp:button {"width":100} -->
+				<div class="wp-block-button has-custom-width wp-block-button__width-100">
+					<a class="wp-block-button__link wp-element-button" href="/contact">Vraag om meer informatie</a>
 				</div>
-				<!-- /wp:buttons -->
+				<!-- /wp:button -->
+			</div>
+			<!-- /wp:buttons -->
 			</div>
 			<!-- /wp:column -->
 
@@ -209,13 +209,13 @@
 
 		<!-- wp:details {"summary":"Moet ik een eigen gitaar hebben?"} -->
 		<details class="wp-block-details"><summary>Moet ik een eigen gitaar hebben?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block"} -->
-		<p>Ja, het is belangrijk dat je thuis een gitaar hebt om te oefenen. Tijdens de lessen hebben we gitaren beschikbaar die je kunt gebruiken. Wil je een gitaar aanschaffen? We geven graag advies over welk type en merk het beste bij jou past.</p>
+		<p>Ja, het is belangrijk dat je thuis een gitaar hebt om te oefenen. Wil je een gitaar aanschaffen? We geven graag advies over welk type en merk het beste bij jou past.</p>
 		<!-- /wp:paragraph --></details>
 		<!-- /wp:details -->
 
 		<!-- wp:details {"summary":"Voor welke leeftijd zijn de lessen geschikt?"} -->
 		<details class="wp-block-details"><summary>Voor welke leeftijd zijn de lessen geschikt?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block"} -->
-		<p>Onze lessen zijn geschikt voor alle leeftijden! Kinderen kunnen meestal rond 7-8 jaar beginnen, maar het hangt ook af van de motivatie en handgrootte van het kind. Voor volwassenen is er geen leeftijdsgrens – het is nooit te laat om gitaar te leren spelen.</p>
+		<p>Onze lessen zijn geschikt voor alle leeftijden! Kinderen kunnen meestal rond 6-7 jaar beginnen, maar het hangt ook af van de motivatie en handgrootte van het kind. Voor volwassenen is er geen leeftijdsgrens – het is nooit te laat om gitaar te leren spelen.</p>
 		<!-- /wp:paragraph --></details>
 		<!-- /wp:details -->
 
@@ -227,7 +227,7 @@
 
 		<!-- wp:details {"summary":"Hoe vaak moet ik oefenen tussen de lessen?"} -->
 		<details class="wp-block-details"><summary>Hoe vaak moet ik oefenen tussen de lessen?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block"} -->
-		<p>Voor goede vooruitgang raden we aan om minimaal 3-4 keer per week te oefenen, zo'n 15-30 minuten per keer. Hoe meer je oefent, hoe sneller je vooruitgang boekt. Maar het belangrijkste is consistentie – liever kort en regelmatig dan lang en sporadisch.</p>
+		<p>Voor goede vooruitgang raden we aan om minimaal 3-4 keer per week te oefenen, zo'n 10 minuten per keer. Hoe meer je oefent, hoe sneller je vooruitgang boekt. Maar het belangrijkste is consistentie – liever kort en regelmatig dan lang en sporadisch.</p>
 		<!-- /wp:paragraph --></details>
 		<!-- /wp:details -->
 

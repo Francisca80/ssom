@@ -54,7 +54,7 @@ Door zijn op maat gemaakte opdrachten is gitaar spelen een heerlijke dagelijkse 
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"typography":{"textTransform":"capitalize","fontStyle":"normal","fontWeight":"var:preset|font-weight|medium"},"color":{"text":"var:preset|color|accent"}},"fontSize":"medium"} -->
-<p class="has-text-color has-medium-font-size" style="color:var(--wp--preset--color--accent);margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;font-style:normal;font-weight:var(--wp--preset--font-weight--medium);text-transform:capitalize">Guitar Student</p>
+<p class="has-text-color has-medium-font-size" style="color:var(--wp--preset--color--accent);margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;font-style:normal;font-weight:var(--wp--preset--font-weight--medium);text-transform:capitalize">Gitaar Student</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

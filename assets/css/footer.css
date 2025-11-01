@@ -158,14 +158,14 @@ footer .wp-block-group.alignfull.has-background.has-text-color .hero-line,
   color: #ffffff !important;
 }
 
-/* Footer button styling - Simple and clean */
+/* Footer button styling - Outline with transparent fill */
 footer .wp-block-button__link {
-  background-color: #b8ea3f !important;
-  color: #000000 !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
   font-family: var(--wp--preset--font-family--manrope) !important;
   font-weight: var(--wp--preset--font-weight--bold) !important;
   font-size: var(--wp--preset--font-size--medium) !important;
-  border: none !important;
+  border: 2px solid var(--wp--preset--color--accent) !important;
   border-radius: 8px !important;
   padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--30) !important;
   text-decoration: none !important;
@@ -173,8 +173,9 @@ footer .wp-block-button__link {
 }
 
 footer .wp-block-button__link:hover {
-  background-color: #000000 !important;
-  color: #b8ea3f !important;
+  background-color: var(--wp--preset--color--accent) !important;
+  color: var(--wp--preset--color--accent-dark) !important;
+  border-color: var(--wp--preset--color--accent) !important;
   transform: translateY(-2px) !important;
 }
 
@@ -221,11 +222,3 @@ footer .hero-line,
     color: black !important;
   }
 }
-/* Cache buster: Wed Oct 29 10:55:50 CET 2025 */
-/* Cache buster: Wed Oct 29 13:30:22 CET 2025 */
-/* Cache buster: Wed Oct 29 13:33:05 CET 2025 */
-/* Cache buster: Wed Oct 29 13:34:15 CET 2025 */
-/* Cache buster: Wed Oct 29 13:37:24 CET 2025 */
-/* Cache buster: Wed Oct 29 13:39:30 CET 2025 */
-/* Cache buster: Wed Oct 29 13:40:56 CET 2025 */
-/* Cache buster: Wed Oct 29 14:31:22 CET 2025 */

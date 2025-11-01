@@ -26,13 +26,13 @@
   <div class="wp-block-buttons">
     <!-- wp:button -->
     <div class="wp-block-button">
-      <a class="wp-block-button__link wp-element-button" href="#proefles">GRATIS PROEFLES</a>
+      <a class="wp-block-button__link wp-element-button" href="/contact">Contact</a>
     </div>
     <!-- /wp:button -->
 
     <!-- wp:button -->
     <div class="wp-block-button">
-      <a class="wp-block-button__link wp-element-button" href="/lessen">BEKIJK LESSEN</a>
+      <a class="wp-block-button__link wp-element-button" href="/gitaarles">Lesaanbod</a>
     </div>
     <!-- /wp:button -->
   </div>

@@ -90,9 +90,18 @@
     background: transparent;
     border: none;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+/* Ensure post template grid items stretch */
+.wp-block-post-template.is-flex-container > li,
+.wp-block-post-template > li,
+.wp-block-post-template .wp-block-post {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
 }
 
 /* Blog Card Image - Parallax handled by JavaScript */
@@ -119,40 +128,57 @@
 
 .blog-card .wp-block-post-excerpt,
 .blog-card .wp-block-post-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-bottom: 0 !important;
 }
 
 .blog-card .wp-block-post-excerpt p {
-    flex-grow: 1;
+    flex-grow: 1 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Ensure title doesn't take extra space */
+.blog-card .wp-block-post-title,
+.blog-card .blog-card-title {
+    flex-shrink: 0 !important;
+}
+
+/* Ensure date doesn't take extra space */
+.blog-card .wp-block-post-date,
+.blog-card .blog-card-date {
+    flex-shrink: 0 !important;
 }
 
 /* Button/Read More alignment at bottom */
 .blog-card .wp-block-read-more,
 .blog-card .wp-block-button,
-.blog-card .wp-block-buttons {
-    margin-top: auto;
+.blog-card .wp-block-buttons,
+.blog-card .wp-block-post-excerpt .wp-block-post-excerpt__more-link {
+    margin-top: auto !important;
 }
 
 /* Convert read-more links to button style */
-.blog-card .wp-block-read-more {
-    display: inline-block;
-    background-color: var(--wp--preset--color--accent);
-    color: var(--wp--preset--color--accent-dark);
-    padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--30);
-    border-radius: 8px;
-    font-family: var(--wp--preset--font-family--manrope);
-    font-size: var(--wp--preset--font-size--medium);
-    font-weight: var(--wp--preset--font-weight--bold);
-    text-decoration: none;
-    border: none;
-    transition: all 0.3s ease;
+.blog-card .wp-block-read-more,
+.blog-card .wp-block-post-excerpt .wp-block-post-excerpt__more-link {
+    display: inline-block !important;
+    background-color: var(--wp--preset--color--accent) !important;
+    color: var(--wp--preset--color--accent-dark) !important;
+    padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--30) !important;
+    border-radius: 8px !important;
+    font-family: var(--wp--preset--font-family--manrope) !important;
+    font-size: var(--wp--preset--font-size--medium) !important;
+    font-weight: var(--wp--preset--font-weight--bold) !important;
+    text-decoration: none !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
 }
 
-.blog-card .wp-block-read-more:hover {
-    background-color: var(--wp--preset--color--accent-dark);
-    color: var(--wp--preset--color--base);
+.blog-card .wp-block-read-more:hover,
+.blog-card .wp-block-post-excerpt .wp-block-post-excerpt__more-link:hover {
+    background-color: var(--wp--preset--color--accent-dark) !important;
+    color: var(--wp--preset--color--base) !important;
 }
 
 /* Buttons and Pagination - All styling handled by theme.json */
@@ -195,5 +221,3 @@
     border-radius: 8px;
     border: 2px dashed #e0e0e0;
 }
-
-/* Cache buster: Thu Oct 30 2025 - v8 Buttons aligned to bottom */

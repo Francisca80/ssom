@@ -112,4 +112,4 @@
 </div>
 <!-- /wp:group -->
 
-<!-- Pattern updated: Thu Oct 30 2025 - v4 Added excerpts with read-more buttons -->
+

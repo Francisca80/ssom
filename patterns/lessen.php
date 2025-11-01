@@ -64,7 +64,7 @@
           <h3 class="wp-block-heading has-base-color has-text-color">Flexibele Lessen</h3>
           <!-- /wp:heading -->
           <!-- wp:paragraph {"textColor":"base","style":{"typography":{"fontSize":"var:preset|font-size|medium"}}} -->
-          <p class="has-base-color has-text-color" style="font-size:var(--wp--preset--font-size--medium)">We bieden verschillende lesvormen aan: individuele lessen, duolessen en groepslessen. Kies wat het beste bij jou past en jouw agenda.</p>
+          <p class="has-base-color has-text-color" style="font-size:var(--wp--preset--font-size--medium)">We bieden verschillende lesvormen aan: individuele lessen en duo lessen. Kies wat het beste bij jou past en jouw agenda.</p>
           <!-- /wp:paragraph -->
         </div>
         <!-- /wp:group -->

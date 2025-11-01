@@ -1,4 +1,55 @@
 <?php
+// Add SEO Meta Tags and Open Graph
+add_action('wp_head', function() {
+    $site_name = 'Studio Sound of Music';
+    $default_description = 'Gitaarlessen in Nieuwegein voor alle leeftijden en niveaus. Persoonlijke begeleiding door ervaren docenten. Boek nu een gratis proefles!';
+    $default_image = get_stylesheet_directory_uri() . '/screenshot.png';
+    
+    // Get current page info
+    $title = is_front_page() ? $site_name . ' - Gitaarlessen Nieuwegein' : wp_get_document_title();
+    $description = $default_description;
+    $url = get_permalink();
+    $image = $default_image;
+    
+    // Page-specific descriptions
+    if (is_page('gitaarles')) {
+        $description = 'Ontdek onze gitaarlessen in Nieuwegein. Van beginners tot gevorderden, privé of duo-lessen. Flexibel, persoonlijk en betaalbaar. Vraag nu een gratis proefles aan!';
+    } elseif (is_page('over-ons')) {
+        $description = 'Leer meer over Studio Sound of Music en onze gepassioneerde gitaardocent Marlowe McQueen. Ervaren, professioneel en met liefde voor muziek.';
+    } elseif (is_page('contact')) {
+        $description = 'Neem contact op met Studio Sound of Music. Vragen over gitaarlessen, tarieven of een proefles? We helpen je graag verder!';
+    } elseif (is_single()) {
+        $description = get_the_excerpt() ?: $default_description;
+        if (has_post_thumbnail()) {
+            $image = get_the_post_thumbnail_url(get_the_ID(), 'large');
+        }
+    }
+    
+    ?>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="<?php echo esc_attr($description); ?>">
+    <meta name="keywords" content="gitaarles, gitaarlessen, Nieuwegein, muziekles, gitaardocent, muziekschool, gitaar leren, proefles">
+    
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="<?php echo esc_attr($site_name); ?>">
+    <meta property="og:title" content="<?php echo esc_attr($title); ?>">
+    <meta property="og:description" content="<?php echo esc_attr($description); ?>">
+    <meta property="og:type" content="<?php echo is_single() ? 'article' : 'website'; ?>">
+    <meta property="og:url" content="<?php echo esc_url($url); ?>">
+    <meta property="og:image" content="<?php echo esc_url($image); ?>">
+    <meta property="og:locale" content="nl_NL">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo esc_attr($title); ?>">
+    <meta name="twitter:description" content="<?php echo esc_attr($description); ?>">
+    <meta name="twitter:image" content="<?php echo esc_url($image); ?>">
+    
+    <!-- Additional SEO -->
+    <link rel="canonical" href="<?php echo esc_url($url); ?>">
+    <?php
+});
+
 // Add Schema.org Structured Data for LocalBusiness
 add_action('wp_head', function() {
     if (is_front_page() || is_page('over-ons') || is_page('contact')) {
@@ -13,9 +64,9 @@ add_action('wp_head', function() {
             "telephone": "+31657461677",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Lierseschans 12",
+                "streetAddress": "Florijnburg 41",
                 "addressLocality": "Nieuwegein",
-                "postalCode": "3432 GS",
+                "postalCode": "3435 CM",
                 "addressCountry": "NL"
             },
             "geo": {
@@ -138,8 +189,10 @@ add_action( 'save_post', function() {
 });
 
 // Manual cache clear - add ?clear_cache=1 to any URL to clear FSE cache
+// Note: Only use in development, disable or remove for production
 add_action( 'init', function() {
-    if (isset($_GET['clear_cache']) && $_GET['clear_cache'] === '1') {
+    // Only allow cache clearing for admin users
+    if (isset($_GET['clear_cache']) && $_GET['clear_cache'] === '1' && current_user_can('manage_options')) {
         wp_cache_flush();
         if (function_exists('wp_cache_flush_group')) {
             wp_cache_flush_group('block_patterns');
@@ -147,6 +200,7 @@ add_action( 'init', function() {
             wp_cache_flush_group('theme');
             wp_cache_flush_group('template-parts');
         }
+        
         // Redirect to remove the parameter
         wp_redirect(remove_query_arg('clear_cache'));
         exit;
@@ -202,6 +256,9 @@ add_action( 'init', function () {
     register_block_pattern_category( 'ssom-blog-home', [
         'label' => __( 'SSOM Blog Home Sections', 'ssom' ),
     ] );
+    register_block_pattern_category( 'ssom-privacy-policy-page', [
+        'label' => __( 'SSOM Privacy Policy Page Sections', 'ssom' ),
+    ] );
 } );
 
 // Explicitly register the blog home pattern
@@ -213,6 +270,19 @@ add_action( 'init', function() {
             'description' => 'Blog home page with posts query and pagination',
             'content'     => file_get_contents(get_stylesheet_directory() . '/patterns/ssom-blog-home.php'),
             'categories'  => array( 'ssom-blog-home' ),
+        )
+    );
+} );
+
+// Explicitly register the privacy policy pattern
+add_action( 'init', function() {
+    register_block_pattern(
+        'ssom/privacy-policy',
+        array(
+            'title'       => 'Privacy Policy Page',
+            'description' => 'Privacy policy page with GDPR compliance',
+            'content'     => file_get_contents(get_stylesheet_directory() . '/patterns/privacy-policy.php'),
+            'categories'  => array( 'ssom-privacy-policy-page' ),
         )
     );
 } );/* Cache buster: Wed Oct 29 13:31:30 CET 2025 */

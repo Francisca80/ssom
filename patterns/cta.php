@@ -31,7 +31,7 @@
         <!-- wp:paragraph -->
         <p>
           We geven geen standaardlessen uit een boekje, maar stemmen alles af op jouw niveau, doelen en muzieksmaak.
-          Of je nu wil leren soleren, fingerpicken of je favoriete nummers spelen — we helpen je groeien met slimme oefeningen, persoonlijke aandacht en veel plezier.
+          Of je nu wil solo spelen, fingerpicken of je favoriete nummers spelen. We helpen je groeien met slimme oefeningen, persoonlijke aandacht en veel plezier.
         </p>
         <!-- /wp:paragraph -->
       </div>
@@ -48,7 +48,7 @@
 
         <!-- wp:button -->
         <div class="wp-block-button">
-          <a class="wp-block-button__link wp-element-button" href="#proefles">
+          <a class="wp-block-button__link wp-element-button" href="/contact">
             Plan een gratis proefles
           </a>
         </div>
